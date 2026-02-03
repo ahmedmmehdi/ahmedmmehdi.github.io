@@ -32,7 +32,7 @@
   }
 
   header h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
-  header h2 { color: var(--muted); margin-top:0; }
+  header h2 { color: var(--muted); margin-top: 0; }
 
   main {
     max-width: 1200px;
@@ -40,19 +40,11 @@
     padding: 2rem 1.5rem 4rem;
   }
 
-  /* GRID: max 3 columns */
+  /* GRID: auto-fit for responsiveness */
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-  }
-
-  @media (max-width:1024px){
-    .grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width:600px){
-    .grid { grid-template-columns: 1fr; }
   }
 
   .card {
@@ -76,11 +68,22 @@
     gap: 1rem;
     margin-bottom: 1rem;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  .card-logo { width: 110px; border-radius:8px; }
+  .card-logo {
+    width: 110px;
+    max-width: 30%;
+    border-radius: 8px;
+    height: auto;
+  }
 
-  .card-text { font-size: 0.95rem; line-height:1.5; }
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex: 1 1 60%;
+    min-width: 150px;
+  }
 
   .card-links {
     display: flex;
@@ -89,9 +92,9 @@
   }
 
   .card-links a {
-    flex: 1 1 160px;
+    flex: 0 0 auto;
     text-align: center;
-    padding: 0.45rem;
+    padding: 0.45rem 0.8rem;
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -107,7 +110,7 @@
     text-align: center;
     padding: 2rem 1.5rem;
     color: var(--muted);
-    font-size:0.85rem;
+    font-size: 0.85rem;
     border-top: 1px solid rgba(148,163,184,0.15);
   }
 
@@ -116,13 +119,16 @@
   /* MOBILE: stack card-top vertically */
   @media(max-width:600px){
     .card-top{ flex-direction: column; align-items: center; text-align: center; }
+    .card-logo { max-width: 60%; }
+    .card-text { flex: 1 1 100%; }
   }
+
 </style>
 </head>
 
 <body>
 <header>
-  <img src="FZIS_logo.jpg" style="width:150px; margin-bottom:1rem;">
+  <img src="FZIS_logo.jpg" style="width:150px; margin-bottom:1rem;" alt="FZIS Logo">
   <h1>Fatima Zahra Islamic School</h1>
   <h2>Intermediate Class – Weekly Lessons</h2>
 </header>
@@ -132,48 +138,49 @@
 
     <!-- WEEK 1 -->
     <div class="card">
-      <div class="card-header">Term1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</div>
+      <div class="card-header">Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</div>
       <div class="card-top">
-        <img src="Intidhar.jpg" class="card-logo" alt="">
+        <img src="Intidhar.jpg" class="card-logo" alt="Al-Intizar">
         <p class="card-text">
-        Learn about <strong>Al-Intizar</strong>, the role of a true <strong>Muntazir</strong>, and how to prepare for Imam al-Mahdi (AS).        </p>
+          Learn about <strong>Al-Intizar</strong>, the role of a true <strong>Muntazir</strong>, and how to prepare for Imam al-Mahdi (AS).
+        </p>
       </div>
       <div class="card-links">
         <a href="Active_Anticipation.pdf">Slides</a>   
-        <a href="Intidhar_AlMahdi.png"> Lesson Infographic</a>
-        <a href="https://https://youtu.be/fbUw52fkS_o">🎥 Quick Revision of Lesson</a>
+        <a href="Intidhar_AlMahdi.png">Lesson Infographic</a>
+        <a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision</a>
         <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Class Resources</a>
         <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
         <a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">Additional Resources</a>
         <a href="https://www.youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 Who is Imam Mahdi</a>
-
       </div>
     </div>
 
     <!-- WEEK 2 -->
     <div class="card">
-      <div class="card-header">Term 1-Week 2 · 14 Feb 2026 [25th Sha'ban 1447]  · Taqlīd & Taklīf</div>
+      <div class="card-header">Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd & Taklīf</div>
       <div class="card-top">
-        <img src="Week2_Lesson2_Summary.png" class="card-logo" alt="">
+        <img src="Week2_Lesson2_Summary.png" class="card-logo" alt="Taqlīd & Taklīf">
         <p class="card-text">
-        Learn about <strong>Taqlīd</strong> and <strong>Taklīf</strong> and how to prepare spiritually for Ramadhan.</p>
+          Learn about <strong>Taqlīd</strong> and <strong>Taklīf</strong> and how to prepare spiritually for Ramadhan.
+        </p>
       </div>
       <div class="card-links">
         <a href="Week2_Slides_Taqlid_Taklif_and_The_Map_to_Perfection.pdf">Slides</a>
-        <a href="Week2_Lesson2_Summary.png"> Lesson Infographic</a>
-        <a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision of Lesson</a>
+        <a href="Week2_Lesson2_Summary.png">Lesson Infographic</a>
+        <a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision</a>
         <a href="Ijtihad_Taklif_Lesson2_14Feb26.pdf">Class Resources</a>
         <a href="#">Quiz</a>
         <a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi">Additional Resources</a>
-        <a href="https://https://www.youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
+        <a href="https://www.youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
       </div>
     </div>
 
     <!-- WEEK 3 TBA -->
     <div class="card">
-      <div class="card-header">Term1 - Week 3 · 21 Feb[3rd Ramadan 1447] · Coming Soon</div>
+      <div class="card-header">Term 1 - Week 3 · 21 Feb [3rd Ramadan 1447] · Coming Soon</div>
       <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="">
+        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
         <p class="card-text">Content will be uploaded soon.</p>
       </div>
       <div class="card-links">
@@ -187,9 +194,9 @@
 
     <!-- WEEK 4 TBA -->
     <div class="card">
-      <div class="card-header">Term1 - Week 4 · 28 Feb[10th Ramadan 1447]· Coming Soon</div>
+      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Coming Soon</div>
       <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="">
+        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
         <p class="card-text">Content will be uploaded soon.</p>
       </div>
       <div class="card-links">
@@ -201,7 +208,6 @@
       </div>
     </div>
 
-    
   </section>
 </main>
 
