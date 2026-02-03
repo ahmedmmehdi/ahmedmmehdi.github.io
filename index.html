@@ -1,187 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weekly Lessons | Ahmed Mehdi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Lessons | Ahmed Mehdi</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --accent: #38bdf8;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-    }
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --accent: #38bdf8;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+  }
 
-    * { box-sizing: border-box; }
+  * { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #020617, var(--bg));
-      color: var(--text);
-    }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #020617, var(--bg));
+    color: var(--text);
+  }
 
-    header {
-      padding: 4rem 1.5rem 3rem;
-      text-align: center;
-    }
+  header {
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+  }
 
-    header h1 { font-size: 2.6rem; }
-    header h2 { color: var(--muted); }
+  header h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
+  header h2 { color: var(--muted); margin-top:0; }
 
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
 
-    /* ✅ FIXED 3-COLUMN GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
+  /* GRID: max 3 columns */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 
-    /* Tablet */
-    @media (max-width: 1024px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+  @media (max-width:1024px){
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
+  @media (max-width:600px){
+    .grid { grid-template-columns: 1fr; }
+  }
 
-    .card {
-      background: linear-gradient(180deg, var(--card), #020617);
-      border-radius: 16px;
-      padding: 1.6rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      transition: transform 0.25s ease;
-    }
+  .card {
+    background: linear-gradient(180deg, var(--card), #020617);
+    border-radius: 16px;
+    padding: 1.6rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease;
+  }
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
+  .card:hover { transform: translateY(-6px); }
 
-    .card-header {
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .card-top {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
+  .card-header {
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
 
-    .card-logo {
-      width: 110px;
-      border-radius: 8px;
-    }
+  .card-top {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
 
-    .card-text {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+  .card-logo { width: 110px; border-radius:8px; }
 
-    .card-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+  .card-text { font-size: 0.95rem; line-height:1.5; }
 
-    .card-links a {
-      flex: 1 1 160px;
-      text-align: center;
-      padding: 0.45rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-decoration: none;
-      background: var(--accent);
-      color: #020617;
-    }
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-    }
-  </style>
+  .card-links a {
+    flex: 1 1 160px;
+    text-align: center;
+    padding: 0.45rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--accent);
+    color: #020617;
+    transition: transform 0.2s ease;
+  }
+
+  .card-links a:hover { transform: scale(1.05); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--muted);
+    font-size:0.85rem;
+    border-top: 1px solid rgba(148,163,184,0.15);
+  }
+
+  footer span { color: var(--accent); }
+
+  /* MOBILE: stack card-top vertically */
+  @media(max-width:600px){
+    .card-top{ flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
 </head>
 
 <body>
-
 <header>
-  <img src="FZIS_logo.jpg" style="width:150px;">
+  <img src="FZIS_logo.jpg" style="width:150px; margin-bottom:1rem;">
   <h1>Fatima Zahra Islamic School</h1>
   <h2>Intermediate Class – Weekly Lessons</h2>
 </header>
 
 <main>
-<section class="grid">
+  <section class="grid">
 
-<!-- WEEK 1 -->
-<div class="card">
-  <div class="card-header">Week 1 · 8 Feb 2026 · Imam al-Mahdi (AS)</div>
-  <div class="card-top">
-    <img src="Intidhar.jpg" class="card-logo">
-    <p class="card-text">
-      Introduction to <strong>Al-Intizar</strong>, readiness, and true waiting.
-    </p>
-  </div>
-  <div class="card-links">
-    <a href="#">Slides</a>
-    <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Resources</a>
-    <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
-  </div>
-</div>
+    <!-- WEEK 1 -->
+    <div class="card">
+      <div class="card-header">Week 1 · 8 Feb 2026 · Imam al-Mahdi (AS)</div>
+      <div class="card-top">
+        <img src="Intidhar.jpg" class="card-logo" alt="">
+        <p class="card-text">
+          Introduction to <strong>Al-Intizar</strong>, readiness, and true waiting.
+        </p>
+      </div>
+      <div class="card-links">
+        <a href="#">Slides</a>
+        <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Resources</a>
+        <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
+      </div>
+    </div>
 
-<!-- WEEK 2 -->
-<div class="card">
-  <div class="card-header">Week 2 · 15 Feb 2026 · Taqlīd & Taklīf</div>
-  <div class="card-top">
-    <img src="taqlid_taklif.jpg" class="card-logo">
-    <p class="card-text">
-      Understanding religious responsibility and preparing for Ramadhan.
-    </p>
-  </div>
-  <div class="card-links">
-    <a href="#">Slides</a>
-    <a href="#">Resources</a>
-    <a href="#">Quiz</a>
-  </div>
-</div>
+    <!-- WEEK 2 -->
+    <div class="card">
+      <div class="card-header">Week 2 · 15 Feb 2026 · Taqlīd & Taklīf</div>
+      <div class="card-top">
+        <img src="taqlid_taklif.jpg" class="card-logo" alt="">
+        <p class="card-text">
+          Understanding religious responsibility and preparing for Ramadhan.
+        </p>
+      </div>
+      <div class="card-links">
+        <a href="#">Slides</a>
+        <a href="#">Resources</a>
+        <a href="#">Quiz</a>
+      </div>
+    </div>
 
-<!-- WEEK 3 -->
-<div class="card">
-  <div class="card-header">Week 3 · Coming Soon</div>
-  <div class="card-top">
-    <img src="taqlid_taklif.jpg" class="card-logo">
-    <p class="card-text">
-      Content will be uploaded soon.
-    </p>
-  </div>
-  <div class="card-links">
-    <a href="#">TBA</a>
-  </div>
-</div>
+    <!-- WEEK 3 -->
+    <div class="card">
+      <div class="card-header">Week 3 · Coming Soon</div>
+      <div class="card-top">
+        <img src="taqlid_taklif.jpg" class="card-logo" alt="">
+        <p class="card-text">Content will be uploaded soon.</p>
+      </div>
+      <div class="card-links">
+        <a href="#">TBA</a>
+      </div>
+    </div>
 
-</section>
+  </section>
 </main>
 
 <footer>
-  © <strong>Ahmed Mehdi</strong> · GitHub Pages
+  © <span>Ahmed Mehdi</span> · GitHub Pages
 </footer>
 
 </body>
