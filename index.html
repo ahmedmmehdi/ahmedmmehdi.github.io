@@ -5,283 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weekly Lessons | Ahmed Mehdi</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --bg: #0f172a;
-    --card: #111827;
-    --accent: #38bdf8;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #020617, var(--bg));
-    color: var(--text);
-  }
-
-  header {
-    padding: 4rem 1.5rem 3rem;
-    text-align: center;
-  }
-
-  header h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
-  header h2 { color: var(--muted); margin-top: 0; }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-
-  /* GRID: auto-fit for responsiveness */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .card {
-    background: linear-gradient(180deg, var(--card), #020617);
-    border-radius: 16px;
-    padding: 1.6rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    transition: transform 0.25s ease;
-  }
-
-  .card:hover { transform: translateY(-6px); }
-
-  .card-header {
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  .card-top {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .card-logo {
-    width: 110px;
-    max-width: 30%;
-    border-radius: 8px;
-    height: auto;
-  }
-
-  .card-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    flex: 1 1 60%;
-    min-width: 150px;
-  }
-
-  .card-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .card-links a {
-    flex: 0 0 auto;
-    text-align: center;
-    padding: 0.45rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-decoration: none;
-    background: var(--accent);
-    color: #020617;
-    transition: transform 0.2s ease;
-  }
-
-  .card-links a:hover { transform: scale(1.05); }
-
-  footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(148,163,184,0.15);
-  }
-
-  footer span { color: var(--accent); }
-
-  /* MOBILE: stack card-top vertically */
-  @media(max-width:600px){
-    .card-top{ flex-direction: column; align-items: center; text-align: center; }
-    .card-logo { max-width: 60%; }
-    .card-text { flex: 1 1 100%; }
-  }
-
+:root{--bg:#0f172a;--card:#111827;--accent:#38bdf8;--text:#e5e7eb;--muted:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(180deg,#020617,var(--bg));color:var(--text)}
+header{padding:4rem 1.5rem 3rem;text-align:center}
+header h1{font-size:2.6rem;margin-bottom:.5rem}
+header h2{color:var(--muted);margin-top:0}
+main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.card{background:linear-gradient(180deg,var(--card),#020617);border-radius:16px;padding:1.6rem;box-shadow:0 10px 25px rgba(0,0,0,.35);transition:transform .25s ease}
+.card:hover{transform:translateY(-6px)}
+.card-header{font-weight:600;color:var(--accent);margin-bottom:1rem}
+.card-top{display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start;flex-wrap:wrap}
+.card-logo{width:110px;max-width:30%;border-radius:8px;height:auto}
+.card-text{font-size:.95rem;line-height:1.5;flex:1 1 60%;min-width:150px}
+.card-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.card-links a{padding:.45rem .8rem;border-radius:999px;font-size:.8rem;font-weight:600;text-decoration:none;background:var(--accent);color:#020617}
+.card-parents{margin-top:.9rem;padding-top:.6rem;border-top:1px dashed rgba(148,163,184,.25);font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.5rem}
+.card-parents span{font-weight:600;color:var(--accent)}
+.card-parents a{border:1px solid rgba(56,189,248,.4);color:var(--accent);padding:.35rem .7rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.75rem}
+@media(max-width:600px){.card-top{flex-direction:column;align-items:center;text-align:center}.card-logo{max-width:60%}}
 </style>
 </head>
-
 <body>
 <header>
-  <img src="FZIS_logo.jpg" style="width:150px; margin-bottom:1rem;" alt="FZIS Logo">
-  <h1>Fatima Zahra Islamic School</h1>
-  <h2>Intermediate Class – Weekly Lessons</h2>
+<img src="FZIS_logo.jpg" style="width:150px;margin-bottom:1rem" alt="FZIS Logo">
+<h1>Fatima Zahra Islamic School</h1>
+<h2>Intermediate Class – Weekly Lessons</h2>
 </header>
-
 <main>
-  <section class="grid">
+<section class="grid">
 
-    <!-- WEEK 1 -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</div>
-      <div class="card-top">
-        <img src="Intidhar.jpg" class="card-logo" alt="Al-Intizar">
-        <p class="card-text">
-          Learn about <strong>Al-Intizar</strong>, the role of a true <strong>Muntazir</strong>, and how to prepare for Imam al-Mahdi (AS).
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="Active_Anticipation.pdf">Slides</a>   
-        <a href="Week1_Intedhar_Infographics.jpeg">Lesson Infographic</a>
-        <a href="https://youtu.be/erjdUmeGgUA">🎥 Quick Revision</a>
-        <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Class Resources</a>
-        <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
-        <a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">Additional Resources</a>
-        <a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 Who is Imam Mahdi</a>
-      </div>
-    </div>
+<!-- WEEK 1 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</div>
+<div class="card-top">
+<img src="Intidhar.jpg" class="card-logo" alt="Al-Intizar">
+<p class="card-text">Learn about <strong>Al-Intizar</strong>, the role of a true <strong>Muntazir</strong>, and how to prepare for Imam al-Mahdi (AS).</p>
+</div>
+<div class="card-links">
+<a href="Active_Anticipation.pdf">Slides</a>
+<a href="Week1_Intedhar_Infographics.jpeg">Lesson Infographic</a>
+<a href="https://youtu.be/erjdUmeGgUA">🎥 Quick Revision</a>
+<a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Class Resources</a>
+<a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
+<a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 Who is Imam Mahdi</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    <!-- WEEK 2 -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd & Taklīf</div>
-      <div class="card-top">
-        <img src="Week2_Lesson2_Summary.png" class="card-logo" alt="Taqlīd & Taklīf">
-        <p class="card-text">
-          Learn about <strong>Taqlīd</strong> and <strong>Taklīf</strong> and how to prepare spiritually for Ramadhan.
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="Week2_Slides_Taqlid_Taklif_and_The_Map_to_Perfection.pdf">Slides</a>
-        <a href="Week2_Lesson2_Summary.png">Lesson Infographic</a>
-        <a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision</a>
-        <a href="Ijtihad_Taklif_Lesson2_14Feb26.pdf">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi">Additional Resources</a>
-        <a href="https://youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
-      </div>
-    </div>
+<!-- WEEK 2 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd & Taklīf</div>
+<div class="card-top">
+<img src="Week2_Lesson2_Summary.png" class="card-logo" alt="Taqlīd & Taklīf">
+<p class="card-text">Learn about <strong>Taqlīd</strong> and <strong>Taklīf</strong> and how to prepare spiritually for Ramadhan.</p>
+</div>
+<div class="card-links">
+<a href="Week2_Slides_Taqlid_Taklif_and_The_Map_to_Perfection.pdf">Slides</a>
+<a href="Week2_Lesson2_Summary.png">Lesson Infographic</a>
+<a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision</a>
+<a href="Ijtihad_Taklif_Lesson2_14Feb26.pdf">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi">Additional Resources</a>
+<a href="https://youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    <!-- WEEK 3 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 3 · 21 Feb [3rd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
+<!-- WEEK 3 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 3 · 21 Feb [3rd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    
+<!-- WEEK 4 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Understanding Taharah and Najasah</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    <!-- WEEK 4 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Understanding Taharah and Najasah </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https:/youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
+<!-- WEEK 5 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 5 · Imam Hasan Al-Mujtaba: The Wisdom of Courage</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    <!-- WEEK 5 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Imam Hasan Al-Mujtaba: The Wisdom of Courage </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https:/youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
+<!-- WEEK 6 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 6 · Rules of Wudu</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-    <!-- WEEK 6 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Rules of Wudu </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https:/youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
+<!-- WEEK 7 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 7 · Rules of Ghusl</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
+<!-- WEEK 8 -->
+<div class="card">
+<div class="card-header">Term 1 - Week 8 · Revision and Assessment</div>
+<div class="card-top">
+<img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
+<p class="card-text">Content will be uploaded soon.</p>
+</div>
+<div class="card-links">
+<a href="#">Slides</a>
+<a href="#">Class Resources</a>
+<a href="#">Quiz</a>
+<a href="#">Additional Resources</a>
+<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
+</div>
+<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
+</div>
 
-     <!-- WEEK 7 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Rules of Ghusl </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https:/youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
-
-     <!-- WEEK 8 TBA -->
-    <div class="card">
-      <div class="card-header">Term 1 - Week 4 · 28 Feb [10th Ramadan 1447] · Revision and Assessment </div>
-      <div class="card-top">
-        <img src="taqlid_taklif.jpg" class="card-logo" alt="Coming Soon">
-        <p class="card-text">Content will be uploaded soon.</p>
-      </div>
-      <div class="card-links">
-        <a href="#">Slides</a>
-        <a href="#">Class Resources</a>
-        <a href="#">Quiz</a>
-        <a href="#">Additional Resources</a>
-        <a href="https:/youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>      
-      </div>
-    </div>
-
-
-  </section>
+</section>
 </main>
-
-<footer>
-  © <span>Ahmed Mehdi</span> · GitHub Pages
-</footer>
-
+<footer>© <span>Ahmed Mehdi</span> · GitHub Pages</footer>
 </body>
 </html>
