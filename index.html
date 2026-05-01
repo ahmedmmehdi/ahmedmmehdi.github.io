@@ -5,64 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weekly Lessons | Ahmed Mehdi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root{--bg:#0f172a;--card:#111827;--accent:#38bdf8;--text:#e5e7eb;--muted:#94a3b8}
-*{box-sizing:border-box}
-body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(180deg,#020617,var(--bg));color:var(--text)}
-
-header{padding:4rem 1.5rem 3rem;text-align:center}
-header h1{font-size:2.6rem;margin-bottom:.5rem}
-header h2{color:var(--muted);margin-top:0}
-
-main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-
-.card{background:linear-gradient(180deg,var(--card),#020617);border-radius:16px;padding:1.6rem;box-shadow:0 10px 25px rgba(0,0,0,.35);transition:transform .25s ease}
-.card:hover{transform:translateY(-6px)}
-.card-header{font-weight:600;color:var(--accent);margin-bottom:1rem}
-.card-top{display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start;flex-wrap:wrap}
-.card-logo{width:110px;max-width:30%;border-radius:8px;height:auto}
-.card-text{font-size:.95rem;line-height:1.5;flex:1 1 60%;min-width:150px}
-
-.card-links{display:flex;flex-wrap:wrap;gap:.5rem}
-.card-links a{padding:.45rem .8rem;border-radius:999px;font-size:.8rem;font-weight:600;text-decoration:none;background:var(--accent);color:#020617}
-
-.term-btn{
-  background: var(--card);
-  color: var(--text);
-  border: 1px solid var(--accent);
-  padding: .6rem 1.2rem;
-  margin: 0 .5rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 600;
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --accent:#38bdf8;
+  --text:#e2e8f0;
+  --muted:#94a3b8;
 }
-.term-btn:hover{
-  background: var(--accent);
-  color: #020617;
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
-</style>
-</head>
 
-<body>
+header{
+  text-align:center;
+  padding:1.5rem;
+  font-size:1.5rem;
+  font-weight:bold;
+}
 
-<header>
-<h1>Fatima Zahra Islamic School</h1>
-<h2>Intermediate Class – Weekly Lessons</h2>
-</header>
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin-bottom:1.5rem;
+}
 
-<main>
+.tabs button{
+  padding:0.6rem 1.2rem;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:var(--card);
+  color:var(--text);
+}
 
-<!-- ✅ TERM BUTTONS -->
-<div style="text-align:center; margin-bottom:2rem;">
-  <button onclick="showTerm('term1')" class="term-btn">Term 1</button>
-  <button onclick="showTerm('term2')" class="term-btn">Term 2</button>
-</div>
+.tabs button.active{
+  background:var(--accent);
+  color:#000;
+}
 
-<section class="grid">
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1rem;
+  padding:1rem;
+}
 
+.card{
+  background:var(--card);
+  padding:1rem;
+  border-radius:12px;
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.card-links a{
+  display:inline-block;
+  margin:0.2rem;
+  padding:0.4rem 0.7rem;
+  border-radius:999px;
+  background:rgba(56,189,248,0.15);
+  color:var(--accent);
+  font-size:0.75rem;
+  text-decoration:none;
+}
+
+<!-- TERM 1 -->
 <!-- ================= TERM 1 ================= -->
 <div id="term1">
 
@@ -348,19 +363,16 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 <div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
 </div>
 
-
-
-</div>
-
-</section>
-</main>
-
 <!-- ✅ SCRIPT -->
 <script>
-function showTerm(term){
-  document.getElementById('term1').style.display = 'none';
-  document.getElementById('term2').style.display = 'none';
-  document.getElementById(term).style.display = 'block';
+  function showTerm(termId, btn){
+  document.getElementById('term1').classList.add('hidden');
+  document.getElementById('term2').classList.add('hidden');
+
+  document.getElementById(termId).classList.remove('hidden');
+
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
 </script>
 
