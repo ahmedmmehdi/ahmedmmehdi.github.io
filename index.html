@@ -12,6 +12,7 @@
   --accent:#38bdf8;
   --text:#e2e8f0;
   --muted:#94a3b8;
+  --highlight:#22c55e;
 }
 
 body{
@@ -21,49 +22,58 @@ body{
   color:var(--text);
 }
 
+/* HEADER */
 header{
   text-align:center;
-  padding:1.5rem;
-  font-size:1.5rem;
+  padding:1.2rem;
+  font-size:1.6rem;
   font-weight:bold;
 }
 
-.tabs{
+/* SEARCH */
+.search-box{
   display:flex;
   justify-content:center;
-  gap:1rem;
-  margin-bottom:1.5rem;
+  margin:10px;
 }
 
-.tabs button{
-  padding:0.6rem 1.2rem;
+.search-box input{
+  width:90%;
+  max-width:500px;
+  padding:10px;
+  border-radius:8px;
   border:none;
-  border-radius:999px;
-  cursor:pointer;
-  background:var(--card);
-  color:var(--text);
 }
 
-.tabs button.active{
-  background:var(--accent);
-  color:#000;
+/* CALENDAR */
+.calendar-box{
+  text-align:center;
+  margin:10px;
+  padding:10px;
+  background:rgba(56,189,248,0.1);
+  border-radius:10px;
 }
 
-.hidden{
-  display:none;
-}
-
-.container{
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:1rem;
   padding:1rem;
 }
 
+/* CARD */
 .card{
   background:var(--card);
-  padding:1rem;
   border-radius:12px;
+  padding:1rem;
+  cursor:pointer;
+  transition:0.3s;
+  position:relative;
+}
+
+.card:hover{
+  transform:scale(1.01);
 }
 
 .card-header{
@@ -88,10 +98,12 @@ header{
   color:var(--muted);
 }
 
-.card-links a{
+/* LINKS */
+.card-links a,
+.card-parents a{
   display:inline-block;
   margin:0.2rem;
-  padding:0.4rem 0.7rem;
+  padding:0.3rem 0.6rem;
   border-radius:999px;
   background:rgba(56,189,248,0.15);
   color:var(--accent);
@@ -99,103 +111,219 @@ header{
   text-decoration:none;
 }
 
-.card-parents{
-  margin-top:1rem;
-  padding-top:0.6rem;
-  border-top:1px solid rgba(255,255,255,0.1);
+/* COLLAPSE */
+.card-content{
+  display:none;
+  margin-top:10px;
 }
 
-.card-parents span{
+.card.open .card-content{
   display:block;
-  margin-bottom:0.4rem;
-  font-size:0.8rem;
-  color:var(--muted);
 }
 
-.card-parents a{
-  display:block;
-  font-size:0.8rem;
-  color:var(--accent);
-  text-decoration:none;
-  margin-bottom:0.2rem;
+/* HIGHLIGHT CURRENT WEEK */
+.card.current{
+  border:2px solid var(--highlight);
 }
 
-.card-parents a:hover{
-  text-decoration:underline;
+/* MOBILE */
+@media(max-width:600px){
+  .card-top{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>Weekly Lessons</header>
+<header>Weekly Lessons 2026</header>
 
-<div class="tabs">
-  <button class="active" onclick="showTerm('term1', this)">Term 1</button>
-  <button onclick="showTerm('term2', this)">Term 2</button>
+<div class="calendar-box">
+<h3>📅 Academic Calendar – 2026</h3>
+<a href="FZIS calendar 2026.pdf" target="_blank">Open Academic Calendar (PDF)</a>
 </div>
 
-<div id="term1" class="container">
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search lessons...">
+</div>
 
-<!-- TERM 1 CONTENT (ALL YOUR WEEKS KEPT EXACTLY) -->
+<main class="grid">
+
+<!-- ================= TERM 1 ================= -->
 
 <!-- WEEK 1 -->
-<div class="card">
-<div class="card-header">Term 1 - Week 1 · 7 Feb 2026 · Imam al-Mahdi (AS)</div>
-<div class="card-top">
-<img src="Intidhar.jpg" class="card-logo">
-<p class="card-text">Learn about Al-Intidhar and preparing for Imam al-Mahdi (AS).</p>
-</div>
+<div class="card" data-title="imam mahdi al intidhar week1">
+<div class="card-header">Term 1 - Week 1 · Imam al-Mahdi (AS)</div>
+<div class="card-top"><img src="Intidhar.jpg" class="card-logo"><p class="card-text">Al-Intidhar & Muntadhir preparation.</p></div>
+<div class="card-content">
 <div class="card-links">
 <a href="Active_Anticipation.pdf">Slides</a>
+<a href="Intidhar_AlMahdi.png">Infographic</a>
+<a href="https://youtu.be/erjdUmeGgUA">Quick Revision</a>
+<a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Resources</a>
 <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
 </div>
 <div class="card-parents">
-<span>Parents Resources:</span>
-<a href="#">Video</a>
+<span>Parents:</span>
+<a href="https://youtu.be/a-ZVMdG8H5E">Story 1</a>
+<a href="https://youtu.be/InA6t_MdX94">Story 2</a>
+</div>
 </div>
 </div>
 
 <!-- WEEK 2 -->
-<div class="card">
+<div class="card" data-title="taqlid taklif week2 ramadhan">
 <div class="card-header">Term 1 - Week 2 · Taqlīd & Taklīf</div>
-<div class="card-top">
-<img src="Tohzeeh.jpg" class="card-logo">
-<p class="card-text">Learn about Taqlīd and Taklīf.</p>
-</div>
+<div class="card-top"><img src="Tohzeeh.jpg" class="card-logo"><p class="card-text">Taqlid & spiritual preparation.</p></div>
+<div class="card-content">
 <div class="card-links">
-<a href="#">Slides</a>
+<a href="Week2_Slides_Taqlid_Taklif_and_The_Map_to_Perfection.pdf">Slides</a>
+<a href="Week2_Lesson2_Summary.png">Infographic</a>
+<a href="https://forms.gle/cQ4aj6tZEQZnWsvh8">Quiz</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="#">Story</a></div>
+<div class="card-parents">
+<span>Parents:</span>
+<a href="https://youtu.be/EgKsqhD155Y">Story</a>
+<a href="https://www.youtube.com/watch?v=x_YIZfym6w8">Dua</a>
+</div>
+</div>
 </div>
 
-<!-- KEEP ADDING YOUR OTHER WEEKS HERE (UNCHANGED) -->
-
+<!-- WEEK 3 -->
+<div class="card" data-title="ramadan spiritual training week3">
+<div class="card-header">Term 1 - Week 3 · Ramadan Training</div>
+<div class="card-top"><img src="Ramadan_logo.jpg" class="card-logo"><p class="card-text">Spiritual training of soul.</p></div>
+<div class="card-content">
+<div class="card-links">
+<a href="T1W3_Ramadan_Guide_and_Framework.pdf">Slides</a>
+<a href="Fasting_Infographics.png">Infographic</a>
+<a href="https://forms.gle/QDyMczVtWJYXn7966">Quiz</a>
+</div>
+<div class="card-parents">
+<span>Parents:</span>
+<a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi">Article</a>
+</div>
+</div>
 </div>
 
-<div id="term2" class="container hidden">
+<!-- WEEK 4 -->
+<div class="card" data-title="imam hasan wisdom courage week4">
+<div class="card-header">Term 1 - Week 4 · Imam Hasan (AS)</div>
+<div class="card-top"><img src="Imam_hasan_logo.jpg"><p>Wisdom & courage.</p></div>
+<div class="card-content">
+<div class="card-links">
+<a href="The_Courage_of_Wisdom.pdf">Slides</a>
+<a href="https://forms.gle/HvnyyoquKG8dmHr97">Quiz</a>
+</div>
+<div class="card-parents">
+<a href="https://youtu.be/8Vly2hsJP70">Lecture</a>
+</div>
+</div>
+</div>
 
-<!-- TERM 2 -->
-<div class="card">
+<!-- WEEK 5 -->
+<div class="card" data-title="imam ali martyrdom week5">
+<div class="card-header">Term 1 - Week 5 · Imam Ali (AS)</div>
+<div class="card-top"><img src="Imam_Ali_logo_image.jpg"><p>Martyrdom & legacy.</p></div>
+<div class="card-content">
+<div class="card-links">
+<a href="Slides_ImamAli_Lesson.pdf">Slides</a>
+<a href="https://forms.gle/powNNCmC6ECQPWUKA">Quiz</a>
+</div>
+<div class="card-parents">
+<a href="https://youtu.be/j3k5HHXybsU">Story</a>
+</div>
+</div>
+</div>
+
+<!-- WEEK 6 -->
+<div class="card current" data-title="laylatul qadr week6">
+<div class="card-header">Term 1 - Week 6 · Laylatul Qadr</div>
+<div class="card-top"><img src="LylatulQadar_logo.png"><p>No Class</p></div>
+<div class="card-content">
+<div class="card-parents">
+<a href="https://www.duas.org/ramadan-laylat-ul-qadr-amaal-dua-common.html">Amaal</a>
+</div>
+</div>
+</div>
+
+<!-- WEEK 7 -->
+<div class="card" data-title="eid ul fitr week7">
+<div class="card-header">Term 1 - Week 7 · Eid-ul-Fitr</div>
+<div class="card-top"><img src="Eid_fitr_logo.png"><p>No Class</p></div>
+<div class="card-content">
+<div class="card-parents">
+<a href="https://www.duas.org/dua-nudbah.html">Dua</a>
+</div>
+</div>
+</div>
+
+<!-- WEEK 8 -->
+<div class="card" data-title="taharah najasah week8">
+<div class="card-header">Week 8 · Taharah (Part 1)</div>
+<div class="card-top"><img src="Tahara_logo.png"><p>Purity laws</p></div>
+<div class="card-content">
+<div class="card-links">
+<a href="Taharah_and_Najasah.pdf">Slides</a>
+</div>
+</div>
+</div>
+
+<!-- WEEK 9 -->
+<div class="card" data-title="taharah najasah week9">
+<div class="card-header">Week 9 · Taharah (Part 2)</div>
+<div class="card-top"><img src="Tahara_logo.png"><p>Continuation</p></div>
+<div class="card-content">
+<div class="card-links">
+<a href="Taharah_and_Najasah.pdf">Slides</a>
+</div>
+</div>
+</div>
+
+<!-- ================= TERM 2 ================= -->
+
+<div class="card" data-title="revision week term2">
 <div class="card-header">Term 2 - Week 1 · Revision</div>
-<div class="card-top">
-<img src="revsion_logo.png" class="card-logo">
-<p class="card-text">Content coming soon.</p>
+<div class="card-content">
+<p>Coming soon</p>
 </div>
 </div>
 
+<div class="card" data-title="wudu week term2">
+<div class="card-header">Term 2 - Week 2 · Wudu</div>
+<div class="card-content">
+<p>Coming soon</p>
 </div>
+</div>
+
+<div class="card" data-title="ghusl week term2">
+<div class="card-header">Term 2 - Week 3 · Ghusl</div>
+<div class="card-content">
+<p>Coming soon</p>
+</div>
+</div>
+
+</main>
 
 <script>
-function showTerm(termId, btn){
-  document.getElementById('term1').classList.add('hidden');
-  document.getElementById('term2').classList.add('hidden');
 
-  document.getElementById(termId).classList.remove('hidden');
+/* COLLAPSE */
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    card.classList.toggle('open');
+  });
+});
 
-  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
+/* SEARCH */
+document.getElementById('searchInput').addEventListener('input',function(){
+  let val = this.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card=>{
+    let text = card.dataset.title || "";
+    card.style.display = text.toLowerCase().includes(val) ? "block":"none";
+  });
+});
+
 </script>
 
 </body>
