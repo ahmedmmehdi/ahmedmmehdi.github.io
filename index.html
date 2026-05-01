@@ -29,340 +29,89 @@ main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem}
 .card-links{display:flex;flex-wrap:wrap;gap:.5rem}
 .card-links a{padding:.45rem .8rem;border-radius:999px;font-size:.8rem;font-weight:600;text-decoration:none;background:var(--accent);color:#020617}
 
-.card-parents{margin-top:.9rem;padding-top:.6rem;border-top:1px dashed rgba(148,163,184,.25);font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.5rem}
-.card-parents span{font-weight:600;color:var(--accent)}
-.card-parents a{border:1px solid rgba(56,189,248,.4);color:var(--accent);padding:.35rem .7rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.75rem}
-
-/* ✅ Academic Calendar Styling */
-.calendar-box{
-  background:linear-gradient(180deg,var(--card),#020617);
-  border-radius:16px;
-  padding:1.2rem;
-  margin-top:2rem;
-  max-width:600px;
-  margin-left:auto;
-  margin-right:auto;
-  box-shadow:0 8px 22px rgba(0,0,0,.3);
+.term-btn{
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  padding: .6rem 1.2rem;
+  margin: 0 .5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
 }
-
-.calendar-box h3{
-  margin-top:0;
-  margin-bottom:.6rem;
-  color:var(--accent);
-}
-
-.calendar-box a{
-  color:var(--accent);
-  font-weight:600;
-  text-decoration:none;
-}
-
-.calendar-box a:hover{
-  text-decoration:underline;
-}
-
-/* Mobile */
-@media(max-width:600px){
-  .card-top{flex-direction:column;align-items:center;text-align:center}
-  .card-logo{max-width:60%}
+.term-btn:hover{
+  background: var(--accent);
+  color: #020617;
 }
 </style>
 </head>
+
 <body>
+
 <header>
-<img src="FZIS_logo.jpg" style="width:130px;margin-bottom:1rem" alt="FZIS Logo">
 <h1>Fatima Zahra Islamic School</h1>
 <h2>Intermediate Class – Weekly Lessons</h2>
-
-<!-- Academic Calendar Section -->
-<div class="calendar-box">
-<h3>📅 Academic Calendar – 2026</h3>
-<a href="FZIS calendar 2026.pdf" target="_blank">Open Academic Calendar to View important dates and holidays (PDF)</a>
-</div>
 </header>
 
 <main>
+
+<!-- ✅ TERM BUTTONS -->
+<div style="text-align:center; margin-bottom:2rem;">
+  <button onclick="showTerm('term1')" class="term-btn">Term 1</button>
+  <button onclick="showTerm('term2')" class="term-btn">Term 2</button>
+</div>
+
 <section class="grid">
 
-<!-- WEEK 1 -->
-<div class="card">
-  <div class="card-header">
-    Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)
-  </div>
+<!-- ================= TERM 1 ================= -->
+<div id="term1">
 
+<div class="card">
+  <div class="card-header">Term 1 - Week 1</div>
   <div class="card-top">
-    <img src="Intidhar.jpg" class="card-logo" alt="Al-Intidhar">
-    <p class="card-text">
-      Learn about <strong>Al-Intidhar</strong>, the role of a true
-      <strong>Muntadhir</strong>, and how to prepare for Imam al-Mahdi (AS). 
-      <u><strong>Homework:</strong></u> Do not forget to complete 
-      pages <strong>378, 382, and 383</strong> from <strong>Book 7.</strong>
-    </p>
-  </div>
-
-  <div class="card-links">
-    <a href="Active_Anticipation.pdf">Slides</a>
-    <a href="Intidhar_AlMahdi.png">Lesson Infographic</a>
-    <a href="https://youtu.be/erjdUmeGgUA">🎥 Quick Revision</a>
-    <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Class Resources</a>
-    <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz Week1</a>
-    <a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">
-      Additional Resources
-    </a>
-    <a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 Who is Imam Mahdi</a>
-  </div>
-
-  <div class="card-parents">
-    <span>Parents Resources (Share stories with your children):</span>
-    <a href="https://youtu.be/a-ZVMdG8H5E?si=_VNCBVXznm4aXrQD">
-      Imam Al-Mahdi (AS): Miraculous Birth of Imam Al-Mahdi (ajtf) Explained — Shaikh Azhar Nasser
-    </a>
-    <a href="https://youtu.be/InA6t_MdX94">
-      Imam Al-Mahdi (AS): The Awaited Reality [Sumamarized lectures of Syed Abid Hussain Zaidi]
-    </a>
+    <p class="card-text">Content for Week 1</p>
   </div>
 </div>
-  
-<!-- WEEK 2 -->
-<div class="card">
-<div class="card-header">Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd & Taklīf</div>
-<div class="card-top">
-<img src="Tohzeeh.jpg" class="card-logo" alt="Taqlīd & Taklīf">
-<p class="card-text">Learn about <strong>Taqlīd</strong> and <strong>Taklīf</strong> and how to prepare spiritually for Ramadhan.
-      <u><strong>Homework:</strong></u> Do not forget to complete 
-      pages <strong>177, 182, and 183</strong> from <strong>Book 7.</strong>
-      <a href="https://www.sistani.org/english/book/48/2264/" style="color:#ffffff; font-weight:600; text-decoration:none;">
-      If you are not able to search "Traveller Prayers" related question using QR code (Page 177), please CLICK ME</a>
-</p>
-</div>
-<div class="card-links">
-<a href="Week2_Slides_Taqlid_Taklif_and_The_Map_to_Perfection.pdf">Slides</a>
-<a href="Week2_Lesson2_Summary.png">Lesson Infographic</a>
-<a href="https://youtu.be/fbUw52fkS_o">🎥 Quick Revision</a>
-<a href="Ijtihad_Taklif_Lesson2_14Feb26.pdf">Class Resources</a>
-<a href="https://forms.gle/cQ4aj6tZEQZnWsvh8">Quiz Week2</a>
-<a href="https://al-islam.org/simplified-islamic-laws-youth-and-young-adults-sayyid-ali-hussaini-sistani/ijtihad-and-taqlid">Additional Resources</a>
-<a href="https://youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/EgKsqhD155Y">  The Spun Wheel Story </a><a href="https://youtu.be/MkSIl_Ro27A">  The Shattered Idol Story</a>
-<a href="https://youtu.be/tCpzDBnTvtw">  🎥[Video] The Prophet’s (SAW) Sermon Welcoming the Month of Ramadhan </a>
-<a href="https://www.youtube.com/watch?v=x_YIZfym6w8"> Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English </a>
-<a href="https://al-islam.org/fasting-and-holy-month-ramadhan-mansour-leghaei/ramadhan-awareness"> Ramadhan Awareness</a>
-  
-</div>
-</div>
-  
-<!-- WEEK 3 -->
-<div class="card">
-<div class="card-header">Term 1 - Week 3 · 21 Feb [2nd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul + Discussion on Last week's related questions</div>
-<div class="card-top">
-<img src="Ramadan_logo.jpg" class="card-logo" alt="Ramadan: A Spiritual Training for the Soul"> 
-<p class="card-text">Explore how <strong>Ramadan</strong> serves as a <strong>spiritual training for the soul</strong>, nurturing patience, reflection, and closeness to Allah. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong> 286 </strong>from <strong>Book 7.</strong></p>
-</div>
-  
-<div class="card-links">
-<a href="T1W3_Ramadan_Guide_and_Framework.pdf">Slides</a>
-<a href="Fasting_Infographics.png">Lesson Infographic</a>
-<a href="https://youtu.be/1d8oAd2jLAI">🎥 Quick Revision</a>
-<a href="T1W3_Ramadan.pdf">Class Resources</a>
-<a href="https://forms.gle/QDyMczVtWJYXn7966">Quiz Week3</a>
-<a href="Ramadan_Book9.pdf"> Additional Resource on Ramadhan Awareness (taken from Book9)</a>
-<a href="Taqlid_Book8.pdf"> Additional Resource on Taqlid (taken from Book8)</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi"> Ijtihad and Taqlid [https://al-islam.org/]</a><a href="https://www.sistani.org/english/qa/"> Q & A [Grand Ayatollah Sayyid Ali al-Husayni al-Sistani (born 1930)]</a>
-<a href="https://youtu.be/EgKsqhD155Y">  [Story] The Spun Wheel  </a>
-<a href="https://youtu.be/MkSIl_Ro27A">  [Story] The Shattered Idol </a>
-<a href="https://youtu.be/j3k5HHXybsU"> [Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS) </a>
-<a href="https://www.youtube.com/watch?v=x_YIZfym6w8"> Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English </a>
-  
-</div>
-</div>
-  
-<!-- WEEK 4 -->
-<div class="card">
-<div class="card-header">Term 1 - Week 4· 28 Feb [9th Ramadan 1447] · Imam Hasan Al-Mujtaba (AS): The Wisdom of Courage</div>
-  
-<div class="card-top">
-<img src="Imam_hasan_logo.jpg" class="card-logo" alt="Imam Hasan Al-Mujtaba">
-<p class="card-text">This lesson will discuss Imam Hasan (a.s.) as the "Manifestation of Divine Beauty" and the "speaking Quran". 
-Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty of character" by repelling evil with good, transforming enemies into friends, and exercising the supreme courage of 
-  wisdom to sign a peace treaty that preserved the Muslim nation. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong>333, 334, 335 </strong>from <strong>Book 7.</strong></p>
-</div>
-<div class="card-links">
-<a href="The_Courage_of_Wisdom.pdf">Slides</a>
-<a href="Imam_Hasan_LessonInfographics.png">Lesson Infographic</a>
-<a href="T1W5_ImamHasan.pdf">Class Resources</a>
-<a href="https://youtu.be/xgC760gzPUYI">🎥 Quick Revision</a>
-<a href="https://forms.gle/HvnyyoquKG8dmHr97">Quiz Week4</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/8Vly2hsJP70?start=1601&end=4735"> The Hassani Persona - Part 1: Dr Aws Hmud  </a>
-<a href="https://youtu.be/EqqopJvg40w?start=1819&end=5346"> The Hassani Persona - Part 2: Dr Aws Hmud </a>
-<a href="https://youtu.be/68ewiOugX24?start=1383&end=4743"> The Hassani Persona - Part 3: Dr Aws Hmud </a>
-<a href="https://youtu.be/8o6XvcnbH5s?start=3066&end=5754"> The Hassani Persona - Part 4: Dr Aws Hmud </a>
-  
-</div>
-</div>
 
-<!-- WEEK 5 -->
 <div class="card">
-<div class="card-header">Term 1 - Week 5 · 7th March [16th Ramadan 1447]· The Martyrdom of Imam Ali (AS)</div>
-<div class="card-top">
-<img src="Imam_Ali_logo_image.jpg" class="card-logo" alt="Imam Ali (AS)">
-<p class="card-text">This lesson explores the life, spiritual importance, and ultimate sacrifice of Imām ʿAlī ibn Abī Ṭālib, emphasizing his distinctive role as the first Imām and the successor to Prophet Muḥammad.</p>
-</div>
-<div class="card-links">
-<a href="Slides_ImamAli_Lesson.pdf">Slides</a>
-<a href="ImamAli_Infographics.png">Lesson Infographic</a>
-<a href="ImamAli_Strength_Submission.pdf">Class Resources</a>
-<a href="https://forms.gle/powNNCmC6ECQPWUKA">Quiz Week5</a>
-<a href="https://youtu.be/g2Y14dIU4zY">🎥 Quick Revision</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/j3k5HHXybsU"> [Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS)</a>
-<a href="https://youtu.be/552L-4eAQ_I"> [Story] The importance of Time</a>
-<a href="https://youtu.be/Gwjz3MbYCOE"> [Story] The Melting Capital </a>
-  
-</div>
-</div>
-
-<!-- WEEK 6 -->
-<div class="card">
-  <div class="card-header">Term 1 - Week 6 · 14th March [23rd Ramadan 1447] · No Class (Laylatul Qadr)</div>
-
+  <div class="card-header">Term 1 - Week 2</div>
   <div class="card-top">
-    <img src="LylatulQadar_logo.png" class="card-logo" alt="No Class">
-    <p class="card-text">There will be no class this week in observance of Laylatul Qadr. May Allah accept your prayers and عبادات.</p>
-  </div>
-
-  <div class="card-links">
-    <a href="#">🎥 No Session this week</a>
-  </div>
-
-  <div class="card-parents">
-    <span>Parents Resources:</span>
-    <a href="https://www.duas.org/ramadan-laylat-ul-qadr-amaal-dua-common.html">Laylat ul Qadr - Amaal and Dua for 19-21-23</a>
-    <a href="https://al-islam.org/supplications-month-ramadhan/laylatul-qadr-night-power">Laylatul Qadr, the Night of Power</a>
-
+    <p class="card-text">Content for Week 2</p>
   </div>
 </div>
 
-<!-- WEEK 7 -->
-<div class="card">
-  <div class="card-header">Term 1 - Week 7 · 21st March [1st Shawwal 1447] · No Class (Eid-ul-Fitr holiday)</div>
+</div>
 
+<!-- ================= TERM 2 ================= -->
+<div id="term2" style="display:none;">
+
+<div class="card">
+  <div class="card-header">Term 2 - Week 1</div>
   <div class="card-top">
-    <img src="Eid_fitr_logo.png" class="card-logo" alt="No Class">
-    <p class="card-text">There will be no class this week in observance of Eid-ul-Fitr. May Allah accept your prayers and عبادات.</p>
-  </div>
-
-  <div class="card-links">
-    <a href="#">🎥 No Session</a>
-  </div>
-
-  <div class="card-parents">
-    <span>Parent Resources for Home Support:</span>
-     <a href="https://www.duas.org/1nightshawall.htm">Night preceeding Eid (1st Shawwal)</a>
-     <a href="https://www.duas.org/dua-nudbah.html">Dua Nudba</a>
-     <a href="https://www.duas.org/ziyarat-imam-hussain-laylat-ul-qadr-eid.html">Ziyarat Imam Hussain on Day of Eid </a>
-     <a href="https://www.duas.org/ziyarat-imam-hussain-ashura.html">Ziyarat-e-Ashura </a> 
+    <p class="card-text">Content for Week 1</p>
   </div>
 </div>
 
-<!-- WEEK 8 -->
 <div class="card">
-<div class="card-header">Term 1 - Week 8 · 28th March [8th Shawwal 1447] · Understanding Taharah and Najasah (Part I) </div>
-<div class="card-top">
-<img src="Tahara_logo.png" class="card-logo" alt="Coming Soon">
-<p class="card-text">In this lesson, we will explore the essential principles of ritual purity (ṭahārah) and ritual impurity (najāsah) in Islam.</p>
-</div>
-<div class="card-links">
-<a href="Taharah_and_Najasah.pdf">Slides</a>
-<a href="6. Taharah_and_Najasah_infographics.png">Lesson Infographic</a>
-<a href="T1W4_Taharah_and_Najasah.pdf">Class Resources</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
-<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a></div>
-</div>
+  <div class="card-header">Term 2 - Week 2</div>
+  <div class="card-top">
+    <p class="card-text">Content for Week 2</p>
+  </div>
 </div>
 
-
-  <!-- WEEK 9 -->
-<div class="card">
-<div class="card-header">Term 1 - Week 9 · 4th April [15th Shawwal 1447] · Understanding Taharah and Najasah (Part II) </div>
-<div class="card-top">
-<img src="Tahara_logo.png" class="card-logo" alt="Coming Soon">
-<p class="card-text">We will continue to explore the essential principles of ritual purity (ṭahārah) and ritual impurity (najāsah) in Islam.</p>
 </div>
-<div class="card-links">
-<a href="Taharah_and_Najasah.pdf">Slides</a>
-<a href="6. Taharah_and_Najasah_infographics.png">Lesson Infographic</a>
-<a href="T1W4_Taharah_and_Najasah.pdf">Class Resources</a>
-<a href="https://forms.gle/x4SCEhLgjWQJ1Xzo8">Quiz Week8</a>
-</div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
-<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a></div>
-</div>
-</div>
-
-  
-<!-- WEEK 1 [Revision and Assessment] -->
-<div class="card">
-<div class="card-header">Term 2 - Week 1 · 25th April [6th Dhilqad 1447] · Revision and Assessment</div>
-<div class="card-top">
-<img src="revsion_logo.png" class="card-logo" alt="Coming Soon">
-<p class="card-text">Content will be uploaded soon.</p>
-</div>
-<div class="card-links">
-<a href="#">Slides</a>
-<a href="#">Class Resources</a>
-<a href="#">Quiz</a>
-<a href="#">Additional Resources</a>
-<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
-</div>
-<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
-</div>
-  
-<!-- WEEK 2 -->
-<div class="card">
-<div class="card-header">Term 2 - Week 2 · 2nd May [13th Dhilqad 1447] · Rules of Wudu</div>
-<div class="card-top">
-<img src="Wudu_logo.jpg" class="card-logo" alt="Rules of Wudu">
-<p class="card-text">Content will be uploaded soon.</p>
-</div>
-<div class="card-links">
-<a href="#">Slides</a>
-<a href="Wudu_infographics.png">Lesson Infographic</a>
-<a href="T1W6_Rules_of_Wudu.pdf">Class Resources</a>
-<a href="#">Quiz</a>
-<a href="#">Additional Resources</a>
-<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
-</div>
-<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
-</div>
-
-<!-- WEEK 3 -->
-<div class="card">
-<div class="card-header">Term 2 - Week 3 · 9th May [20th Dhilqad 1447] Rules of Ghusl</div>
-<div class="card-top">
-<img src="GHUSL_Tayammum_logo.png" class="card-logo" alt="Coming Soon">
-<p class="card-text">Content will be uploaded soon.</p>
-</div>
-<div class="card-links">
-<a href="#">Slides</a>
-<a href="Tayammum_Ghusl_infographics.png">Lesson Infographic</a>
-<a href="T1W7_Ghusl.pdf">Class Resources</a>
-<a href="#">Quiz</a>
-<a href="#">Additional Resources</a>
-<a href="https://youtube.com/watch?v=FZWwLWRZS3Y&t=7s">🎥 TBA</a>
-</div>
-<div class="card-parents"><span>Parents Resources:</span><a href="#">Coming Soon</a></div>
-</div>
-
 
 </section>
 </main>
-<footer>© <span>Ahmed Mehdi</span> · GitHub Pages</footer>
+
+<!-- ✅ SCRIPT -->
+<script>
+function showTerm(term){
+  document.getElementById('term1').style.display = 'none';
+  document.getElementById('term2').style.display = 'none';
+  document.getElementById(term).style.display = 'block';
+}
+</script>
+
 </body>
 </html>
