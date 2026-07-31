@@ -4,6 +4,7 @@
 
 <html>
 
+
 <head>
 
 
@@ -11,7 +12,7 @@
 
 
 <title>
-Student Report
+Student Progress Report
 </title>
 
 
@@ -86,7 +87,7 @@ button {
 
 .grade {
 
-    font-size:25px;
+    font-size:26px;
     font-weight:bold;
 
 }
@@ -142,6 +143,7 @@ td {
 }
 
 
+
 </style>
 
 
@@ -155,6 +157,8 @@ td {
 
 <div class="card">
 
+
+<!-- LOGIN AREA -->
 
 
 <div id="login">
@@ -177,7 +181,9 @@ id="password"
 
 
 <button onclick="checkPassword()">
-Open Report
+
+View Report
+
 </button>
 
 
@@ -190,24 +196,32 @@ Open Report
 
 
 
+<!-- REPORT AREA -->
+
+
 <div id="report" style="display:none;">
 
 
 
 <h1>
-Student Progress Report
+
+Student Progress Snapshot
+
 </h1>
 
 
+
 <h2>
+
 Izzah Ali
+
 </h2>
 
 
 
 
-
 <div class="summary">
+
 
 
 <div class="box">
@@ -221,6 +235,7 @@ Weighted Score
 60.47 %
 
 </div>
+
 
 
 
@@ -276,6 +291,7 @@ Percentile
 
 
 
+
 <div class="box">
 
 <b>
@@ -287,6 +303,7 @@ Ranking Date
 01/08/2026
 
 </div>
+
 
 
 </div>
@@ -337,11 +354,13 @@ Score (%)
 
 <tr>
 
+
 <td style="text-align:left">
 
 Ijtehad and Taqlid
 
 </td>
+
 
 
 <td>
@@ -351,11 +370,13 @@ Ijtehad and Taqlid
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -364,6 +385,7 @@ Imam Hassan (AS)
 </td>
 
 
+
 <td>
 
 5.0
@@ -371,11 +393,13 @@ Imam Hassan (AS)
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -384,6 +408,7 @@ Imam Mahdi (as) Quiz – Shia Islam
 </td>
 
 
+
 <td>
 
 0.0
@@ -391,11 +416,13 @@ Imam Mahdi (as) Quiz – Shia Islam
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -404,11 +431,13 @@ Imām Ali&#x27;s Strength and Submission
 </td>
 
 
+
 <td>
 
 0.0
 
 </td>
+
 
 
 </tr>
@@ -417,11 +446,13 @@ Imām Ali&#x27;s Strength and Submission
 
 <tr>
 
+
 <td style="text-align:left">
 
 Open Book Assessment
 
 </td>
+
 
 
 <td>
@@ -431,11 +462,13 @@ Open Book Assessment
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -444,6 +477,7 @@ Ramadan_ A Spiritual Training for the Soul
 </td>
 
 
+
 <td>
 
 8.0
@@ -451,11 +485,13 @@ Ramadan_ A Spiritual Training for the Soul
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -464,11 +500,13 @@ Understanding Taharah and Najasah
 </td>
 
 
+
 <td>
 
 8.0
 
 </td>
+
 
 
 </tr>
@@ -477,11 +515,13 @@ Understanding Taharah and Najasah
 
 <tr>
 
+
 <td style="text-align:left">
 
 Wuḍūʾ Practical Assessment (Parent Assessed)
 
 </td>
+
 
 
 <td>
@@ -491,11 +531,13 @@ Wuḍūʾ Practical Assessment (Parent Assessed)
 </td>
 
 
+
 </tr>
 
 
 
 <tr>
+
 
 <td style="text-align:left">
 
@@ -504,11 +546,13 @@ Closed Book Assessment
 </td>
 
 
+
 <td>
 
 69.0
 
 </td>
+
 
 
 </tr>
@@ -519,9 +563,12 @@ Closed Book Assessment
 
 
 
+
+
 <h3>
 Ranking Information
 </h3>
+
 
 
 
@@ -546,8 +593,6 @@ completed during the remainder of the academic year.
 
 </div>
 
-
-
 </div>
 
 
@@ -557,44 +602,43 @@ completed during the remainder of the academic year.
 <script>
 
 
-function checkPassword(){
+function checkPassword(){{
 
 
-    var entered =
-    document.getElementById("password").value;
-
-
-
-    var correct =
-    "5Z8X4J";
+var entered =
+document.getElementById("password").value;
 
 
 
-    if(entered === correct){
+var correct =
+"{student_passcode}";
 
 
-        document.getElementById("login")
-        .style.display="none";
+
+if(entered === correct){{
 
 
-        document.getElementById("report")
-        .style.display="block";
+document.getElementById("login")
+.style.display="none";
 
 
-    }
-
-    else{
-
-
-        document.getElementById("error")
-        .innerHTML =
-        "Incorrect passcode";
+document.getElementById("report")
+.style.display="block";
 
 
-    }
+}}
+
+else{{
+
+
+document.getElementById("error")
+.innerHTML =
+"Incorrect passcode";
+
+
+}}
 
 }
-
 
 
 </script>
