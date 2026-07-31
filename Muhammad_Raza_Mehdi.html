@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+<meta charset="utf-8">
+
+
+<title>
+Student Report
+</title>
+
+
+
+<style>
+
+
+body {
+
+    font-family: Arial, sans-serif;
+    background:#eef2f7;
+    margin:30px;
+
+}
+
+
+
+.card {
+
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 2px 10px #bbb;
+
+}
+
+
+
+input {
+
+    padding:10px;
+    font-size:16px;
+
+}
+
+
+
+button {
+
+    padding:10px 20px;
+    background:#0b5394;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+
+
+.summary {
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+}
+
+
+
+.box {
+
+    background:#f5f5f5;
+    padding:15px 20px;
+    border-radius:8px;
+
+}
+
+
+
+.grade {
+
+    font-size:25px;
+    font-weight:bold;
+
+}
+
+
+
+table {
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+}
+
+
+
+th {
+
+    background:#0b5394;
+    color:white;
+    padding:10px;
+
+}
+
+
+
+td {
+
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+
+}
+
+
+
+.comment {
+
+    background:#fff8dc;
+    padding:15px;
+    border-left:5px solid #0b5394;
+
+}
+
+
+
+.note {
+
+    background:#e8f4ff;
+    padding:15px;
+    border-left:5px solid #1c4587;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="card">
+
+
+
+<div id="login">
+
+
+<h2>
+Student Report Access
+</h2>
+
+
+<p>
+Enter your passcode:
+</p>
+
+
+<input 
+type="password"
+id="password"
+>
+
+
+<button onclick="checkPassword()">
+Open Report
+</button>
+
+
+<p id="error" style="color:red;"></p>
+
+
+</div>
+
+
+
+
+
+<div id="report" style="display:none;">
+
+
+
+<h1>
+Student Progress Report
+</h1>
+
+
+<h2>
+Muhammad Raza Mehdi
+</h2>
+
+
+
+
+
+<div class="summary">
+
+
+<div class="box">
+
+<b>
+Weighted Score
+</b>
+
+<br>
+
+75.00 %
+
+</div>
+
+
+
+
+<div class="box">
+
+<b>
+Grade
+</b>
+
+<br>
+
+<span class="grade">
+
+B
+
+</span>
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<b>
+Class Rank
+</b>
+
+<br>
+
+2 / 27
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<b>
+Percentile
+</b>
+
+<br>
+
+96.2 %
+
+</div>
+
+
+
+
+<div class="box">
+
+<b>
+Ranking Date
+</b>
+
+<br>
+
+01/08/2026
+
+</div>
+
+
+</div>
+
+
+
+
+
+<h3>
+Teacher Comments
+</h3>
+
+
+<div class="comment">
+
+Muhammad Raza Mehdi is a hardworking student who shows good potential and a positive attitude towards learning. He has successfully completed all online quizzes and the open-book assessment, which demonstrates his commitment to his studies. When he practises regularly and puts in consistent effort, he performs very well; however, he needs to maintain this consistency to ensure steady progress. Muhammad benefits from reminders to complete his homework and is encouraged to develop stronger independent study habits. At times, talking with neighbouring friends can distract him from his work, and he is encouraged to remain focused during lessons. With continued effort, regular practice, and improved concentration, Muhammad can achieve excellent outcomes.
+
+</div>
+
+
+
+
+
+<h3>
+Assessment Results
+</h3>
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+Assessment
+</th>
+
+
+<th>
+Score (%)
+</th>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Ijtehad and Taqlid
+
+</td>
+
+
+<td>
+
+8.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Imam Hassan (AS)
+
+</td>
+
+
+<td>
+
+9.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Imam Mahdi (as) Quiz – Shia Islam
+
+</td>
+
+
+<td>
+
+10.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Imām Ali&#x27;s Strength and Submission
+
+</td>
+
+
+<td>
+
+9.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Open Book Assessment
+
+</td>
+
+
+<td>
+
+60.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Ramadan_ A Spiritual Training for the Soul
+
+</td>
+
+
+<td>
+
+5.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Understanding Taharah and Najasah
+
+</td>
+
+
+<td>
+
+10.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Wuḍūʾ Practical Assessment (Parent Assessed)
+
+</td>
+
+
+<td>
+
+19.0
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td style="text-align:left">
+
+Closed Book Assessment
+
+</td>
+
+
+<td>
+
+85.0
+
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+<h3>
+Ranking Information
+</h3>
+
+
+
+<div class="note">
+
+
+Class ranking is calculated based on assessments completed up to
+01/08/2026.
+
+
+<br><br>
+
+
+The ranking may change and improve as additional assessments are
+completed during the remainder of the academic year.
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function checkPassword(){
+
+
+    var entered =
+    document.getElementById("password").value;
+
+
+
+    var correct =
+    "BOFKSE";
+
+
+
+    if(entered === correct){
+
+
+        document.getElementById("login")
+        .style.display="none";
+
+
+        document.getElementById("report")
+        .style.display="block";
+
+
+    }
+
+    else{
+
+
+        document.getElementById("error")
+        .innerHTML =
+        "Incorrect passcode";
+
+
+    }
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
+
