@@ -4,15 +4,13 @@
 
 <html>
 
-
 <head>
-
 
 <meta charset="utf-8">
 
 
 <title>
-Student Progress Reports
+Student Assessment Report
 </title>
 
 
@@ -22,8 +20,10 @@ Student Progress Reports
 
 body {
 
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
+
     background:#eef2f7;
+
     margin:40px;
 
 }
@@ -32,12 +32,19 @@ body {
 
 .container {
 
-    max-width:900px;
+    max-width:500px;
+
     margin:auto;
+
     background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 2px 10px #bbb;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 15px #aaa;
+
+    text-align:center;
 
 }
 
@@ -51,19 +58,61 @@ h1 {
 
 
 
-li {
+input {
 
-    margin:12px;
+    width:80%;
+
+    padding:12px;
+
+    font-size:18px;
+
+    text-align:center;
+
+    text-transform:uppercase;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    margin:15px;
 
 }
 
 
 
-a {
+button {
 
-    color:#0b5394;
-    text-decoration:none;
-    font-size:18px;
+    padding:12px 30px;
+
+    background:#0b5394;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+
+button:hover {
+
+    background:#073763;
+
+}
+
+
+
+#error {
+
+    color:red;
+
+    margin-top:15px;
 
 }
 
@@ -72,9 +121,16 @@ a {
 .note {
 
     background:#e8f4ff;
+
     padding:15px;
-    border-left:5px solid #1c4587;
-    border-radius:8px;
+
+    margin-top:30px;
+
+    border-left:5px solid #0b5394;
+
+    text-align:left;
+
+    border-radius:6px;
 
 }
 
@@ -87,7 +143,9 @@ a {
 
 
 
+
 <body>
+
 
 
 <div class="container">
@@ -95,24 +153,46 @@ a {
 
 
 <h1>
-
-Student Progress Snapshot
-
+Student Report Portal
 </h1>
 
 
 
 <p>
-
-Total student reports generated:
-
-<b>
-
-27
-
-</b>
-
+Enter your personal access code
 </p>
+
+
+
+<input
+
+id="code"
+
+type="password"
+
+placeholder="Enter code"
+
+
+
+>
+
+
+
+<br>
+
+
+
+<button onclick="openReport()">
+
+Open Report
+
+</button>
+
+
+
+
+<p id="error"></p>
+
 
 
 
@@ -121,22 +201,29 @@ Total student reports generated:
 
 
 <b>
-Ranking Information
+Instructions
 </b>
 
+<br><br>
+
+
+1. Enter the access code provided by your teacher.
+
+<br>
+
+2. Click "Open Report".
+
+<br>
+
+3. Your personal assessment report will open.
 
 <br><br>
 
 
-Class ranking is calculated based on assessments completed up to
-01/08/2026.
+Please keep your access code private.
 
+</div>
 
-<br><br>
-
-
-The ranking may change and improve as additional assessments are
-completed during the remainder of the academic year.
 
 
 </div>
@@ -145,347 +232,59 @@ completed during the remainder of the academic year.
 
 
 
-<h2>
-Student Reports
-</h2>
+<script>
 
 
+const reports = {"CF4144": "Abbas_Asim_Palasara.html", "FD8773": "Amani_Qusai.html", "3F424D": "Amin_Qusai.html", "CE10A3": "Amir_Hussaini.html", "24FA2D": "Ehsan_Najafi.html", "EE5A6A": "Emran_Najafi.html", "D2F298": "Farhad_Rezaee.html", "0DB13D": "Fatema_Soltani.html", "EC1CA0": "Fatima_Hmud.html", "F209F7": "Haniya_Zahra_Khatir.html", "8B1DEF": "Hussain_Asim_Palasara.html", "60B804": "Insiya_palasara.html", "DC3164": "Izzah_Ali.html", "A77A7D": "Marzia_Ali.html", "433E3A": "Muhammad_Borayr_Syed.html", "6859FA": "Muhammad_Raza_Mehdi.html", "D5A99A": "Nazdana_ashoori.html", "841B26": "Rayyan_Sadiq.html", "111035": "Syed_Moosa_Kazmi.html", "EE521B": "Syedah_Nooriyah_Zahra_Naqvi.html", "FE4CCF": "Zainab_Ramezani.html", "B44CB9": "Ziya_Musa.html", "B2D511": "Benyamin_Mehrzadi.html", "CC6EEE": "Zahra_Khadomi.html", "BCA7D3": "Haniye_Akhoundzadeh.html", "F1A71C": "Milad_Azizi.html", "ADEE51": "Nida_Batool.html"};
 
-<ul>
 
 
 
+function openReport(){
 
-<li>
 
-<a href="Abbas_Asim_Palasara.html">
+    let code = 
 
-Abbas Asim Palasara
+    document
 
-</a>
+    .getElementById("code")
 
-</li>
+    .value
 
+    .toUpperCase()
 
+    .trim();
 
-<li>
 
-<a href="Amani.html">
 
-Amani
+    if(reports[code]){
 
-</a>
 
-</li>
+        window.location.href = reports[code];
 
 
+    }
 
-<li>
 
-<a href="Amin.html">
+    else{
 
-Amin 
 
-</a>
+        document
 
-</li>
+        .getElementById("error")
 
+        .innerHTML =
 
+        "Invalid access code";
 
-<li>
 
-<a href="Amir_Hussaini.html">
+    }
 
-Amir Hussaini
 
-</a>
+}
 
-</li>
 
-
-
-<li>
-
-<a href="Ehsan_Najafi.html">
-
-Ehsan Najafi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Emran_Najafi.html">
-
-Emran Najafi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Farhad_Rezaee.html">
-
-Farhad Rezaee
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Fatema_Soltani.html">
-
-Fatema Soltani
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Fatima_Hmud.html">
-
-Fatima Hmud
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Haniya_Zahra_Khatir.html">
-
-Haniya Zahra Khatir
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Hussain_Asim_Palasara.html">
-
-Hussain Asim Palasara
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Insiya_palasara.html">
-
-Insiya palasara 
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Izzah_Ali.html">
-
-Izzah Ali
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Marzia_Ali.html">
-
-Marzia Ali
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Muhammad_Borayr_Syed.html">
-
-Muhammad Borayr Syed
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Muhammad_Raza_Mehdi.html">
-
-Muhammad Raza Mehdi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Nazdana_ashoori.html">
-
-Nazdana ashoori
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Rayyan_Sadiq.html">
-
-Rayyan Sadiq
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Syed_Moosa_Kazmi.html">
-
-Syed Moosa Kazmi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Syedah_Nooriyah_Zahra_Naqvi.html">
-
-Syedah Nooriyah Zahra Naqvi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Zainab_Ramezani.html">
-
-Zainab Ramezani 
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Ziya_Musa.html">
-
-Ziya Musa
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Benyamin_Mehrzadi.html">
-
-Benyamin Mehrzadi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Zahra_Iskandari.html">
-
-Zahra Iskandari
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Haniye_Akhoundzadeh.html">
-
-Haniye Akhoundzadeh
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Milad_Azizi.html">
-
-Milad Azizi
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="Nida_Batool.html">
-
-Nida Batool
-
-</a>
-
-</li>
-
-
-
-
-</ul>
-
-
-
-</div>
+</script>
 
 
 

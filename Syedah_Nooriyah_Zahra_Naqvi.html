@@ -4,15 +4,13 @@
 
 <html>
 
-
 <head>
-
 
 <meta charset="utf-8">
 
 
 <title>
-Student Progress Report
+Student Assessment Report
 </title>
 
 
@@ -24,7 +22,7 @@ body {
 
     font-family: Arial, sans-serif;
     background:#eef2f7;
-    margin:30px;
+    margin:40px;
 
 }
 
@@ -36,8 +34,16 @@ body {
     margin:auto;
     background:white;
     padding:30px;
-    border-radius:12px;
-    box-shadow:0 2px 10px #bbb;
+    border-radius:15px;
+    box-shadow:0 3px 15px #aaa;
+
+}
+
+
+
+h1 {
+
+    color:#0b5394;
 
 }
 
@@ -46,7 +52,7 @@ body {
 input {
 
     padding:10px;
-    font-size:16px;
+    font-size:18px;
 
 }
 
@@ -58,7 +64,7 @@ button {
     background:#0b5394;
     color:white;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
     cursor:pointer;
 
 }
@@ -77,9 +83,10 @@ button {
 
 .box {
 
-    background:#f5f5f5;
-    padding:15px 20px;
-    border-radius:8px;
+    background:#f2f2f2;
+    padding:15px;
+    border-radius:10px;
+    min-width:160px;
 
 }
 
@@ -87,7 +94,7 @@ button {
 
 .grade {
 
-    font-size:26px;
+    font-size:28px;
     font-weight:bold;
 
 }
@@ -108,7 +115,7 @@ th {
 
     background:#0b5394;
     color:white;
-    padding:10px;
+    padding:12px;
 
 }
 
@@ -143,7 +150,6 @@ td {
 }
 
 
-
 </style>
 
 
@@ -154,23 +160,20 @@ td {
 <body>
 
 
-
 <div class="card">
 
-
-<!-- LOGIN AREA -->
 
 
 <div id="login">
 
 
 <h2>
-Student Report Access
+Student Report Found, Please Re-enter for confirmation
 </h2>
 
 
 <p>
-Enter your passcode:
+Enter your personal passcode:
 </p>
 
 
@@ -182,9 +185,10 @@ id="password"
 
 <button onclick="checkPassword()">
 
-View Report
+Open Report
 
 </button>
+
 
 
 <p id="error" style="color:red;"></p>
@@ -196,32 +200,25 @@ View Report
 
 
 
-<!-- REPORT AREA -->
-
-
 <div id="report" style="display:none;">
 
 
 
 <h1>
-
-Student Progress Snapshot
-
+Student Progress Report
 </h1>
 
 
 
 <h2>
-
 Syedah Nooriyah Zahra Naqvi
-
 </h2>
 
 
 
 
-<div class="summary">
 
+<div class="summary">
 
 
 <div class="box">
@@ -232,10 +229,9 @@ Weighted Score
 
 <br>
 
-73.27 %
+77.51 %
 
 </div>
-
 
 
 
@@ -250,7 +246,7 @@ Grade
 
 <span class="grade">
 
-A
+B
 
 </span>
 
@@ -268,7 +264,11 @@ Class Rank
 
 <br>
 
-4 / 27
+6
+
+/
+
+27
 
 </div>
 
@@ -284,26 +284,9 @@ Percentile
 
 <br>
 
-88.5 %
+80.8 %
 
 </div>
-
-
-
-
-
-<div class="box">
-
-<b>
-Ranking Date
-</b>
-
-<br>
-
-01/08/2026
-
-</div>
-
 
 
 </div>
@@ -354,7 +337,6 @@ Score (%)
 
 <tr>
 
-
 <td style="text-align:left">
 
 Ijtehad and Taqlid
@@ -362,13 +344,11 @@ Ijtehad and Taqlid
 </td>
 
 
-
 <td>
 
-10.0
+100.0
 
 </td>
-
 
 
 </tr>
@@ -376,7 +356,6 @@ Ijtehad and Taqlid
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -385,13 +364,11 @@ Imam Hassan (AS)
 </td>
 
 
-
 <td>
 
-7.0
+70.0
 
 </td>
-
 
 
 </tr>
@@ -399,7 +376,6 @@ Imam Hassan (AS)
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -408,13 +384,11 @@ Imam Mahdi (as) Quiz – Shia Islam
 </td>
 
 
-
 <td>
 
-8.0
+80.0
 
 </td>
-
 
 
 </tr>
@@ -422,7 +396,6 @@ Imam Mahdi (as) Quiz – Shia Islam
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -431,7 +404,6 @@ Imām Ali&#x27;s Strength and Submission
 </td>
 
 
-
 <td>
 
 0.0
@@ -439,13 +411,11 @@ Imām Ali&#x27;s Strength and Submission
 </td>
 
 
-
 </tr>
 
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -454,7 +424,6 @@ Open Book Assessment
 </td>
 
 
-
 <td>
 
 0.0
@@ -462,13 +431,11 @@ Open Book Assessment
 </td>
 
 
-
 </tr>
 
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -477,13 +444,11 @@ Ramadan_ A Spiritual Training for the Soul
 </td>
 
 
-
 <td>
 
-8.0
+80.0
 
 </td>
-
 
 
 </tr>
@@ -491,7 +456,6 @@ Ramadan_ A Spiritual Training for the Soul
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -500,7 +464,6 @@ Understanding Taharah and Najasah
 </td>
 
 
-
 <td>
 
 0.0
@@ -508,13 +471,11 @@ Understanding Taharah and Najasah
 </td>
 
 
-
 </tr>
 
 
 
 <tr>
-
 
 <td style="text-align:left">
 
@@ -523,13 +484,11 @@ Wuḍūʾ Practical Assessment (Parent Assessed)
 </td>
 
 
-
 <td>
 
 0.0
 
 </td>
-
 
 
 </tr>
@@ -538,7 +497,6 @@ Wuḍūʾ Practical Assessment (Parent Assessed)
 
 <tr>
 
-
 <td style="text-align:left">
 
 Closed Book Assessment
@@ -546,13 +504,11 @@ Closed Book Assessment
 </td>
 
 
-
 <td>
 
 91.0
 
 </td>
-
 
 
 </tr>
@@ -571,19 +527,39 @@ Ranking Information
 
 
 
-
 <div class="note">
 
 
-Class ranking is calculated based on assessments completed up to
-01/08/2026.
+Your ranking is calculated using all completed assessments
+available on the report generation date.
 
 
 <br><br>
 
 
-The ranking may change and improve as additional assessments are
-completed during the remainder of the academic year.
+Percentile interpretation:
+
+<br>
+
+85+ - 100 : Top performance (A Grade)
+
+<br>
+
+75+ - 85 : Above average (B Grade)
+
+<br>
+
+50 - 75 : Average (C Grade)
+
+<br>
+
+Below 50 : Requires improvement (D Grade)
+
+
+<br><br>
+
+
+Rankings may change as additional assessments are completed.
 
 
 </div>
@@ -592,6 +568,8 @@ completed during the remainder of the academic year.
 
 
 </div>
+
+
 
 </div>
 
@@ -602,7 +580,7 @@ completed during the remainder of the academic year.
 <script>
 
 
-function checkPassword(){{
+function checkPassword(){
 
 
 var entered =
@@ -611,24 +589,26 @@ document.getElementById("password").value;
 
 
 var correct =
-"{student_passcode}";
+"EE521B";
 
 
 
-if(entered === correct){{
+if(entered === correct){
 
 
 document.getElementById("login")
 .style.display="none";
 
 
+
 document.getElementById("report")
 .style.display="block";
 
 
-}}
+}
 
-else{{
+
+else{
 
 
 document.getElementById("error")
@@ -636,7 +616,8 @@ document.getElementById("error")
 "Incorrect passcode";
 
 
-}}
+}
+
 
 }
 
@@ -649,4 +630,5 @@ document.getElementById("error")
 
 
 </html>
+
 
