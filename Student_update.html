@@ -1,191 +1,798 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>
-Student Assessment Report
-</title>
+<title>Student Progress</title>
 
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
+
+
 body {
 
+    margin: 0;
+
+    padding: 0;
+
     font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
         Arial,
-        Helvetica,
         sans-serif;
 
     background:
-        #eef2f7;
+        linear-gradient(
+            135deg,
+            #eef2ff 0%,
+            #f8fafc 45%,
+            #ecfeff 100%
+        );
+
+    color: #172033;
+
+    min-height: 100vh;
+}
+
+
+.login-wrapper {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 38px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(30, 41, 59, 0.15);
+}
+
+
+.login-logo {
+
+    width: 68px;
+
+    height: 68px;
 
     margin:
-        0;
+        0 auto 18px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #4062bb
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+
+.login-card h1 {
+
+    margin: 0;
+
+    color: #182848;
+
+    font-size: 27px;
+}
+
+
+.login-card h2 {
+
+    margin:
+        8px 0 22px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+.login-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+.code-input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border:
+        2px solid #dbe2ea;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    outline: none;
+
+    margin:
+        15px 0;
+}
+
+
+.code-input:focus {
+
+    border-color: #4062bb;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(64, 98, 187, 0.10);
+}
+
+
+.open-button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #4062bb
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.error {
+
+    display: none;
+
+    color: #b91c1c;
+
+    background: #fef2f2;
+
+    border:
+        1px solid #fecaca;
+
+    border-radius: 12px;
+
+    padding: 11px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.small-note {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+#report {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding:
+        25px 18px 50px;
+}
+
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #274690,
+            #4062bb
+        );
+
+    color: white;
+
+    border-radius: 24px;
 
     padding:
         30px;
-}
 
-
-.container {
-
-    max-width:
-        500px;
-
-    margin:
-        80px auto;
-
-    background:
-        white;
-
-    padding:
-        40px;
-
-    border-radius:
-        15px;
+    margin-bottom: 20px;
 
     box-shadow:
-        0 3px 15px
-        rgba(0,0,0,0.12);
-
-    text-align:
-        center;
+        0 15px 40px
+        rgba(24, 40, 72, 0.20);
 }
 
 
-h1 {
+.header-top {
 
-    color:
-        #0b5394;
+    display: flex;
 
-    margin-bottom:
-        10px;
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 20px;
 }
 
 
-.subtitle {
+.school-title {
 
-    color:
-        #666;
+    font-size: 14px;
 
-    margin-bottom:
-        25px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
 }
 
 
-input {
+.class-title {
 
-    width:
-        100%;
+    font-size: 30px;
 
-    box-sizing:
-        border-box;
+    font-weight: 800;
+
+    margin-top: 8px;
+
+    line-height: 1.15;
+}
+
+
+.student-name {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+}
+
+
+.date {
+
+    text-align: right;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+
+.hero {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(30, 41, 59, 0.08);
+}
+
+
+.results-title {
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #52617a;
+
+    margin-bottom: 15px;
+}
+
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+.result-card {
+
+    border-radius: 18px;
+
+    padding: 18px 14px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e5e7eb;
+}
+
+
+.result-label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.result-value {
+
+    font-size: 29px;
+
+    font-weight: 850;
+
+    margin-top: 7px;
+
+    color: #182848;
+}
+
+
+.grade-a {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #d1fae5
+        );
+
+    border-color:
+        #a7f3d0;
+}
+
+
+.grade-a .result-value {
+
+    color: #047857;
+}
+
+
+.grade-b {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    border-color:
+        #bfdbfe;
+}
+
+
+.grade-b .result-value {
+
+    color: #1d4ed8;
+}
+
+
+.grade-c {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffbeb,
+            #fef3c7
+        );
+
+    border-color:
+        #fde68a;
+}
+
+
+.grade-c .result-value {
+
+    color: #b45309;
+}
+
+
+.section {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(30, 41, 59, 0.07);
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+
+.section-title {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #182848;
+}
+
+
+.semester-badge {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
 
     padding:
-        14px;
+        7px 10px;
 
-    font-size:
-        18px;
+    border-radius: 999px;
+}
 
-    text-align:
-        center;
 
-    letter-spacing:
-        2px;
+.badge-sem1 {
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+}
+
+
+.badge-sem2 {
+
+    background: #cffafe;
+
+    color: #155e75;
+}
+
+
+.assessment-table {
+
+    width: 100%;
+
+    border-collapse:
+        separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 16px;
+}
+
+
+.assessment-table th {
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    text-align: left;
+
+    padding:
+        13px 15px;
+
+    font-size: 12px;
 
     text-transform:
         uppercase;
 
-    border:
-        1px solid #ccc;
-
-    border-radius:
-        8px;
-
-    margin-bottom:
-        15px;
+    letter-spacing:
+        0.5px;
 }
 
 
-button {
-
-    width:
-        100%;
+.assessment-table td {
 
     padding:
-        14px;
-
-    font-size:
-        17px;
-
-    background:
-        #0b5394;
-
-    color:
-        white;
-
-    border:
-        none;
-
-    border-radius:
-        8px;
-
-    cursor:
-        pointer;
-}
-
-
-button:hover {
-
-    background:
-        #073763;
-}
-
-
-#error {
-
-    color:
-        #c62828;
-
-    margin-top:
         15px;
 
-    display:
-        none;
+    border-top:
+        1px solid #edf0f4;
+
+    font-size: 14px;
 }
 
 
-.note {
+.score-cell {
+
+    text-align: right;
+
+    font-weight: 800;
+
+    color: #182848;
+}
+
+
+.weighted-row td {
+
+    background: #eef2ff !important;
+
+    font-weight: 800;
+}
+
+
+.comment-box {
 
     background:
-        #e8f4ff;
-
-    padding:
-        18px;
-
-    margin-top:
-        25px;
+        linear-gradient(
+            135deg,
+            #fff7ed,
+            #fffbeb
+        );
 
     border-left:
-        5px solid #0b5394;
+        5px solid #f59e0b;
 
-    border-radius:
-        5px;
+    border-radius: 16px;
 
-    text-align:
-        left;
+    padding: 18px;
 
-    line-height:
-        1.6;
+    color: #4b5563;
+
+    line-height: 1.65;
+
+    font-size: 15px;
+}
+
+
+.info-box {
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    line-height: 1.7;
+
+    color: #475569;
+
+    font-size: 14px;
+}
+
+
+.footer {
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    padding: 15px;
+}
+
+
+.logout-button {
+
+    border: none;
+
+    padding:
+        10px 16px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #182848;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+}
+
+
+@media (max-width: 800px) {
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .class-title {
+
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    #report {
+
+        padding:
+            12px 10px 35px;
+    }
+
+    .header {
+
+        border-radius: 19px;
+
+        padding: 22px 18px;
+    }
+
+    .header-top {
+
+        display: block;
+    }
+
+    .date {
+
+        text-align: left;
+
+        margin-top: 12px;
+    }
+
+    .class-title {
+
+        font-size: 23px;
+    }
+
+    .student-name {
+
+        font-size: 18px;
+    }
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .result-card {
+
+        padding:
+            15px 8px;
+    }
+
+    .result-value {
+
+        font-size: 23px;
+    }
+
+    .section {
+
+        padding: 16px;
+
+        border-radius: 19px;
+    }
+
+    .assessment-table th,
+    .assessment-table td {
+
+        padding:
+            11px 9px;
+    }
+
+    .login-card {
+
+        padding:
+            28px 20px;
+    }
 }
 
 </style>
@@ -196,166 +803,688 @@ button:hover {
 <body>
 
 
-<div class="container">
-
-
-<h1>
-Student Assessment Report
-</h1>
-
-
-<div class="subtitle">
-
-Enter your personal access code
-to view your report.
-
-</div>
-
-
-<input
-
-    id="code"
-
-    type="password"
-
-    placeholder="Enter access code"
-
-    maxlength="6"
-
-    autocomplete="off"
-
-    onkeydown="handleKey(event)"
-
->
-
-
-<button
-    onclick="openReport()"
->
-
-Open Report
-
-</button>
-
+<!-- ======================================================
+     LOGIN
+====================================================== -->
 
 <div
-    id="error"
+    id="login"
+    class="login-wrapper"
 >
 
-Invalid access code.
-Please check your code.
+    <div class="login-card">
+
+        <div class="login-logo">
+            FZIS
+        </div>
+
+        <h1>
+            FZIS Intermediate Class 2026
+        </h1>
+
+        <h2>
+            Student Assessment Progress
+        </h2>
+
+        <p>
+            Enter your personal six-character
+            access code to view your progress.
+        </p>
+
+        <input
+            id="code"
+            class="code-input"
+            type="password"
+            placeholder="ACCESS CODE"
+            maxlength="6"
+            autocomplete="off"
+            onkeydown="handleKey(event)"
+        >
+
+        <button
+            class="open-button"
+            onclick="openReport()"
+        >
+            View My Report
+        </button>
+
+        <div
+            id="error"
+            class="error"
+        >
+            Invalid access code.
+            Please check your code and try again.
+        </div>
+
+        <div class="small-note">
+
+            Your access code is personal
+            and should not be shared.
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<div class="note">
+<!-- ======================================================
+     REPORT
+====================================================== -->
 
-<strong>
-Instructions
-</strong>
+<div id="report">
 
-
-<br><br>
-
-
-Enter the six-character access code
-provided by your teacher.
-
-
-<br><br>
-
-
-Click "Open Report".
-
-
-<br><br>
-
-
-Your personal assessment report
-will open directly.
-
-</div>
-
+    <div id="reportContent"></div>
 
 </div>
 
 
 <script>
 
+/* =========================================================
+   STUDENT DATA
+========================================================= */
 
-// ========================================================
-// PASSCODE -> HTML FILE
-// ========================================================
-
-const reports = {"CF4144": "CF4144.html", "FD8773": "FD8773.html", "3F424D": "3F424D.html", "CE10A3": "CE10A3.html", "24FA2D": "24FA2D.html", "EE5A6A": "EE5A6A.html", "D2F298": "D2F298.html", "0DB13D": "0DB13D.html", "EC1CA0": "EC1CA0.html", "F209F7": "F209F7.html", "8B1DEF": "8B1DEF.html", "60B804": "60B804.html", "DC3164": "DC3164.html", "A77A7D": "A77A7D.html", "433E3A": "433E3A.html", "6859FA": "6859FA.html", "D5A99A": "D5A99A.html", "841B26": "841B26.html", "111035": "111035.html", "EE521B": "EE521B.html", "FE4CCF": "FE4CCF.html", "B44CB9": "B44CB9.html", "B2D511": "B2D511.html", "CC6EEE": "CC6EEE.html", "BCA7D3": "BCA7D3.html", "F1A71C": "F1A71C.html", "ADEE51": "ADEE51.html"};
-
-
-// ========================================================
-// OPEN REPORT
-// ========================================================
-
-function openReport() {
-
-    const input =
-        document.getElementById(
-            "code"
-        );
+const studentData = [{"student": "Abbas Asim Palasara", "passcode": "CF4144", "weighted": 62.67, "grade": "C", "rank": 12, "percentile": 59.3, "comment": "Abbas is active and participates well in class. He sometimes become distracted by talking with nearby friends but listen attentively when addressed. With greater focus during lessons and by asking more questions when unsure, he has the potential to achieve even better results. Needs to finish pending quizzes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 90.0}, {"name": "Imam Hassan (AS)", "score": 40.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 60.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 75.0}, {"name": "Closed Book Assessment", "score": 72.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Amani Qusai", "passcode": "FD8773", "weighted": 53.8, "grade": "C", "rank": 15, "percentile": 48.1, "comment": "Amani is a respectful student with good akhlaq and consistently demonstrates kindness and good manners in class. To make stronger academic progress, she needs to improve her focus during lessons and listen more attentively to instructions and discussions. She has also missed the online quizzes and the open-book assessment, and it is important that she completes these tasks to demonstrate her understanding of the course material. With greater concentration and consistent participation in all class activities and assessments, Amani has the ability to achieve much better outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 70.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 66.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Amin Qusai", "passcode": "3F424D", "weighted": 43.69, "grade": "C", "rank": 19, "percentile": 33.3, "comment": "Amin has good akhlaq and consistently shows respect towards his teachers and classmates. He is making an effort to write class notes, which is encouraging. He would benefit from developing greater patience and dedicating more time to practising the concepts covered in class. With consistent effort and regular practice, Amin has the potential to strengthen his understanding and continue making steady progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 90.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 53.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Amir Hussaini", "passcode": "CE10A3", "weighted": 71.6, "grade": "B", "rank": 9, "percentile": 70.4, "comment": "Amir Hussaini is among the best students in the class. He listens attentively, is consistently respectful, and makes a genuine effort to understand the lesson by staying focused and taking clear class notes. He actively asks thoughtful questions and shows a keen interest in Islamic Studies, which reflects his enthusiasm for learning. Amir has, however, missed some of the online quizzes, and it is important that he completes these assessments to fully demonstrate his understanding. Keep up the excellent attitude and commitment to learning.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 100.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 77.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Ehsan Najafi", "passcode": "24FA2D", "weighted": 50.8, "grade": "C", "rank": 16, "percentile": 44.4, "comment": "Ehsan Najafi has missed several online quizzes, including the closed-book assessment, which has affected his overall progress. He needs to improve his concentration during lessons and apply himself more consistently to his classwork. With greater dedication, regular participation in assessments, and a stronger work ethic, Ehsan has the potential to make significant improvement in his understanding and achievement.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 80.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 60.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 61.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Emran Najafi", "passcode": "EE5A6A", "weighted": 44.71, "grade": "C", "rank": 18, "percentile": 37.0, "comment": "Emran Najafi is a hardworking student who puts effort into his learning. encourage him to be a positive role model for Ehsan through his attitude, commitment, and consistency. To reach his full potential, Emran needs to improve his concentration during lessons and ensure that he completes and maintains his class notes. He has also missed several online quizzes and the open-book assessment, and it is important that these assessments are completed. With greater focus, organisation, and consistent participation, Emran is capable of achieving much stronger academic outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 40.0}, {"name": "Imam Hassan (AS)", "score": 80.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 80.0}, {"name": "Imām Ali's Strength and Submission", "score": 70.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 60.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 50.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Farhad Rezaee", "passcode": "D2F298", "weighted": 38.51, "grade": "C", "rank": 22, "percentile": 22.2, "comment": "Farhad Rezaee demonstrates good akhlaq and is respectful in class. However, he has missed a number of classes, several online quizzes, and the open-book assessment, which has affected his learning progress. Farhad is encouraged to attend classes regularly, take comprehensive class notes, and complete all assessments on time. With consistent attendance, active participation, and improved organisation, he has the potential to make strong progress in Islamic Studies.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 60.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 60.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 46.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Fatema Soltani", "passcode": "0DB13D", "weighted": 37.43, "grade": "C", "rank": 23, "percentile": 18.5, "comment": "Fatema Soltani demonstrates good akhlaq and is respectful in class. However, she has missed a number of classes, several online quizzes, and the open-book assessment, which has affected her learning progress. Fatema is encouraged to attend classes regularly, take comprehensive class notes, and complete all assessments on time. With consistent attendance, active participation, and improved organisation, she has the potential to make strong progress in Islamic Studies.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 45.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Fatima Hmud", "passcode": "EC1CA0", "weighted": 73.26, "grade": "B", "rank": 8, "percentile": 74.1, "comment": "Fatima Hmud is a capable student with excellent akhlaq and a positive attitude towards learning. She demonstrates strong ability, particularly in History, and achieved a great score in the exam. However, she needs to develop a deeper understanding in Fiqh, an area where improvement is needed. Fatima is developing good note-taking practices, which will support her learning and revision. She is encouraged to continue building consistency, attend classes regularly, and complete all quizzes and assessments, including missed tasks. With humility, focus, and continued effort, Fatima has the potential to achieve excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 100.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 100.0}, {"name": "Closed Book Assessment", "score": 88.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Haniya Zahra Khatir", "passcode": "F209F7", "weighted": 64.83, "grade": "C", "rank": 11, "percentile": 63.0, "comment": "Haniya Zahra Khatir is a student who tries her best and shows a willingness to learn. Her ability to write class notes is improving, which is a positive step towards developing better learning habits. She is encouraged to continue putting in more consistent effort, practise regularly, and maintain focus during lessons. With greater hard work and dedication, Haniya has the potential to make strong progress and achieve better outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 80.0}, {"name": "Imam Hassan (AS)", "score": 90.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 80.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 100.0}, {"name": "Understanding Taharah and Najasah", "score": 100.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 73.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Hussain Asim Palasara", "passcode": "8B1DEF", "weighted": 80.14, "grade": "A", "rank": 5, "percentile": 85.2, "comment": "Hussain Asim Palasara is a great student who demonstrates a hardworking attitude and a strong commitment to learning. He participates well in class and shows good potential through his consistent efforts. At times, talking with his classmates he gets distracted from focusing on the lesson. He is encouraged to maintain his positive attitude while improving his concentration and using class time effectively. With continued effort and focus, Hussain can continue to achieve excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 50.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 90.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 96.7}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 55.0}, {"name": "Closed Book Assessment", "score": 83.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Insiya palasara", "passcode": "60B804", "weighted": 84.54, "grade": "A", "rank": 3, "percentile": 92.6, "comment": "Insiya Palasara is a hardworking and dedicated student who consistently tries to focus and complete her work on time. She demonstrates a positive attitude towards learning and sets a wonderful example through her commitment, responsibility, and respectful behaviour. Insiya is a role model for other girls in the class, and her consistent effort and determination are highly appreciated. Keep up the excellent work and continue striving for further improvement.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 80.0}, {"name": "Imam Hassan (AS)", "score": 70.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 80.0}, {"name": "Imām Ali's Strength and Submission", "score": 70.0}, {"name": "Open Book Assessment", "score": 100.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 80.0}, {"name": "Understanding Taharah and Najasah", "score": 90.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 100.0}, {"name": "Closed Book Assessment", "score": 83.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Izzah Ali", "passcode": "DC3164", "weighted": 67.75, "grade": "B", "rank": 10, "percentile": 66.7, "comment": "Izzah Ali is a hardworking student who always tries her best to complete her work promptly. She demonstrates a positive attitude and a willingness to learn. At times, her desire to finish tasks quickly can lead to small mistakes, and she is encouraged to slow down, carefully review her work, and focus on accuracy. With her strong effort and dedication, Izzah has the potential to continue making excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 50.0}, {"name": "Imam Hassan (AS)", "score": 50.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 78.3}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 80.0}, {"name": "Understanding Taharah and Najasah", "score": 80.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 70.0}, {"name": "Closed Book Assessment", "score": 69.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Marzia Ali", "passcode": "A77A7D", "weighted": 48.83, "grade": "C", "rank": 17, "percentile": 40.7, "comment": "Marzia Ali is a hardworking student who makes an effort and tries her best to complete her online quizzes. However, she needs to dedicate more time and effort to her studies, as her current results are below expectations. She is encouraged to continue her hard work while focusing on improving her understanding of the concepts, reviewing her work carefully, and practising regularly. With greater focus, consistency, and commitment, Marzia has the ability to make positive progress and achieve better outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 70.0}, {"name": "Imam Hassan (AS)", "score": 90.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 100.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 53.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Muhammad Borayr Syed", "passcode": "433E3A", "weighted": 80.32, "grade": "A", "rank": 4, "percentile": 88.9, "comment": "Muhammad Borayr Syed is a hardworking and dedicated student who consistently puts effort into his learning. He has shown excellent responsibility by completing all online quizzes and the open-book assessment. He demonstrates a positive attitude, participates in class, and shows commitment towards improving his understanding. At times, talking with friends can distract him from fully focusing on the lesson, and he is encouraged to manage this so he can make the most of his learning time. With his strong work ethic, respectful attitude, and continued focus, Muhammad Borayr has the potential to achieve excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 100.0}, {"name": "Imam Hassan (AS)", "score": 70.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 83.3}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 90.0}, {"name": "Understanding Taharah and Najasah", "score": 80.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 85.0}, {"name": "Closed Book Assessment", "score": 79.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Muhammad Raza Mehdi", "passcode": "6859FA", "weighted": 86.64, "grade": "A", "rank": 1, "percentile": 100.0, "comment": "Muhammad Raza Mehdi is a hardworking student who shows good potential and a positive attitude towards learning. He has successfully completed all online quizzes and the open-book assessment, which demonstrates his commitment to his studies. When he practises regularly and puts in consistent effort, he performs very well; however, he needs to maintain this consistency to ensure steady progress. Muhammad benefits from reminders to complete his homework and is encouraged to develop stronger independent study habits. At times, talking with neighbouring friends can distract him from his work, and he is encouraged to remain focused during lessons. With continued effort, regular practice, and improved concentration, Muhammad can achieve excellent outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 80.0}, {"name": "Imam Hassan (AS)", "score": 90.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 100.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 50.0}, {"name": "Understanding Taharah and Najasah", "score": 100.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 95.0}, {"name": "Closed Book Assessment", "score": 85.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Nazdana ashoori", "passcode": "D5A99A", "weighted": 56.28, "grade": "C", "rank": 14, "percentile": 51.9, "comment": "Nazdana Ashoori demonstrates good akhlaq and shows respectful behaviour towards her teachers and classmates. She has completed the closed-book and open-book assessments; however, she has not attempted the online quizzes, which are an important part of her learning and progress. Nazdana is encouraged to put in more consistent effort, participate regularly, and complete all required tasks on time. With greater dedication, regular practice, and commitment to her studies, she has the potential to make significant improvement.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 91.7}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 50.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 58.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Rayyan Sadiq", "passcode": "841B26", "weighted": 59.95, "grade": "C", "rank": 13, "percentile": 55.6, "comment": "Rayyan Sadiq is a hardworking and respectful student who consistently tries his best to understand the concepts taught in class. He actively asks questions and shows genuine interest in learning, often staying until the end of the class to seek further clarification from the teacher. Rayyan also demonstrates responsibility and a helpful attitude by assisting with closing the class. To further improve, Rayyan is encouraged to put in more effort, especially in developing his writing skills. Regular practice in writing stories, historical reflections, and English-related activities will help him significantly enhance his creativity, expression, and overall learning. With his positive attitude, curiosity, and continued dedication, Rayyan has the potential to achieve excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 90.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 80.0}, {"name": "Imām Ali's Strength and Submission", "score": 90.0}, {"name": "Open Book Assessment", "score": 96.7}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 100.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 80.0}, {"name": "Closed Book Assessment", "score": 55.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Syed Moosa Kazmi", "passcode": "111035", "weighted": 85.01, "grade": "A", "rank": 2, "percentile": 96.3, "comment": "Syed Moosa Kazmi is a very hardworking student who demonstrates strong understanding of the concepts taught in class. He actively participates in discussions and asks thoughtful questions, which reflects his curiosity and genuine interest in learning. His contributions often enrich the class and make teaching more enjoyable. At times, he can become distracted by conversations with fellow students, and he is encouraged to maintain his focus during lessons. With his excellent work ethic, positive attitude, and continued concentration, Syed Moosa has the potential to achieve outstanding progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 90.0}, {"name": "Imam Hassan (AS)", "score": 50.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 100.0}, {"name": "Open Book Assessment", "score": 100.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 95.0}, {"name": "Closed Book Assessment", "score": 86.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Syedah Nooriyah Zahra Naqvi", "passcode": "EE521B", "weighted": 77.51, "grade": "B", "rank": 6, "percentile": 81.5, "comment": "Syedah Nooriyah Zahra Naqvi is a very hardworking and dedicated student who consistently demonstrates excellent learning habits. Her note-taking skills are outstanding, and she shows great responsibility in maintaining her classwork. She is focused, actively participates in class, and shows a genuine desire to understand the concepts being taught. Syedah Nooriyah is a wonderful role model for her fellow female students through her commitment, respectful attitude, and positive approach to learning. Her consistent effort and dedication are highly appreciated. Keep up the excellent work and continue to strive for further growth.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 100.0}, {"name": "Imam Hassan (AS)", "score": 70.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 80.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 80.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 91.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Zainab Ramezani", "passcode": "FE4CCF", "weighted": 42.37, "grade": "C", "rank": 20, "percentile": 29.6, "comment": "Zainab Ramezani is encouraged to put in more consistent effort and develop stronger study habits. She needs to be more regular in completing online quizzes, including the open-book assessment, as these activities are important for reinforcing her understanding and tracking her progress. With greater commitment, regular practice, and a more consistent approach to her learning, Zainab has the potential to make significant improvement and achieve better outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 40.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 70.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 51.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Ziya Musa", "passcode": "B44CB9", "weighted": 75.45, "grade": "B", "rank": 7, "percentile": 77.8, "comment": "Ziya Musa is a hardworking student who demonstrates excellent akhlaq and serves as a positive role model for her classmates. She shows great responsibility by trying to complete her homework on the same day and maintains a positive attitude towards learning. To achieve even better grades, Ziya is encouraged to continue working hard, put in additional effort, and focus on strengthening her understanding of the concepts. With her good character, dedication, and consistent effort, she has the potential to achieve excellent progress.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 90.0}, {"name": "Imam Hassan (AS)", "score": 90.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 100.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 93.3}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 70.0}, {"name": "Understanding Taharah and Najasah", "score": 90.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 100.0}, {"name": "Closed Book Assessment", "score": 73.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Benyamin Mehrzadi", "passcode": "B2D511", "weighted": 40.0, "grade": "C", "rank": 21, "percentile": 25.9, "comment": "Benyamin Mehrzadi is encouraged to put in more effort and develop greater focus during lessons. At times, conversations with fellow students can become a distraction and affect his concentration. Improving attendance and maintaining regular participation in class will also support his learning progress. With increased attention, consistent effort, and a stronger commitment to his studies, Benyamin has the potential to make significant improvement.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 50.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Zahra Khadomi", "passcode": "CC6EEE", "weighted": 16.8, "grade": "C", "rank": 25, "percentile": 11.1, "comment": "Zahra is encouraged to put in more effort and develop greater focus during lessons. At times, conversations with fellow students can become a distraction and affect her concentration. Improving attendance and maintaining regular participation in class will also support her learning progress. With increased attention, consistent effort, and a stronger commitment to his studies, Zahra has the potential to make significant improvement.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 21.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Haniye Akhoundzadeh", "passcode": "BCA7D3", "weighted": 11.2, "grade": "C", "rank": 27, "percentile": 3.7, "comment": "Haniye Akhoundzadeh demonstrates excellent akhlaq and is a respectful student in the class. She is encouraged to develop greater focus and show more interest and engagement during lessons. By paying closer attention, participating more actively, and dedicating more effort to her learning, Haniye can strengthen her understanding and make better progress. With her good character and a more focused approach, she has the potential to achieve excellent outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 14.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Milad Azizi", "passcode": "F1A71C", "weighted": 20.0, "grade": "C", "rank": 24, "percentile": 14.8, "comment": "Milad demonstrates excellent akhlaq and is a respectful student in the class. He is encouraged to develop greater focus and show more interest and engagement during lessons. By paying closer attention, participating more actively, and dedicating more effort to his learning, Milad can strengthen his understanding and make better progress. With his good character and a more focused approach, he has the potential to achieve excellent outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 25.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}, {"student": "Nida Batool", "passcode": "ADEE51", "weighted": 12.0, "grade": "C", "rank": 26, "percentile": 7.4, "comment": "Nida demonstrates excellent **akhlaq** and is a respectful student in the class. She is encouraged to develop greater focus and show more interest and engagement during lessons. By paying closer attention, participating more actively, and dedicating more effort to her learning, Haniye can strengthen her understanding and make better progress. With her good character and a more focused approach, she has the potential to achieve excellent outcomes.", "semester1": [{"name": "Ijtehad and Taqlid", "score": 0.0}, {"name": "Imam Hassan (AS)", "score": 0.0}, {"name": "Imam Mahdi (as) Quiz – Shia Islam", "score": 0.0}, {"name": "Imām Ali's Strength and Submission", "score": 0.0}, {"name": "Open Book Assessment", "score": 0.0}, {"name": "Ramadan_ A Spiritual Training for the Soul", "score": 0.0}, {"name": "Understanding Taharah and Najasah", "score": 0.0}, {"name": "Wuḍūʾ Practical Assessment (Parent Assessed)", "score": 0.0}, {"name": "Closed Book Assessment", "score": 15.0}], "semester2": [{"name": "Test1 (not started)", "score": 0.0}, {"name": "Test2 (not started)", "score": 0.0}]}];
 
 
-    const code =
-        input.value
-        .trim()
-        .toUpperCase();
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value) {
+
+    const div = document.createElement("div");
+
+    div.textContent = value;
+
+    return div.innerHTML;
+}
 
 
-    const error =
-        document.getElementById(
-            "error"
-        );
+/* =========================================================
+   HANDLE ENTER KEY
+========================================================= */
 
+function handleKey(event) {
 
-    // ----------------------------------------------------
-    // Valid passcode
-    // ----------------------------------------------------
+    if (event.key === "Enter") {
 
-    if (reports[code]) {
-
-        // Open the HTML file whose filename
-        // is the student's passcode.
-
-        window.location.href =
-            reports[code];
-
-    }
-
-
-    // ----------------------------------------------------
-    // Invalid passcode
-    // ----------------------------------------------------
-
-    else {
-
-        error.style.display =
-            "block";
+        openReport();
 
     }
 
 }
 
 
-// ========================================================
-// ENTER KEY
-// ========================================================
+/* =========================================================
+   OPEN REPORT
+========================================================= */
 
-function handleKey(event) {
+function openReport() {
 
-    if (
-        event.key === "Enter"
-    ) {
+    const codeInput =
+        document.getElementById("code");
 
-        openReport();
+    const error =
+        document.getElementById("error");
+
+    const code =
+        codeInput.value
+            .trim()
+            .toUpperCase();
+
+
+    error.style.display = "none";
+
+
+    if (!code) {
+
+        error.textContent =
+            "Please enter your access code.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    const student =
+        studentData.find(
+            item =>
+                item.passcode === code
+        );
+
+
+    if (!student) {
+
+        error.textContent =
+            "Invalid access code. Please check your code and try again.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    showReport(student);
+
+}
+
+
+/* =========================================================
+   SHOW REPORT
+========================================================= */
+
+function showReport(student) {
+
+    document.getElementById(
+        "login"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "report"
+    ).style.display = "block";
+
+
+    let gradeClass = "grade-c";
+
+
+    if (student.grade === "A") {
+
+        gradeClass = "grade-a";
 
     }
+
+    else if (student.grade === "B") {
+
+        gradeClass = "grade-b";
+
+    }
+
+
+    /* -----------------------------------------------------
+       SEMESTER 1 TABLE
+    ----------------------------------------------------- */
+
+    let semester1Rows = "";
+
+
+    student.semester1.forEach(
+        assessment => {
+
+            semester1Rows += `
+
+                <tr>
+
+                    <td>
+                        ${escapeHtml(
+                            assessment.name
+                        )}
+                    </td>
+
+                    <td class="score-cell">
+                        ${assessment.score.toFixed(1)}%
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+    );
+
+
+    semester1Rows += `
+
+        <tr class="weighted-row">
+
+            <td>
+                Final Weighted Percentage
+            </td>
+
+            <td class="score-cell">
+                ${student.weighted.toFixed(2)}%
+            </td>
+
+        </tr>
+
+    `;
+
+
+    /* -----------------------------------------------------
+       SEMESTER 2 TABLE
+    ----------------------------------------------------- */
+
+    let semester2Section = "";
+
+
+    if (
+        student.semester2 &&
+        student.semester2.length > 0
+    ) {
+
+        let semester2Rows = "";
+
+
+        student.semester2.forEach(
+            assessment => {
+
+                semester2Rows += `
+
+                    <tr>
+
+                        <td>
+                            ${escapeHtml(
+                                assessment.name
+                            )}
+                        </td>
+
+                        <td class="score-cell">
+                            ${assessment.score.toFixed(1)}%
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+        );
+
+
+        semester2Section = `
+
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <div class="section-title">
+                        Semester 2 Results
+                    </div>
+
+                    <div class="semester-badge badge-sem2">
+                        Results Only
+                    </div>
+
+                </div>
+
+
+                <table class="assessment-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Assessment
+                            </th>
+
+                            <th style="text-align:right;">
+                                Result
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${semester2Rows}
+
+                    </tbody>
+
+                </table>
+
+
+                <div
+                    style="
+                        margin-top:15px;
+                        color:#64748b;
+                        font-size:13px;
+                        line-height:1.6;
+                    "
+                >
+
+                    Semester 2 results are shown
+                    for progress monitoring only
+                    and are not included in the
+                    current weighted percentage,
+                    grade, rank or percentile.
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FULL REPORT
+    ----------------------------------------------------- */
+
+    document.getElementById(
+        "reportContent"
+    ).innerHTML = `
+
+        <div class="header">
+
+            <div class="header-top">
+
+                <div>
+
+                    <div class="school-title">
+                        FZIS
+                    </div>
+
+                    <div class="class-title">
+                        FZIS Intermediate Class 2026
+                    </div>
+
+                    <div class="student-name">
+                        ${escapeHtml(
+                            student.student
+                        )}
+                    </div>
+
+                </div>
+
+
+                <div class="date">
+
+                    Progress Report<br>
+
+                    09 August 2026
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Back to Login
+            </button>
+
+        </div>
+
+
+        <div class="hero">
+
+            <div class="results-title">
+                Current Academic Progress
+            </div>
+
+
+            <div class="result-grid">
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Weighted Percentage
+                    </div>
+
+                    <div class="result-value">
+                        ${student.weighted.toFixed(2)}%
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="result-card ${gradeClass}"
+                >
+
+                    <div class="result-label">
+                        Grade
+                    </div>
+
+                    <div class="result-value">
+                        ${escapeHtml(
+                            student.grade
+                        )}
+                    </div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Class Rank
+                    </div>
+
+                    <div class="result-value">
+                        ${student.rank}/${studentData.length}
+                    </div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Percentile
+                    </div>
+
+                    <div class="result-value">
+                        ${student.percentile.toFixed(1)}%
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <div class="section-heading">
+
+                <div class="section-title">
+                    Teacher's Comment
+                </div>
+
+            </div>
+
+
+            <div class="comment-box">
+
+                ${escapeHtml(
+                    student.comment
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <div class="section-heading">
+
+                <div class="section-title">
+                    Semester 1 Results
+                </div>
+
+                <div
+                    class="semester-badge badge-sem1"
+                >
+                    Assessed
+                </div>
+
+            </div>
+
+
+            <table class="assessment-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Assessment
+                        </th>
+
+                        <th style="text-align:right;">
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    ${semester1Rows}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="section">
+
+            <div class="section-heading">
+
+                <div class="section-title">
+                    How the Result is Calculated
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>
+                    Semester 1 weighting:
+                </strong>
+
+                <br><br>
+
+                Closed Book Assessment:
+                <strong>80%</strong>
+
+                <br>
+
+                Open Book Assessment:
+                <strong>10%</strong>
+
+                <br>
+
+                Other Semester 1 assessments:
+                <strong>10%</strong>
+
+                <br><br>
+
+                Missing Semester 1 assessment
+                values are treated as zero.
+
+                <br><br>
+
+                <strong>
+                    The percentile shown above is
+                    for information only and is NOT
+                    used to calculate the grade or
+                    final percentage.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        ${semester2Section}
+
+
+        <div class="section">
+
+            <div class="info-box">
+
+                <strong>
+                    Important:
+                </strong>
+
+                <br><br>
+
+                Rankings may change as additional
+                assessment results are added.
+
+                This page will be updated
+                throughout the year.
+
+                <br><br>
+
+                Your rank is based on your current
+                weighted percentage compared with
+                the other students in the class.
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            <strong>
+                FZIS Intermediate Class 2026
+            </strong>
+
+            <br>
+
+            Student Assessment Progress Report
+
+            <br><br>
+
+            This report is confidential and
+            intended for the student and their
+            parent/guardian.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout() {
+
+    document.getElementById(
+        "report"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "login"
+    ).style.display = "flex";
+
+
+    document.getElementById(
+        "code"
+    ).value = "";
+
+
+    document.getElementById(
+        "error"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "reportContent"
+    ).innerHTML = "";
 
 }
 
