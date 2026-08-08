@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Student Assessment Report
+</title>
+
+
+<!-- =====================================================
+     SHEETJS
+     Allows browser to read the Excel file.
+     ===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js">
+</script>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #eef2f7;
+
+    margin:
+        0;
+
+    padding:
+        30px;
+
+}
+
+
+/* ========================================================
+   LOGIN
+   ======================================================== */
+
+.container {
+
+    max-width:
+        600px;
+
+    margin:
+        60px auto;
+
+    background:
+        white;
+
+    padding:
+        40px;
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.12);
+
+    text-align:
+        center;
+
+}
+
+
+h1 {
+
+    color:
+        #0b5394;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.subtitle {
+
+    color:
+        #666;
+
+    margin-bottom:
+        25px;
+
+    line-height:
+        1.6;
+
+}
+
+
+input {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    font-size:
+        18px;
+
+    text-align:
+        center;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    border:
+        1px solid #ccc;
+
+    border-radius:
+        8px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+button {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    font-size:
+        17px;
+
+    background:
+        #0b5394;
+
+    color:
+        white;
+
+    border:
+        none;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+}
+
+
+button:hover {
+
+    background:
+        #073763;
+
+}
+
+
+#error {
+
+    color:
+        #c62828;
+
+    margin-top:
+        15px;
+
+    display:
+        none;
+
+}
+
+
+#loading {
+
+    color:
+        #666;
+
+    margin-top:
+        15px;
+
+    display:
+        none;
+
+}
+
+
+.note {
+
+    background:
+        #e8f4ff;
+
+    padding:
+        18px;
+
+    margin-top:
+        25px;
+
+    border-left:
+        5px solid #0b5394;
+
+    border-radius:
+        5px;
+
+    text-align:
+        left;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* ========================================================
+   REPORT
+   ======================================================== */
+
+#report {
+
+    display:
+        none;
+
+}
+
+
+.report-card {
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    background:
+        white;
+
+    padding:
+        30px;
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.12);
+
+}
+
+
+.student-name {
+
+    text-align:
+        center;
+
+    font-size:
+        24px;
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.summary {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap:
+        15px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.box {
+
+    background:
+        #f2f2f2;
+
+    padding:
+        20px;
+
+    border-radius:
+        10px;
+
+    text-align:
+        center;
+
+}
+
+
+.box-title {
+
+    color:
+        #666;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.box-value {
+
+    font-size:
+        28px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.grade {
+
+    font-size:
+        32px;
+
+    font-weight:
+        bold;
+
+    color:
+        #0b5394;
+
+}
+
+
+table {
+
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    margin-top:
+        20px;
+
+}
+
+
+th {
+
+    background:
+        #0b5394;
+
+    color:
+        white;
+
+    padding:
+        12px;
+
+}
+
+
+td {
+
+    padding:
+        11px;
+
+    border-bottom:
+        1px solid #ddd;
+
+    text-align:
+        center;
+
+}
+
+
+td:first-child {
+
+    text-align:
+        left;
+
+}
+
+
+.comment {
+
+    background:
+        #fff8dc;
+
+    padding:
+        20px;
+
+    border-left:
+        5px solid #0b5394;
+
+    margin-top:
+        25px;
+
+    border-radius:
+        5px;
+
+}
+
+
+.note-report {
+
+    background:
+        #e8f4ff;
+
+    padding:
+        20px;
+
+    border-left:
+        5px solid #0b5394;
+
+    margin-top:
+        25px;
+
+    border-radius:
+        5px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.back-button {
+
+    margin-top:
+        25px;
+
+}
+
+
+@media print {
+
+    body {
+
+        background:
+            white;
+
+        padding:
+            0;
+
+    }
+
+
+    .report-card {
+
+        box-shadow:
+            none;
+
+    }
+
+
+    .back-button {
+
+        display:
+            none;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN PAGE
+     ===================================================== -->
+
+<div
+    id="login"
+    class="container"
+>
+
+<h1>
+    Student Assessment Report
+</h1>
+
+
+<div class="subtitle">
+
+    Enter your personal access code
+    to view your report.
+
+</div>
+
+
+<input
+    id="code"
+    type="password"
+    placeholder="Enter access code"
+    maxlength="6"
+    autocomplete="off"
+    onkeydown="handleKey(event)"
+>
+
+
+<button
+    onclick="openReport()"
+>
+
+    Open Report
+
+</button>
+
+
+<div
+    id="loading"
+>
+
+    Loading assessment data...
+
+</div>
+
+
+<div
+    id="error"
+>
+
+    Invalid access code.
+    Please check your code.
+
+</div>
+
+
+<div class="note">
+
+<strong>
+    Instructions
+</strong>
+
+<br><br>
+
+Enter the six-character access code
+provided by your teacher.
+
+<br><br>
+
+Click "Open Report".
+
+<br><br>
+
+Your personal assessment report
+will open automatically.
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     REPORT PAGE
+     ===================================================== -->
+
+<div
+    id="report"
+>
+
+<div class="report-card">
+
+
+<h1>
+    Student Progress Report
+</h1>
+
+
+<div
+    id="studentName"
+    class="student-name"
+>
+</div>
+
+
+<div
+    id="summary"
+    class="summary"
+>
+</div>
+
+
+<h2>
+    Teacher Comments
+</h2>
+
+
+<div
+    id="teacherComment"
+    class="comment"
+>
+</div>
+
+
+<h2>
+    Assessment Results
+</h2>
+
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+    Assessment
+</th>
+
+<th>
+    Score (%)
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+    id="assessmentTable"
+>
+</tbody>
+
+
+</table>
+
+
+<h2>
+    Final Percentage Calculation
+</h2>
+
+
+<div class="note-report">
+
+The final percentage is calculated using:
+
+<br><br>
+
+<strong>
+    Closed Book Assessment: 80%
+</strong>
+
+<br>
+
+<strong>
+    Open Book Assessment: 10%
+</strong>
+
+<br>
+
+<strong>
+    Other assessments: 10%
+</strong>
+
+<br><br>
+
+Missing assessment values are treated as zero.
+
+</div>
+
+
+<h2>
+    Grade Boundaries
+</h2>
+
+
+<div class="note-report">
+
+<strong>
+    80% and above = A
+</strong>
+
+<br>
+
+<strong>
+    65% and above = B
+</strong>
+
+<br>
+
+<strong>
+    50% and above = C
+</strong>
+
+<br>
+
+<strong>
+    Below 50% = C
+</strong>
+
+</div>
+
+
+<h2>
+    Class Ranking
+</h2>
+
+
+<div class="note-report">
+
+Your class rank is based on your final
+weighted percentage compared with the
+other students in the class.
+
+<br><br>
+
+<strong>
+    Rankings may change as additional
+    assessment results are added.
+    This page will be updated throughout
+    the year.
+</strong>
+
+</div>
+
+
+<div class="back-button">
+
+<button
+    onclick="showLogin()"
+>
+
+    Back to Login
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+
+// ============================================================
+// CONFIGURATION
+// ============================================================
+
+const EXCEL_FILE =
+    "Student_Assessment_Report.xlsx";
+
+
+const SECRET_KEY =
+    "FZIS_Student_Report_2026";
+
+
+const CLOSED_BOOK_WEIGHT =
+    0.80;
+
+
+const OPEN_BOOK_WEIGHT =
+    0.10;
+
+
+const OTHER_WEIGHT =
+    0.10;
+
+
+const STUDENT_COLUMN =
+    "Student";
+
+
+const COMMENT_COLUMN =
+    "Comments";
+
+
+const CLOSED_BOOK_COLUMN =
+    "Closed Book Assessment";
+
+
+const OPEN_BOOK_COLUMN =
+    "Open Book Assessment";
+
+
+// ============================================================
+// GLOBAL DATA
+// ============================================================
+
+let students = [];
+
+let assessments = [];
+
+
+// ============================================================
+// LOAD EXCEL
+// ============================================================
+
+async function loadExcel() {
+
+    const loading =
+        document.getElementById(
+            "loading"
+        );
+
+
+    loading.style.display =
+        "block";
+
+
+    try {
+
+        /*
+         * Date.now() prevents the browser from using
+         * an old cached copy of the Excel file.
+         */
+
+        const response =
+            await fetch(
+                EXCEL_FILE +
+                "?v=" +
+                Date.now()
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Excel file could not be loaded."
+            );
+
+        }
+
+
+        const arrayBuffer =
+            await response.arrayBuffer();
+
+
+        const workbook =
+            XLSX.read(
+                arrayBuffer,
+                {
+                    type: "array"
+                }
+            );
+
+
+        /*
+         * Use the first worksheet.
+         */
+
+        const firstSheet =
+            workbook.Sheets[
+                workbook.SheetNames[0]
+            ];
+
+
+        /*
+         * Convert worksheet into JSON.
+         */
+
+        const data =
+            XLSX.utils.sheet_to_json(
+                firstSheet,
+                {
+                    defval: ""
+                }
+            );
+
+
+        if (
+            !data ||
+            data.length === 0
+        ) {
+
+            throw new Error(
+                "The Excel file contains no data."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Clean column names
+        // ----------------------------------------------------
+
+        const cleanedData =
+            data.map(
+                row => {
+
+                    const newRow = {};
+
+
+                    Object.keys(row).forEach(
+                        key => {
+
+                            newRow[
+                                String(key).trim()
+                            ] =
+                                row[key];
+
+                        }
+                    );
+
+
+                    return newRow;
+
+                }
+            );
+
+
+        // ----------------------------------------------------
+        // Check Student column
+        // ----------------------------------------------------
+
+        if (
+            !Object.prototype.hasOwnProperty.call(
+                cleanedData[0],
+                STUDENT_COLUMN
+            )
+        ) {
+
+            throw new Error(
+                "'Student' column was not found."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Remove blank students
+        // ----------------------------------------------------
+
+        students =
+            cleanedData.filter(
+                row => {
+
+                    const name =
+                        String(
+                            row[
+                                STUDENT_COLUMN
+                            ]
+                        ).trim();
+
+
+                    return (
+                        name !== "" &&
+                        name.toLowerCase()
+                            !== "nan"
+                    );
+
+                }
+            );
+
+
+        // ----------------------------------------------------
+        // Automatically identify assessments
+        // ----------------------------------------------------
+
+        assessments =
+            Object.keys(
+                cleanedData[0]
+            ).filter(
+                column =>
+                    column !==
+                        STUDENT_COLUMN &&
+
+                    column !==
+                        COMMENT_COLUMN
+            );
+
+
+        console.log(
+            "Students:",
+            students.length
+        );
+
+
+        console.log(
+            "Assessment columns:",
+            assessments
+        );
+
+
+        loading.style.display =
+            "none";
+
+
+    }
+
+    catch (error) {
+
+        loading.style.display =
+            "none";
+
+
+        alert(
+            "Unable to load assessment data.\n\n" +
+            error.message
+        );
+
+
+        console.error(
+            error
+        );
+
+    }
+
+}
+
+
+// ============================================================
+// CONVERT SCORE
+// ============================================================
+
+function convertScore(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return 0;
+
+    }
+
+
+    let text =
+        String(value).trim();
+
+
+    if (
+        text === ""
+    ) {
+
+        return 0;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Percentage
+    // --------------------------------------------------------
+
+    if (
+        text.includes("%")
+    ) {
+
+        const match =
+            text.match(
+                /-?\d+\.?\d*/
+            );
+
+
+        if (match) {
+
+            return parseFloat(
+                match[0]
+            );
+
+        }
+
+
+        return 0;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Fraction
+    // --------------------------------------------------------
+
+    const fraction =
+        text.match(
+            /(-?\d+\.?\d*)\s*\/\s*(-?\d+\.?\d*)/
+        );
+
+
+    if (fraction) {
+
+        const obtained =
+            parseFloat(
+                fraction[1]
+            );
+
+
+        const total =
+            parseFloat(
+                fraction[2]
+            );
+
+
+        if (
+            total > 0
+        ) {
+
+            return (
+                obtained /
+                total
+            ) * 100;
+
+        }
+
+
+        return 0;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Number
+    // --------------------------------------------------------
+
+    const number =
+        text.match(
+            /-?\d+\.?\d*/
+        );
+
+
+    if (number) {
+
+        return parseFloat(
+            number[0]
+        );
+
+    }
+
+
+    return 0;
+
+}
+
+
+// ============================================================
+// GENERATE PASSCODE
+// ============================================================
+
+async function generatePasscode(
+    student
+) {
+
+    const text =
+        SECRET_KEY
+        +
+        String(student)
+            .trim()
+            .toLowerCase();
+
+
+    const encoder =
+        new TextEncoder();
+
+
+    const data =
+        encoder.encode(
+            text
+        );
+
+
+    const hashBuffer =
+        await crypto.subtle.digest(
+            "SHA-256",
+            data
+        );
+
+
+    const hashArray =
+        Array.from(
+            new Uint8Array(
+                hashBuffer
+            )
+        );
+
+
+    let hex =
+        "";
+
+
+    hashArray.forEach(
+        byte => {
+
+            hex +=
+                byte
+                    .toString(16)
+                    .padStart(
+                        2,
+                        "0"
+                    );
+
+        }
+    );
+
+
+    return hex
+        .substring(
+            0,
+            6
+        )
+        .toUpperCase();
+
+}
+
+
+// ============================================================
+// CALCULATE WEIGHTED SCORE
+// ============================================================
+
+function calculateStudentScore(
+    student
+) {
+
+    // --------------------------------------------------------
+    // Closed Book
+    // --------------------------------------------------------
+
+    let closed =
+        0;
+
+
+    if (
+        Object.prototype.hasOwnProperty.call(
+            student,
+            CLOSED_BOOK_COLUMN
+        )
+    ) {
+
+        closed =
+            convertScore(
+                student[
+                    CLOSED_BOOK_COLUMN
+                ]
+            );
+
+    }
+
+
+    // --------------------------------------------------------
+    // Open Book
+    // --------------------------------------------------------
+
+    let openBook =
+        0;
+
+
+    if (
+        Object.prototype.hasOwnProperty.call(
+            student,
+            OPEN_BOOK_COLUMN
+        )
+    ) {
+
+        openBook =
+            convertScore(
+                student[
+                    OPEN_BOOK_COLUMN
+                ]
+            );
+
+    }
+
+
+    // --------------------------------------------------------
+    // Other assessments
+    // --------------------------------------------------------
+
+    const otherColumns =
+        assessments.filter(
+            column =>
+                column !==
+                    CLOSED_BOOK_COLUMN &&
+
+                column !==
+                    OPEN_BOOK_COLUMN
+        );
+
+
+    let otherAverage =
+        0;
+
+
+    if (
+        otherColumns.length > 0
+    ) {
+
+        let total =
+            0;
+
+
+        otherColumns.forEach(
+            column => {
+
+                total +=
+                    convertScore(
+                        student[column]
+                    );
+
+            }
+        );
+
+
+        otherAverage =
+            total /
+            otherColumns.length;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Final weighted percentage
+    // --------------------------------------------------------
+
+    const finalScore =
+        (
+            closed *
+            CLOSED_BOOK_WEIGHT
+        )
+        +
+        (
+            openBook *
+            OPEN_BOOK_WEIGHT
+        )
+        +
+        (
+            otherAverage *
+            OTHER_WEIGHT
+        );
+
+
+    return Number(
+        finalScore.toFixed(
+            2
+        )
+    );
+
+}
+
+
+// ============================================================
+// GRADE
+// ============================================================
+
+function calculateGrade(
+    percentage
+) {
+
+    if (
+        percentage >= 80
+    ) {
+
+        return "A";
+
+    }
+
+
+    if (
+        percentage >= 65
+    ) {
+
+        return "B";
+
+    }
+
+
+    if (
+        percentage >= 50
+    ) {
+
+        return "C";
+
+    }
+
+
+    return "C";
+
+}
+
+
+// ============================================================
+// CALCULATE RANKS
+// ============================================================
+
+function calculateAllResults() {
+
+    const results =
+        students.map(
+            student => {
+
+                const name =
+                    String(
+                        student[
+                            STUDENT_COLUMN
+                        ]
+                    ).trim();
+
+
+                return {
+
+                    student:
+                        name,
+
+                    score:
+                        calculateStudentScore(
+                            student
+                        )
+
+                };
+
+            }
+        );
+
+
+    // --------------------------------------------------------
+    // Sort highest score first
+    // --------------------------------------------------------
+
+    const sorted =
+        [...results].sort(
+            (a, b) =>
+                b.score -
+                a.score
+        );
+
+
+    // --------------------------------------------------------
+    // Competition ranking
+    //
+    // Example:
+    //
+    // 90 = 1
+    // 90 = 1
+    // 80 = 3
+    //
+    // --------------------------------------------------------
+
+    const rankMap =
+        new Map();
+
+
+    let currentRank =
+        1;
+
+
+    sorted.forEach(
+        (item, index) => {
+
+            if (
+                index > 0 &&
+                item.score <
+                    sorted[
+                        index - 1
+                    ].score
+            ) {
+
+                currentRank =
+                    index + 1;
+
+            }
+
+
+            rankMap.set(
+                item.student,
+                currentRank
+            );
+
+        }
+    );
+
+
+    return {
+
+        results:
+            results,
+
+        rankMap:
+            rankMap
+
+    };
+
+}
+
+
+// ============================================================
+// ESCAPE HTML
+// ============================================================
+
+function escapeHTML(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+
+    }
+
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+// ============================================================
+// OPEN REPORT
+// ============================================================
+
+async function openReport() {
+
+    const input =
+        document.getElementById(
+            "code"
+        );
+
+
+    const code =
+        input.value
+            .trim()
+            .toUpperCase();
+
+
+    const error =
+        document.getElementById(
+            "error"
+        );
+
+
+    error.style.display =
+        "none";
+
+
+    if (
+        code.length !== 6
+    ) {
+
+        error.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Ensure Excel data is loaded
+    // --------------------------------------------------------
+
+    if (
+        students.length === 0
+    ) {
+
+        await loadExcel();
+
+    }
+
+
+    // --------------------------------------------------------
+    // Find student
+    // --------------------------------------------------------
+
+    let selectedStudent =
+        null;
+
+
+    for (
+        const student of students
+    ) {
+
+        const name =
+            String(
+                student[
+                    STUDENT_COLUMN
+                ]
+            ).trim();
+
+
+        const studentCode =
+            await generatePasscode(
+                name
+            );
+
+
+        if (
+            studentCode === code
+        ) {
+
+            selectedStudent =
+                student;
+
+            break;
+
+        }
+
+    }
+
+
+    // --------------------------------------------------------
+    // Invalid passcode
+    // --------------------------------------------------------
+
+    if (
+        !selectedStudent
+    ) {
+
+        error.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Display report
+    // --------------------------------------------------------
+
+    displayReport(
+        selectedStudent
+    );
+
+}
+
+
+// ============================================================
+// DISPLAY REPORT
+// ============================================================
+
+function displayReport(
+    student
+) {
+
+    const {
+        rankMap
+    } =
+        calculateAllResults();
+
+
+    const studentName =
+        String(
+            student[
+                STUDENT_COLUMN
+            ]
+        ).trim();
+
+
+    const studentScore =
+        calculateStudentScore(
+            student
+        );
+
+
+    const studentGrade =
+        calculateGrade(
+            studentScore
+        );
+
+
+    const studentRank =
+        rankMap.get(
+            studentName
+        );
+
+
+    // ========================================================
+    // NAME
+    // ========================================================
+
+    document.getElementById(
+        "studentName"
+    ).textContent =
+        studentName;
+
+
+    // ========================================================
+    // SUMMARY
+    // ========================================================
+
+    document.getElementById(
+        "summary"
+    ).innerHTML = `
+
+        <div class="box">
+
+            <div class="box-title">
+                Final Percentage
+            </div>
+
+            <div class="box-value">
+                ${studentScore.toFixed(2)}%
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="box-title">
+                Grade
+            </div>
+
+            <div class="grade">
+                ${studentGrade}
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="box-title">
+                Class Rank
+            </div>
+
+            <div class="box-value">
+                ${studentRank}/${students.length}
+            </div>
+
+        </div>
+
+    `;
+
+
+    // ========================================================
+    // COMMENTS
+    // ========================================================
+
+    let comment =
+        "";
+
+
+    if (
+        Object.prototype.hasOwnProperty.call(
+            student,
+            COMMENT_COLUMN
+        )
+    ) {
+
+        comment =
+            String(
+                student[
+                    COMMENT_COLUMN
+                ]
+            ).trim();
+
+    }
+
+
+    if (
+        comment === "" ||
+        comment === "undefined"
+    ) {
+
+        comment =
+            "No comments provided.";
+
+    }
+
+
+    document.getElementById(
+        "teacherComment"
+    ).textContent =
+        comment;
+
+
+    // ========================================================
+    // ASSESSMENT TABLE
+    // ========================================================
+
+    const table =
+        document.getElementById(
+            "assessmentTable"
+        );
+
+
+    table.innerHTML =
+        "";
+
+
+    assessments.forEach(
+        assessment => {
+
+            const score =
+                convertScore(
+                    student[
+                        assessment
+                    ]
+                );
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const assessmentCell =
+                document.createElement(
+                    "td"
+                );
+
+
+            const scoreCell =
+                document.createElement(
+                    "td"
+                );
+
+
+            assessmentCell.textContent =
+                assessment;
+
+
+            scoreCell.textContent =
+                score.toFixed(1) +
+                "%";
+
+
+            row.appendChild(
+                assessmentCell
+            );
+
+
+            row.appendChild(
+                scoreCell
+            );
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
+
+
+    // ========================================================
+    // SHOW REPORT
+    // ========================================================
+
+    document.getElementById(
+        "login"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "report"
+    ).style.display =
+        "block";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+// ============================================================
+// BACK TO LOGIN
+// ============================================================
+
+function showLogin() {
+
+    document.getElementById(
+        "report"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "login"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "code"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "error"
+    ).style.display =
+        "none";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+// ============================================================
+// ENTER KEY
+// ============================================================
+
+function handleKey(
+    event
+) {
+
+    if (
+        event.key === "Enter"
+    ) {
+
+        openReport();
+
+    }
+
+}
+
+
+// ============================================================
+// LOAD EXCEL WHEN PAGE OPENS
+// ============================================================
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadExcel();
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
