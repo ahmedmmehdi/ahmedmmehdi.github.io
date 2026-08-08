@@ -1,295 +1,367 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 
 <meta charset="utf-8">
 
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
 
 <title>
 Student Assessment Report
 </title>
 
 
-
 <style>
-
 
 body {
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    background:#eef2f7;
+    background:
+        #eef2f7;
 
-    margin:40px;
+    margin:
+        0;
 
+    padding:
+        30px;
 }
-
 
 
 .container {
 
-    max-width:500px;
+    max-width:
+        500px;
 
-    margin:auto;
+    margin:
+        80px auto;
 
-    background:white;
+    background:
+        white;
 
-    padding:40px;
+    padding:
+        40px;
 
-    border-radius:15px;
+    border-radius:
+        15px;
 
-    box-shadow:0 3px 15px #aaa;
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.12);
 
-    text-align:center;
-
+    text-align:
+        center;
 }
-
 
 
 h1 {
 
-    color:#0b5394;
+    color:
+        #0b5394;
 
+    margin-bottom:
+        10px;
 }
 
+
+.subtitle {
+
+    color:
+        #666;
+
+    margin-bottom:
+        25px;
+}
 
 
 input {
 
-    width:80%;
+    width:
+        100%;
 
-    padding:12px;
+    box-sizing:
+        border-box;
 
-    font-size:18px;
+    padding:
+        14px;
 
-    text-align:center;
+    font-size:
+        18px;
 
-    text-transform:uppercase;
+    text-align:
+        center;
 
-    border:1px solid #ccc;
+    letter-spacing:
+        2px;
 
-    border-radius:6px;
+    text-transform:
+        uppercase;
 
-    margin:15px;
+    border:
+        1px solid #ccc;
 
+    border-radius:
+        8px;
+
+    margin-bottom:
+        15px;
 }
-
 
 
 button {
 
-    padding:12px 30px;
+    width:
+        100%;
 
-    background:#0b5394;
+    padding:
+        14px;
 
-    color:white;
+    font-size:
+        17px;
 
-    border:none;
+    background:
+        #0b5394;
 
-    border-radius:6px;
+    color:
+        white;
 
-    cursor:pointer;
+    border:
+        none;
 
-    font-size:16px;
+    border-radius:
+        8px;
 
+    cursor:
+        pointer;
 }
-
 
 
 button:hover {
 
-    background:#073763;
-
+    background:
+        #073763;
 }
-
 
 
 #error {
 
-    color:red;
+    color:
+        #c62828;
 
-    margin-top:15px;
+    margin-top:
+        15px;
 
+    display:
+        none;
 }
-
 
 
 .note {
 
-    background:#e8f4ff;
+    background:
+        #e8f4ff;
 
-    padding:15px;
+    padding:
+        18px;
 
-    margin-top:30px;
+    margin-top:
+        25px;
 
-    border-left:5px solid #0b5394;
+    border-left:
+        5px solid #0b5394;
 
-    text-align:left;
+    border-radius:
+        5px;
 
-    border-radius:6px;
+    text-align:
+        left;
 
+    line-height:
+        1.6;
 }
-
-
 
 </style>
 
-
 </head>
-
-
 
 
 <body>
 
 
-
 <div class="container">
 
 
-
 <h1>
-Student Report Portal
+Student Assessment Report
 </h1>
 
 
+<div class="subtitle">
 
-<p>
 Enter your personal access code
-</p>
+to view your report.
 
+</div>
 
 
 <input
 
-id="code"
+    id="code"
 
-type="password"
+    type="password"
 
-placeholder="Enter code"
+    placeholder="Enter access code"
 
+    maxlength="6"
 
+    autocomplete="off"
+
+    onkeydown="handleKey(event)"
 
 >
 
 
-
-<br>
-
-
-
-<button onclick="openReport()">
+<button
+    onclick="openReport()"
+>
 
 Open Report
 
 </button>
 
 
+<div
+    id="error"
+>
 
+Invalid access code.
+Please check your code.
 
-<p id="error"></p>
-
-
-
+</div>
 
 
 <div class="note">
 
-
-<b>
+<strong>
 Instructions
-</b>
+</strong>
+
 
 <br><br>
 
 
-1. Enter the access code provided by your teacher.
+Enter the six-character access code
+provided by your teacher.
 
-<br>
-
-2. Click "Open Report".
-
-<br>
-
-3. Your personal assessment report will open.
 
 <br><br>
 
 
-Please keep your access code private.
+Click "Open Report".
+
+
+<br><br>
+
+
+Your personal assessment report
+will open directly.
 
 </div>
 
 
-
 </div>
-
-
-
 
 
 <script>
 
 
-const reports = {"CF4144": "Abbas_Asim_Palasara.html", "FD8773": "Amani_Qusai.html", "3F424D": "Amin_Qusai.html", "CE10A3": "Amir_Hussaini.html", "24FA2D": "Ehsan_Najafi.html", "EE5A6A": "Emran_Najafi.html", "D2F298": "Farhad_Rezaee.html", "0DB13D": "Fatema_Soltani.html", "EC1CA0": "Fatima_Hmud.html", "F209F7": "Haniya_Zahra_Khatir.html", "8B1DEF": "Hussain_Asim_Palasara.html", "60B804": "Insiya_palasara.html", "DC3164": "Izzah_Ali.html", "A77A7D": "Marzia_Ali.html", "433E3A": "Muhammad_Borayr_Syed.html", "6859FA": "Muhammad_Raza_Mehdi.html", "D5A99A": "Nazdana_ashoori.html", "841B26": "Rayyan_Sadiq.html", "111035": "Syed_Moosa_Kazmi.html", "EE521B": "Syedah_Nooriyah_Zahra_Naqvi.html", "FE4CCF": "Zainab_Ramezani.html", "B44CB9": "Ziya_Musa.html", "B2D511": "Benyamin_Mehrzadi.html", "CC6EEE": "Zahra_Khadomi.html", "BCA7D3": "Haniye_Akhoundzadeh.html", "F1A71C": "Milad_Azizi.html", "ADEE51": "Nida_Batool.html"};
+// ========================================================
+// PASSCODE -> HTML FILE
+// ========================================================
+
+const reports = {"CF4144": "CF4144.html", "FD8773": "FD8773.html", "3F424D": "3F424D.html", "CE10A3": "CE10A3.html", "24FA2D": "24FA2D.html", "EE5A6A": "EE5A6A.html", "D2F298": "D2F298.html", "0DB13D": "0DB13D.html", "EC1CA0": "EC1CA0.html", "F209F7": "F209F7.html", "8B1DEF": "8B1DEF.html", "60B804": "60B804.html", "DC3164": "DC3164.html", "A77A7D": "A77A7D.html", "433E3A": "433E3A.html", "6859FA": "6859FA.html", "D5A99A": "D5A99A.html", "841B26": "841B26.html", "111035": "111035.html", "EE521B": "EE521B.html", "FE4CCF": "FE4CCF.html", "B44CB9": "B44CB9.html", "B2D511": "B2D511.html", "CC6EEE": "CC6EEE.html", "BCA7D3": "BCA7D3.html", "F1A71C": "F1A71C.html", "ADEE51": "ADEE51.html"};
 
 
+// ========================================================
+// OPEN REPORT
+// ========================================================
+
+function openReport() {
+
+    const input =
+        document.getElementById(
+            "code"
+        );
 
 
-function openReport(){
+    const code =
+        input.value
+        .trim()
+        .toUpperCase();
 
 
-    let code = 
-
-    document
-
-    .getElementById("code")
-
-    .value
-
-    .toUpperCase()
-
-    .trim();
+    const error =
+        document.getElementById(
+            "error"
+        );
 
 
+    // ----------------------------------------------------
+    // Valid passcode
+    // ----------------------------------------------------
 
-    if(reports[code]){
+    if (reports[code]) {
 
+        // Open the HTML file whose filename
+        // is the student's passcode.
 
-        window.location.href = reports[code];
-
+        window.location.href =
+            reports[code];
 
     }
 
 
-    else{
+    // ----------------------------------------------------
+    // Invalid passcode
+    // ----------------------------------------------------
 
+    else {
 
-        document
-
-        .getElementById("error")
-
-        .innerHTML =
-
-        "Invalid access code";
-
+        error.style.display =
+            "block";
 
     }
-
 
 }
 
 
-</script>
+// ========================================================
+// ENTER KEY
+// ========================================================
 
+function handleKey(event) {
+
+    if (
+        event.key === "Enter"
+    ) {
+
+        openReport();
+
+    }
+
+}
+
+</script>
 
 
 </body>
 
-
 </html>
-
