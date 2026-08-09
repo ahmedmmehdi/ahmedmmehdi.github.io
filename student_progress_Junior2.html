@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Student Assessment Progress</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc,
+            #ecfeff
+        );
+
+    color: #172033;
+
+}
+
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+
+.login-wrapper {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(30, 41, 59, 0.15);
+
+}
+
+
+.logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto
+        20px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #4062bb
+        );
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+}
+
+
+.login-card h1 {
+
+    margin: 0;
+
+    color: #182848;
+
+    font-size: 28px;
+
+}
+
+
+.login-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+.code-input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border:
+        2px solid
+        #dbe2ea;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    outline: none;
+
+    margin:
+        15px 0;
+
+}
+
+
+.code-input:focus {
+
+    border-color: #4062bb;
+
+}
+
+
+.open-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #4062bb
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+.error {
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    color: #b91c1c;
+
+    background: #fef2f2;
+
+    border:
+        1px solid
+        #fecaca;
+
+}
+
+
+/* ============================================================
+   REPORT
+   ============================================================ */
+
+#report {
+
+    display: none;
+
+}
+
+
+.page {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding:
+        25px
+        18px
+        50px;
+
+}
+
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #274690,
+            #4062bb
+        );
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.school-title {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.class-title {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+
+}
+
+
+.student-name {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+
+}
+
+
+.date {
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+
+}
+
+
+.section {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(30, 41, 59, 0.07);
+
+}
+
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.result-card {
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+}
+
+
+.result-label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+}
+
+
+.result-value {
+
+    font-size: 28px;
+
+    font-weight: 850;
+
+    margin-top: 7px;
+
+    color: #182848;
+
+}
+
+
+.grade-a {
+
+    background: #ecfdf5;
+
+}
+
+
+.grade-a .result-value {
+
+    color: #047857;
+
+}
+
+
+.grade-b {
+
+    background: #eff6ff;
+
+}
+
+
+.grade-b .result-value {
+
+    color: #1d4ed8;
+
+}
+
+
+.grade-c {
+
+    background: #fffbeb;
+
+}
+
+
+.grade-c .result-value {
+
+    color: #b45309;
+
+}
+
+
+.section-title {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #182848;
+
+    margin-bottom: 17px;
+
+}
+
+
+.assessment-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.assessment-table th {
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    text-align: left;
+
+    padding: 13px;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+}
+
+
+.assessment-table td {
+
+    padding: 14px;
+
+    border-top:
+        1px solid
+        #edf0f4;
+
+}
+
+
+.score-cell {
+
+    text-align: right;
+
+    font-weight: 800;
+
+}
+
+
+.comment-box {
+
+    background: #fff7ed;
+
+    border-left:
+        5px solid
+        #f59e0b;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    line-height: 1.65;
+
+}
+
+
+.info-box {
+
+    background: #f8fafc;
+
+    border:
+        1px solid
+        #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    line-height: 1.7;
+
+    color: #475569;
+
+}
+
+
+.footer {
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    padding: 20px;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .page {
+
+        padding:
+            12px
+            10px
+            35px;
+
+    }
+
+    .header {
+
+        padding: 22px 18px;
+
+    }
+
+    .class-title {
+
+        font-size: 23px;
+
+    }
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .result-value {
+
+        font-size: 23px;
+
+    }
+
+    .section {
+
+        padding: 16px;
+
+    }
+
+    .login-card {
+
+        padding: 28px 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOGIN
+     ========================================================= -->
+
+<div
+    id="login"
+    class="login-wrapper"
+>
+
+    <div class="login-card">
+
+        <div class="logo">
+            FZIS
+        </div>
+
+        <h1>
+            Student Assessment Progress
+        </h1>
+
+        <p>
+            Enter your personal six-character
+            access code to view your current
+            results.
+        </p>
+
+        <input
+            id="code"
+            class="code-input"
+            type="password"
+            maxlength="6"
+            placeholder="ACCESS CODE"
+            autocomplete="off"
+        >
+
+        <button
+            class="open-button"
+            onclick="openReport()"
+        >
+            View My Report
+        </button>
+
+        <div
+            id="error"
+            class="error"
+        >
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     REPORT
+     ========================================================= -->
+
+<div id="report">
+
+    <div class="page">
+
+        <div class="header">
+
+            <div class="school-title">
+                FZIS
+            </div>
+
+            <div
+                id="className"
+                class="class-title"
+            >
+            </div>
+
+            <div
+                id="studentName"
+                class="student-name"
+            >
+            </div>
+
+            <div class="date">
+                Live Student Progress
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Current Academic Progress
+            </div>
+
+            <div class="result-grid">
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Average Percentage
+                    </div>
+
+                    <div
+                        id="average"
+                        class="result-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="gradeCard"
+                    class="result-card"
+                >
+
+                    <div class="result-label">
+                        Grade
+                    </div>
+
+                    <div
+                        id="grade"
+                        class="result-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Class Rank
+                    </div>
+
+                    <div
+                        id="rank"
+                        class="result-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <div class="result-label">
+                        Percentile
+                    </div>
+
+                    <div
+                        id="percentile"
+                        class="result-value"
+                    >
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ASSESSMENTS -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Assessment Results
+            </div>
+
+            <table class="assessment-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Assessment
+                        </th>
+
+                        <th style="text-align:right;">
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody
+                    id="assessmentRows"
+                >
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- COMMENTS -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Teacher's Comment
+            </div>
+
+            <div
+                id="comment"
+                class="comment-box"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Information
+            </div>
+
+            <div class="info-box">
+
+                This page reflects all assessments completed by today.
+
+
+                <br><br>
+
+              If an assessment is not completed, it is recorded as zero.
+
+
+                <br><br>
+
+                Results are read directly from
+                your regular assessments in class or homeworks.
+
+                <br><br>
+
+                This page reflects all assessments completed by today. Grades, scores, and class rankings may change as additional assessments are completed.
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            FZIS Junior-2 Class 2026
+
+            <br>
+
+            Student Assessment Progress
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+/* ============================================================
+   GOOGLE APPS SCRIPT URL
+   ============================================================ */
+
+const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbx1dqzW7clKlHLGeMonfRmKZWpyaPaNsX5rvid-DfHDr2Vc-n5MMPjoJt1k6Q6SJjJ3/exec";
+
+
+/* ============================================================
+   ENTER KEY
+   ============================================================ */
+
+document
+    .getElementById("code")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                openReport();
+
+            }
+
+        }
+    );
+
+
+/* ============================================================
+   OPEN REPORT
+   ============================================================ */
+
+async function openReport() {
+
+    const input =
+        document.getElementById(
+            "code"
+        );
+
+    const error =
+        document.getElementById(
+            "error"
+        );
+
+
+    const code =
+        input.value
+            .trim()
+            .toUpperCase();
+
+
+    error.style.display =
+        "none";
+
+
+    if (
+        code.length !== 6
+    ) {
+
+        showError(
+            "Please enter your six-character access code."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        APPS_SCRIPT_URL.includes(
+            "PASTE_YOUR"
+        )
+    ) {
+
+        showError(
+            "Google Apps Script URL has not been added."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const url =
+            APPS_SCRIPT_URL +
+            "?passcode=" +
+            encodeURIComponent(
+                code
+            );
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method: "GET",
+                    cache: "no-store"
+                }
+            );
+
+
+        if (
+            !response.ok
+        ) {
+
+            throw new Error(
+                "Server returned HTTP " +
+                response.status
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.success !== true
+        ) {
+
+            showError(
+                data.error ||
+                "Unable to access assessment data."
+            );
+
+            return;
+
+        }
+
+
+        displayReport(
+            data
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            error
+        );
+
+        showError(
+            "Unable to access assessment data. "
+            +
+            "Please check your access code "
+            +
+            "and try again."
+        );
+
+    }
+
+}
+
+
+/* ============================================================
+   DISPLAY REPORT
+   ============================================================ */
+
+function displayReport(data) {
+
+    const student =
+        data.student;
+
+
+    document
+        .getElementById(
+            "login"
+        )
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById(
+            "report"
+        )
+        .style.display =
+        "block";
+
+
+    document
+        .getElementById(
+            "className"
+        )
+        .textContent =
+        data.className ||
+        "Student Assessment Progress";
+
+
+    document
+        .getElementById(
+            "studentName"
+        )
+        .textContent =
+        student.student;
+
+
+    document
+        .getElementById(
+            "average"
+        )
+        .textContent =
+        Number(
+            student.averagePercentage || 0
+        ).toFixed(2)
+        +
+        "%";
+
+
+    document
+        .getElementById(
+            "grade"
+        )
+        .textContent =
+        student.grade ||
+        "C";
+
+
+    document
+        .getElementById(
+            "rank"
+        )
+        .textContent =
+        (
+            student.rank ||
+            "-"
+        )
+        +
+        "/"
+        +
+        (
+            data.totalStudents ||
+            "-"
+        );
+
+
+    document
+        .getElementById(
+            "percentile"
+        )
+        .textContent =
+        Number(
+            student.percentile || 0
+        ).toFixed(1)
+        +
+        "%";
+
+
+    const gradeCard =
+        document.getElementById(
+            "gradeCard"
+        );
+
+
+    gradeCard.classList.remove(
+        "grade-a",
+        "grade-b",
+        "grade-c"
+    );
+
+
+    if (
+        student.grade === "A"
+    ) {
+
+        gradeCard.classList.add(
+            "grade-a"
+        );
+
+    }
+
+    else if (
+        student.grade === "B"
+    ) {
+
+        gradeCard.classList.add(
+            "grade-b"
+        );
+
+    }
+
+    else {
+
+        gradeCard.classList.add(
+            "grade-c"
+        );
+
+    }
+
+
+    displayAssessments(
+        student.semester1 ||
+        {}
+    );
+
+
+    document
+        .getElementById(
+            "comment"
+        )
+        .textContent =
+        student.comment ||
+        "No comments provided.";
+
+}
+
+
+/* ============================================================
+   DISPLAY ASSESSMENTS
+   ============================================================ */
+
+function displayAssessments(
+    assessments
+) {
+
+    const tbody =
+        document.getElementById(
+            "assessmentRows"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    Object.keys(
+        assessments
+    ).forEach(
+        function(name) {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const nameCell =
+                document.createElement(
+                    "td"
+                );
+
+
+            const scoreCell =
+                document.createElement(
+                    "td"
+                );
+
+
+            nameCell.textContent =
+                name;
+
+
+            scoreCell.className =
+                "score-cell";
+
+
+            scoreCell.textContent =
+                Number(
+                    assessments[name] || 0
+                ).toFixed(1)
+                +
+                "%";
+
+
+            row.appendChild(
+                nameCell
+            );
+
+
+            row.appendChild(
+                scoreCell
+            );
+
+
+            tbody.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+function showError(
+    message
+) {
+
+    const error =
+        document.getElementById(
+            "error"
+        );
+
+
+    error.textContent =
+        message;
+
+
+    error.style.display =
+        "block";
+
+}
+
+
+</script>
+
+</body>
+
+</html>
