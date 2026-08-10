@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<title>FZIS Intermediate Class 2026</title>
+<title>Student Assessment Progress</title>
 
 
 <style>
 
-/* =========================================================
-   GLOBAL
-   ========================================================= */
-
 * {
     box-sizing: border-box;
 }
+
 
 body {
 
@@ -49,442 +43,6 @@ body {
     color: #172033;
 
     min-height: 100vh;
-}
-
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
-.page {
-
-    width: 100%;
-
-    max-width: 1050px;
-
-    margin: 0 auto;
-
-    padding: 25px 18px 50px;
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #182848,
-            #274690,
-            #4062bb
-        );
-
-    color: white;
-
-    border-radius: 24px;
-
-    padding: 30px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(24, 40, 72, 0.20);
-}
-
-
-.school-title {
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-    opacity: 0.85;
-}
-
-
-.class-title {
-
-    font-size: 30px;
-
-    font-weight: 800;
-
-    margin-top: 8px;
-
-    line-height: 1.15;
-}
-
-
-.student-name {
-
-    font-size: 20px;
-
-    font-weight: 600;
-
-    margin-top: 15px;
-}
-
-
-.date {
-
-    margin-top: 12px;
-
-    font-size: 13px;
-
-    opacity: 0.85;
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 22px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 10px 35px
-        rgba(30, 41, 59, 0.08);
-}
-
-
-.results-title {
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    color: #52617a;
-
-    margin-bottom: 15px;
-}
-
-
-.result-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 12px;
-}
-
-
-.result-card {
-
-    border-radius: 18px;
-
-    padding: 18px 14px;
-
-    text-align: center;
-
-    background: #f8fafc;
-
-    border: 1px solid #e5e7eb;
-}
-
-
-.result-label {
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    color: #64748b;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.6px;
-}
-
-
-.result-value {
-
-    font-size: 29px;
-
-    font-weight: 850;
-
-    margin-top: 7px;
-
-    color: #182848;
-}
-
-
-.grade-a {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ecfdf5,
-            #d1fae5
-        );
-
-    border-color: #a7f3d0;
-}
-
-
-.grade-a .result-value {
-
-    color: #047857;
-}
-
-
-.grade-b {
-
-    background:
-        linear-gradient(
-            135deg,
-            #eff6ff,
-            #dbeafe
-        );
-
-    border-color: #bfdbfe;
-}
-
-
-.grade-b .result-value {
-
-    color: #1d4ed8;
-}
-
-
-.grade-c {
-
-    background:
-        linear-gradient(
-            135deg,
-            #fffbeb,
-            #fef3c7
-        );
-
-    border-color: #fde68a;
-}
-
-
-.grade-c .result-value {
-
-    color: #b45309;
-}
-
-
-/* =========================================================
-   SECTION
-   ========================================================= */
-
-.section {
-
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 22px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 10px 35px
-        rgba(30, 41, 59, 0.07);
-}
-
-
-.section-heading {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-bottom: 17px;
-}
-
-
-.section-title {
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    color: #182848;
-}
-
-
-.semester-badge {
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.7px;
-
-    padding: 7px 10px;
-
-    border-radius: 999px;
-}
-
-
-.badge-sem1 {
-
-    background: #e0e7ff;
-
-    color: #3730a3;
-}
-
-
-.badge-sem2 {
-
-    background: #cffafe;
-
-    color: #155e75;
-}
-
-
-/* =========================================================
-   TABLE
-   ========================================================= */
-
-.table-wrapper {
-
-    width: 100%;
-
-    overflow-x: auto;
-}
-
-
-.assessment-table {
-
-    width: 100%;
-
-    border-collapse: separate;
-
-    border-spacing: 0;
-
-    overflow: hidden;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 16px;
-}
-
-
-.assessment-table th {
-
-    background: #f1f5f9;
-
-    color: #475569;
-
-    text-align: left;
-
-    padding: 13px 15px;
-
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-}
-
-
-.assessment-table td {
-
-    padding: 15px;
-
-    border-top: 1px solid #edf0f4;
-
-    font-size: 14px;
-}
-
-
-.score-cell {
-
-    text-align: right;
-
-    font-weight: 800;
-
-    color: #182848;
-
-    white-space: nowrap;
-}
-
-
-.weighted-row td {
-
-    background: #eef2ff !important;
-
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   COMMENTS
-   ========================================================= */
-
-.comment-box {
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff7ed,
-            #fffbeb
-        );
-
-    border-left:
-        5px solid #f59e0b;
-
-    border-radius: 16px;
-
-    padding: 18px;
-
-    color: #4b5563;
-
-    line-height: 1.65;
-
-    font-size: 15px;
-}
-
-
-/* =========================================================
-   INFO
-   ========================================================= */
-
-.info-box {
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 16px;
-
-    padding: 18px;
-
-    line-height: 1.7;
-
-    color: #475569;
-
-    font-size: 14px;
 }
 
 
@@ -653,7 +211,7 @@ body {
 
 .open-button:disabled {
 
-    opacity: 0.6;
+    opacity: 0.65;
 
     cursor: wait;
 }
@@ -684,11 +242,15 @@ body {
 
 .loading {
 
-    color: #475569;
+    display: none;
 
     margin-top: 15px;
 
-    font-size: 13px;
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
 
@@ -699,6 +261,480 @@ body {
     font-size: 12px;
 
     color: #94a3b8;
+}
+
+
+/* =========================================================
+   REPORT
+   ========================================================= */
+
+#reportPage {
+
+    display: none;
+}
+
+
+.page {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding:
+        25px 18px 50px;
+}
+
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #182848,
+            #274690,
+            #4062bb
+        );
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(24, 40, 72, 0.20);
+}
+
+
+.header-top {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 20px;
+}
+
+
+.school-title {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform:
+        uppercase;
+
+    opacity: 0.85;
+}
+
+
+.class-title {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+
+    line-height: 1.15;
+}
+
+
+.student-name {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+}
+
+
+.date {
+
+    text-align: right;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   RESULT CARDS
+   ========================================================= */
+
+.hero {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(30, 41, 59, 0.08);
+}
+
+
+.results-title {
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 1px;
+
+    color: #52617a;
+
+    margin-bottom: 15px;
+}
+
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+.result-card {
+
+    border-radius: 18px;
+
+    padding: 18px 14px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e5e7eb;
+}
+
+
+.result-label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.result-value {
+
+    font-size: 29px;
+
+    font-weight: 850;
+
+    margin-top: 7px;
+
+    color: #182848;
+}
+
+
+.grade-a {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #d1fae5
+        );
+
+    border-color: #a7f3d0;
+}
+
+
+.grade-a .result-value {
+
+    color: #047857;
+}
+
+
+.grade-b {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    border-color: #bfdbfe;
+}
+
+
+.grade-b .result-value {
+
+    color: #1d4ed8;
+}
+
+
+.grade-c {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffbeb,
+            #fef3c7
+        );
+
+    border-color: #fde68a;
+}
+
+
+.grade-c .result-value {
+
+    color: #b45309;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(30, 41, 59, 0.07);
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+
+.section-title {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #182848;
+}
+
+
+.semester-badge {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 0.7px;
+
+    padding:
+        7px 10px;
+
+    border-radius:
+        999px;
+}
+
+
+.badge-sem1 {
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+}
+
+
+.badge-sem2 {
+
+    background: #cffafe;
+
+    color: #155e75;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.assessment-table {
+
+    width: 100%;
+
+    border-collapse:
+        separate;
+
+    border-spacing: 0;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    min-width: 500px;
+}
+
+
+.assessment-table th {
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    text-align: left;
+
+    padding:
+        13px 15px;
+
+    font-size: 12px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+.assessment-table td {
+
+    padding: 15px;
+
+    border-top:
+        1px solid #edf0f4;
+
+    font-size: 14px;
+}
+
+
+.assessment-table tr:hover td {
+
+    background: #f8fafc;
+}
+
+
+.score-cell {
+
+    text-align: right;
+
+    font-weight: 800;
+
+    color: #182848;
+}
+
+
+.weighted-row td {
+
+    background: #eef2ff !important;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   COMMENTS
+   ========================================================= */
+
+.comment-box {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7ed,
+            #fffbeb
+        );
+
+    border-left:
+        5px solid #f59e0b;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    color: #4b5563;
+
+    line-height: 1.65;
+
+    font-size: 15px;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.info-box {
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    line-height: 1.7;
+
+    color: #475569;
+
+    font-size: 14px;
 }
 
 
@@ -751,7 +787,20 @@ body {
 
         border-radius: 19px;
 
-        padding: 22px 18px;
+        padding:
+            22px 18px;
+    }
+
+    .header-top {
+
+        display: block;
+    }
+
+    .date {
+
+        text-align: left;
+
+        margin-top: 12px;
     }
 
     .class-title {
@@ -772,7 +821,8 @@ body {
 
     .result-card {
 
-        padding: 15px 8px;
+        padding:
+            15px 8px;
     }
 
     .result-value {
@@ -809,9 +859,9 @@ body {
 <body>
 
 
-<!-- ======================================================
+<!-- =======================================================
      LOGIN
-     ====================================================== -->
+     ======================================================= -->
 
 <div
     id="loginPage"
@@ -824,7 +874,7 @@ body {
             FZIS
         </div>
 
-        <h1>
+        <h1 id="loginClassName">
             FZIS Intermediate Class 2026
         </h1>
 
@@ -833,74 +883,44 @@ body {
         </h2>
 
         <p>
-
-            Enter your personal
-            six-character access code
-            to view your report.
-
+            Enter your personal six-character
+            access code to view your report.
         </p>
 
-
         <input
-
             id="code"
-
             class="code-input"
-
             type="password"
-
             placeholder="ACCESS CODE"
-
             maxlength="6"
-
             autocomplete="off"
-
         >
-
 
         <button
-
             id="openButton"
-
             class="open-button"
-
             onclick="openReport()"
-
         >
-
             View My Report
-
         </button>
-
-
-        <div
-            id="error"
-            class="error"
-        >
-
-            Unable to access assessment data.
-
-            Please check that the online
-            spreadsheet is publicly readable.
-
-        </div>
-
 
         <div
             id="loading"
             class="loading"
         >
-
-            Results are read directly from
-            the online assessment spreadsheet.
-
+            Loading assessment data...
         </div>
 
+        <div
+            id="error"
+            class="error"
+        >
+            Unable to access assessment data.
+        </div>
 
         <div class="small-note">
 
-            Your access code is personal and
-            should not be shared with other students.
+            Results will be updated as homework / quizzes are completed.
 
         </div>
 
@@ -909,479 +929,486 @@ body {
 </div>
 
 
-<!-- ======================================================
+<!-- =======================================================
      REPORT
-     ====================================================== -->
+     ======================================================= -->
 
-<div
-    id="reportPage"
-    style="display:none;"
->
+<div id="reportPage">
 
-    <div class="page">
+<div class="page">
 
 
-        <div class="header">
+    <!-- HEADER -->
 
-            <div class="school-title">
-                FZIS
-            </div>
+    <div class="header">
 
-            <div
-                id="classTitle"
-                class="class-title"
-            >
-                FZIS Intermediate Class 2026
-            </div>
+        <div class="header-top">
 
-            <div
-                id="studentName"
-                class="student-name"
-            >
-            </div>
+            <div>
 
-            <div
-                id="reportDate"
-                class="date"
-            >
-            </div>
-
-        </div>
-
-
-        <!-- ==================================================
-             SUMMARY
-             ================================================== -->
-
-        <div class="hero">
-
-            <div class="results-title">
-                Current Academic Progress
-            </div>
-
-
-            <div class="result-grid">
-
-
-                <div class="result-card">
-
-                    <div class="result-label">
-                        Weighted Percentage
-                    </div>
-
-                    <div
-                        id="weightedScore"
-                        class="result-value"
-                    >
-                    </div>
-
+                <div class="school-title">
+                    FZIS
                 </div>
-
 
                 <div
-                    id="gradeCard"
-                    class="result-card"
+                    id="reportClassName"
+                    class="class-title"
                 >
-
-                    <div class="result-label">
-                        Grade
-                    </div>
-
-                    <div
-                        id="gradeValue"
-                        class="result-value"
-                    >
-                    </div>
-
                 </div>
 
-
-                <div class="result-card">
-
-                    <div class="result-label">
-                        Class Rank
-                    </div>
-
-                    <div
-                        id="rankValue"
-                        class="result-value"
-                    >
-                    </div>
-
+                <div
+                    id="reportStudentName"
+                    class="student-name"
+                >
                 </div>
 
+            </div>
 
-                <div class="result-card">
+            <div class="date">
 
-                    <div class="result-label">
-                        Percentile
-                    </div>
+                Progress Report
 
-                    <div
-                        id="percentileValue"
-                        class="result-value"
-                    >
-                    </div>
+                <br>
 
-                </div>
-
+                <span
+                    id="reportDate"
+                >
+                </span>
 
             </div>
 
         </div>
 
+    </div>
 
-        <!-- ==================================================
-             COMMENT
-             ================================================== -->
 
-        <div class="section">
+    <!-- RESULTS -->
 
-            <div class="section-heading">
+    <div class="hero">
 
-                <div class="section-title">
-                    Teacher's Comment
+        <div class="results-title">
+            Current Academic Progress
+        </div>
+
+        <div class="result-grid">
+
+
+            <div class="result-card">
+
+                <div class="result-label">
+                    Weighted Percentage
+                </div>
+
+                <div
+                    id="weightedPercentage"
+                    class="result-value"
+                >
                 </div>
 
             </div>
 
 
             <div
-                id="comment"
-                class="comment-box"
+                id="gradeCard"
+                class="result-card"
             >
-            </div>
 
-        </div>
-
-
-        <!-- ==================================================
-             SEMESTER 1
-             ================================================== -->
-
-        <div class="section">
-
-            <div class="section-heading">
-
-                <div class="section-title">
-                    Semester 1 Results
+                <div class="result-label">
+                    Grade
                 </div>
 
-                <div class="semester-badge badge-sem1">
-                    Current Results
+                <div
+                    id="grade"
+                    class="result-value"
+                >
                 </div>
 
             </div>
 
 
-            <div class="table-wrapper">
+            <div class="result-card">
 
-                <table class="assessment-table">
+                <div class="result-label">
+                    Class Rank
+                </div>
 
-                    <thead>
-
-                        <tr>
-
-                            <th>
-                                Assessment
-                            </th>
-
-                            <th
-                                style="text-align:right;"
-                            >
-                                Result
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody
-                        id="semester1Body"
-                    >
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-
-        <!-- ==================================================
-             CALCULATION
-             ================================================== -->
-
-        <div class="section">
-
-            <div class="section-heading">
-
-                <div class="section-title">
-                    How the Result is Calculated
+                <div
+                    id="rank"
+                    class="result-value"
+                >
                 </div>
 
             </div>
 
 
-            <div class="info-box">
+            <div class="result-card">
 
-                <strong>
-                    Semester 1 weighting:
-                </strong>
+                <div class="result-label">
+                    Percentile
+                </div>
 
-                <br><br>
-
-                Closed Book Assessment:
-                <strong>80%</strong>
-
-                <br>
-
-                Open Book Assessment:
-                <strong>10%</strong>
-
-                <br>
-
-                Other Semester 1 assessments:
-                <strong>10%</strong>
-
-                <br><br>
-
-                Missing Semester 1 assessment
-                values are treated as zero.
-
-                <br><br>
-
-                <strong>
-                    Grade boundaries:
-                </strong>
-
-                <br>
-
-                80% and above = A
-
-                <br>
-
-                65% and above = B
-
-                <br>
-
-                50% and above = C
-
-                <br>
-
-                Below 50% = C
-
-                <br><br>
-
-                <strong>
-                    Percentile is displayed for
-                    information only.
-                </strong>
-
-                It is not used to calculate
-                the weighted percentage,
-                grade or rank.
+                <div
+                    id="percentile"
+                    class="result-value"
+                >
+                </div>
 
             </div>
 
+
         </div>
 
+    </div>
 
-        <!-- ==================================================
-             SEMESTER 2
-             ================================================== -->
+
+    <!-- COMMENT -->
+
+    <div class="section">
+
+        <div class="section-heading">
+
+            <div class="section-title">
+                Teacher's Comment
+            </div>
+
+        </div>
 
         <div
-            id="semester2Section"
-            class="section"
-            style="display:none;"
+            id="comment"
+            class="comment-box"
         >
+        </div>
 
-            <div class="section-heading">
+    </div>
 
-                <div class="section-title">
-                    Semester 2 Results
-                </div>
 
-                <div class="semester-badge badge-sem2">
-                    Results Only
-                </div>
+    <!-- SEMESTER 1 -->
 
+    <div class="section">
+
+        <div class="section-heading">
+
+            <div class="section-title">
+                Semester 1 Results
             </div>
-
-
-            <div class="table-wrapper">
-
-                <table class="assessment-table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-                                Assessment
-                            </th>
-
-                            <th
-                                style="text-align:right;"
-                            >
-                                Result
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody
-                        id="semester2Body"
-                    >
-                    </tbody>
-
-                </table>
-
-            </div>
-
 
             <div
-                class="info-box"
-                style="margin-top:15px;"
+                class="semester-badge
+                       badge-sem1"
+            >
+                Included in Grade
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table
+                class="assessment-table"
             >
 
-                Semester 2 results are shown
-                for progress monitoring only.
+                <thead>
 
-                <br><br>
+                    <tr>
 
-                They are not included in the
-                current weighted percentage,
-                grade, rank or percentile.
+                        <th>
+                            Assessment
+                        </th>
 
+                        <th
+                            style="
+                                text-align:right;
+                            "
+                        >
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody
+                    id="semester1Table"
+                >
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- CALCULATION -->
+
+    <div class="section">
+
+        <div class="section-heading">
+
+            <div class="section-title">
+                How the Result is Calculated
             </div>
 
         </div>
 
-
-        <!-- ==================================================
-             RANK NOTICE
-             ================================================== -->
-
-        <div class="section">
-
-            <div class="info-box">
-
-                <strong>
-                    Important:
-                </strong>
-
-                <br><br>
-
-                Rankings may change as additional
-                assessment results are added.
-
-                This page will be updated
-                throughout the year.
-
-                <br><br>
-
-                Your rank is based on your
-                current weighted percentage
-                compared with the other
-                students in the class.
-
-            </div>
-
-        </div>
-
-
-        <div class="footer">
+        <div class="info-box">
 
             <strong>
-                FZIS Intermediate Class 2026
+                Semester 1 weighting:
+            </strong>
+
+            <br><br>
+
+            Closed Book Assessment:
+            <strong>80%</strong>
+
+            <br>
+
+            Open Book Assessment:
+            <strong>10%</strong>
+
+            <br>
+
+            Other Semester 1 assessments:
+            <strong>10%</strong>
+
+            <br><br>
+
+            Missing Semester 1 assessment
+            values are treated as zero.
+
+            <br><br>
+
+            <strong>
+                Grade boundaries:
             </strong>
 
             <br>
 
-            Student Assessment Progress Report
+            80% and above = A
+
+            <br>
+
+            65% and above = B
+
+            <br>
+
+            50% and above = C
+
+            <br>
+
+            Below 50% = C
 
             <br><br>
 
-            This report is confidential and
-            intended for the student and their
-            parent/guardian.
+            <strong>
+                Percentile is displayed for
+                information only.
+            </strong>
+
+            It is not used to calculate the
+            weighted percentage, grade or rank.
+
+        </div>
+
+    </div>
+
+
+    <!-- SEMESTER 2 -->
+
+    <div
+        id="semester2Section"
+        class="section"
+        style="display:none;"
+    >
+
+        <div class="section-heading">
+
+            <div class="section-title">
+                Semester 2 Results
+            </div>
+
+            <div
+                class="semester-badge
+                       badge-sem2"
+            >
+                Results Only
+            </div>
 
         </div>
 
 
+        <div class="table-wrapper">
+
+            <table
+                class="assessment-table"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Assessment
+                        </th>
+
+                        <th
+                            style="
+                                text-align:right;
+                            "
+                        >
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody
+                    id="semester2Table"
+                >
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            style="
+                margin-top:15px;
+                color:#64748b;
+                font-size:13px;
+                line-height:1.6;
+            "
+        >
+
+            Semester 2 results are shown for
+            progress monitoring only.
+
+            They are not included in the
+            current weighted percentage,
+            grade, rank or percentile.
+
+        </div>
+
     </div>
+
+
+    <!-- RANKING -->
+
+    <div class="section">
+
+        <div class="info-box">
+
+            <strong>
+                Important:
+            </strong>
+
+            <br><br>
+
+            Rankings may change as additional
+            assessment results are added.
+
+            This page will be updated
+            throughout the year.
+
+            <br><br>
+
+            Your rank is based on your current
+            weighted percentage compared with
+            the other students in the class.
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <strong>
+            FZIS Intermediate Class 2026
+        </strong>
+
+        <br>
+
+        Student Assessment Progress Report
+
+        <br><br>
+
+        This report is confidential and
+        intended for the student and their
+        parent/guardian.
+
+    </div>
+
+
+</div>
 
 </div>
 
 
 <script>
 
+/* =========================================================
+   GOOGLE APPS SCRIPT URL
+   ========================================================= */
 
-// ============================================================
-// CONFIGURATION
-// ============================================================
-
-const GOOGLE_SHEET_ID =
-    "1waT8WcdBTBfCSCLavh8vGS2I23PzxUma4poIMCV7xQA";
-
-
-const STUDENT_COLUMN =
-    "Student";
+const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyBcDrtffJHchkdGK6UearJylgnSpm3aUNiQGcJOQCyQSpMd5_fhPLtjcKJgWXWR3pU7w/exec";
 
 
-const COMMENT_COLUMN =
-    "Comments";
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const codeInput =
+    document.getElementById(
+        "code"
+    );
+
+const openButton =
+    document.getElementById(
+        "openButton"
+    );
+
+const errorBox =
+    document.getElementById(
+        "error"
+    );
+
+const loadingBox =
+    document.getElementById(
+        "loading"
+    );
 
 
-const CLOSED_BOOK_COLUMN =
-    "Closed Book Assessment";
+/* =========================================================
+   ENTER KEY
+   ========================================================= */
+
+codeInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            openReport();
+
+        }
+
+    }
+);
 
 
-const OPEN_BOOK_COLUMN =
-    "Open Book Assessment";
-
-
-const CLOSED_BOOK_WEIGHT =
-    0.80;
-
-
-const OPEN_BOOK_WEIGHT =
-    0.10;
-
-
-const OTHER_WEIGHT =
-    0.10;
-
-
-const GRADE_A =
-    80;
-
-
-const GRADE_B =
-    65;
-
-
-const GRADE_C =
-    50;
-
-
-// ============================================================
-// GLOBAL DATA
-// ============================================================
-
-let assessmentData = null;
-
-let loadingPromise = null;
-
-
-// ============================================================
-// ESCAPE HTML
-// ============================================================
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
 
 function escapeHtml(value) {
 
@@ -1389,1181 +1416,329 @@ function escapeHtml(value) {
         value === null ||
         value === undefined
     ) {
+
         return "";
+
     }
 
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
 }
 
 
-// ============================================================
-// CONVERT SCORE
-// ============================================================
+/* =========================================================
+   FORMAT SCORE
+   ========================================================= */
 
-function convertScore(value) {
-
-    if (
-        value === null ||
-        value === undefined
-    ) {
-        return 0;
-    }
-
-
-    let text =
-        String(value).trim();
-
-
-    if (text === "") {
-        return 0;
-    }
-
-
-    // Percentage
-
-    if (
-        text.includes("%")
-    ) {
-
-        const match =
-            text.match(
-                /-?\d+\.?\d*/
-            );
-
-        if (match) {
-
-            return parseFloat(
-                match[0]
-            );
-        }
-
-        return 0;
-    }
-
-
-    // Fraction
-
-    const fraction =
-        text.match(
-            /(-?\d+\.?\d*)\s*\/\s*(-?\d+\.?\d*)/
-        );
-
-
-    if (fraction) {
-
-        const obtained =
-            parseFloat(
-                fraction[1]
-            );
-
-
-        const total =
-            parseFloat(
-                fraction[2]
-            );
-
-
-        if (
-            total > 0
-        ) {
-
-            return (
-                obtained /
-                total
-            ) * 100;
-        }
-
-        return 0;
-    }
-
-
-    // Number
+function formatScore(value) {
 
     const number =
-        text.match(
-            /-?\d+\.?\d*/
-        );
-
-
-    if (number) {
-
-        return parseFloat(
-            number[0]
-        );
-    }
-
-
-    return 0;
-}
-
-
-// ============================================================
-// GRADE
-// ============================================================
-
-function calculateGrade(
-    percentage
-) {
+        Number(value);
 
     if (
-        percentage >= GRADE_A
+        Number.isNaN(number)
     ) {
 
-        return "A";
+        return "0.0%";
 
     }
 
-
-    if (
-        percentage >= GRADE_B
-    ) {
-
-        return "B";
-
-    }
-
-
-    if (
-        percentage >= GRADE_C
-    ) {
-
-        return "C";
-
-    }
-
-
-    return "C";
-}
-
-
-// ============================================================
-// NORMALISE NAME
-// ============================================================
-
-function normaliseName(
-    value
-) {
-
-    return String(
-        value || ""
-    )
-    .trim()
-    .toLowerCase();
-
-}
-
-
-// ============================================================
-// JSONP CALLBACK
-//
-// Google GViz calls this function.
-// ============================================================
-
-window.receiveGoogleSheetData =
-function(response) {
-
-    try {
-
-        if (
-            !response ||
-            !response.table
-        ) {
-
-            throw new Error(
-                "Google Sheets returned no table."
-            );
-        }
-
-
-        const table =
-            response.table;
-
-
-        const columns =
-            table.cols.map(
-                function(col) {
-
-                    return (
-                        col.label ||
-                        ""
-                    ).trim();
-
-                }
-            );
-
-
-        const rows = [];
-
-
-        table.rows.forEach(
-            function(row) {
-
-                const record = {};
-
-
-                columns.forEach(
-                    function(column, index) {
-
-                        if (
-                            !column
-                        ) {
-                            return;
-                        }
-
-
-                        let value = "";
-
-
-                        if (
-                            row.c &&
-                            row.c[index]
-                        ) {
-
-                            const cell =
-                                row.c[index];
-
-
-                            if (
-                                cell.v !== null &&
-                                cell.v !== undefined
-                            ) {
-
-                                value =
-                                    cell.v;
-                            }
-
-                            else if (
-                                cell.f !== null &&
-                                cell.f !== undefined
-                            ) {
-
-                                value =
-                                    cell.f;
-                            }
-
-                        }
-
-
-                        record[column] =
-                            value;
-
-                    }
-                );
-
-
-                if (
-                    record[STUDENT_COLUMN] !==
-                    undefined &&
-                    String(
-                        record[STUDENT_COLUMN]
-                    ).trim() !== ""
-                ) {
-
-                    rows.push(
-                        record
-                    );
-                }
-
-            }
-        );
-
-
-        if (
-            rows.length === 0
-        ) {
-
-            throw new Error(
-                "No student records found."
-            );
-        }
-
-
-        assessmentData = {
-
-            columns: columns,
-
-            rows: rows
-
-        };
-
-
-        if (
-            loadingPromise
-        ) {
-
-            loadingPromise.resolve(
-                assessmentData
-            );
-
-        }
-
-    }
-
-    catch(error) {
-
-        if (
-            loadingPromise
-        ) {
-
-            loadingPromise.reject(
-                error
-            );
-
-        }
-
-    }
-
-};
-
-
-// ============================================================
-// LOAD GOOGLE SHEET
-//
-// IMPORTANT:
-//
-// No fetch() is used.
-//
-// A script element loads the GViz JSONP response.
-//
-// This works much better with GitHub Pages.
-// ============================================================
-
-function loadGoogleSheet() {
-
-    if (
-        assessmentData
-    ) {
-
-        return Promise.resolve(
-            assessmentData
-        );
-    }
-
-
-    if (
-        loadingPromise &&
-        loadingPromise.promise
-    ) {
-
-        return (
-            loadingPromise.promise
-        );
-    }
-
-
-    let resolvePromise;
-
-    let rejectPromise;
-
-
-    const promise =
-        new Promise(
-            function(resolve, reject) {
-
-                resolvePromise =
-                    resolve;
-
-                rejectPromise =
-                    reject;
-
-            }
-        );
-
-
-    loadingPromise = {
-
-        promise:
-            promise,
-
-        resolve:
-            resolvePromise,
-
-        reject:
-            rejectPromise
-
-    };
-
-
-    const callbackName =
-        "receiveGoogleSheetData";
-
-
-    const url =
-        "https://docs.google.com/spreadsheets/d/"
+    return (
+        number.toFixed(1)
         +
-        encodeURIComponent(
-            GOOGLE_SHEET_ID
-        )
-        +
-        "/gviz/tq?"
-        +
-        "tqx="
-        +
-        encodeURIComponent(
-            "responseHandler:" +
-            callbackName
-        )
-        +
-        "&headers=1";
-
-
-    const script =
-        document.createElement(
-            "script"
-        );
-
-
-    script.src = url;
-
-    script.async = true;
-
-
-    script.onerror =
-        function() {
-
-            rejectPromise(
-                new Error(
-                    "Google Sheets could not be loaded."
-                )
-            );
-
-        };
-
-
-    document.head.appendChild(
-        script
+        "%"
     );
 
-
-    return promise;
 }
 
 
-// ============================================================
-// PREPARE DATA
-// ============================================================
+/* =========================================================
+   FORMAT WEIGHTED
+   ========================================================= */
 
-function prepareData(
-    rawData
-) {
+function formatWeighted(value) {
 
-    const columns =
-        rawData.columns;
-
-
-    const rows =
-        rawData.rows;
-
-
-    const commentsIndex =
-        columns.indexOf(
-            COMMENT_COLUMN
-        );
-
+    const number =
+        Number(value);
 
     if (
-        commentsIndex === -1
+        Number.isNaN(number)
     ) {
 
-        throw new Error(
-            "Comments column was not found."
-        );
-    }
-
-
-    const semester1Columns =
-        columns.slice(
-            0,
-            commentsIndex
-        );
-
-
-    const semester1Assessments =
-        semester1Columns.filter(
-            function(column) {
-
-                return (
-                    column !==
-                    STUDENT_COLUMN
-                );
-
-            }
-        );
-
-
-    const semester2Columns =
-        columns.slice(
-            commentsIndex + 1
-        );
-
-
-    const students = [];
-
-
-    rows.forEach(
-        function(row) {
-
-            const student =
-                String(
-                    row[STUDENT_COLUMN] ||
-                    ""
-                ).trim();
-
-
-            if (
-                !student
-            ) {
-                return;
-            }
-
-
-            const converted =
-                {};
-
-
-            converted[
-                STUDENT_COLUMN
-            ] = student;
-
-
-            converted[
-                COMMENT_COLUMN
-            ] =
-                row[
-                    COMMENT_COLUMN
-                ] || "";
-
-
-            semester1Assessments
-                .forEach(
-                    function(column) {
-
-                        converted[column] =
-                            convertScore(
-                                row[column]
-                            );
-
-                    }
-                );
-
-
-            semester2Columns
-                .forEach(
-                    function(column) {
-
-                        converted[column] =
-                            convertScore(
-                                row[column]
-                            );
-
-                    }
-                );
-
-
-            // --------------------------------------------
-            // CLOSED BOOK
-            // --------------------------------------------
-
-            const closed =
-                converted[
-                    CLOSED_BOOK_COLUMN
-                ] || 0;
-
-
-            // --------------------------------------------
-            // OPEN BOOK
-            // --------------------------------------------
-
-            const openBook =
-                converted[
-                    OPEN_BOOK_COLUMN
-                ] || 0;
-
-
-            // --------------------------------------------
-            // OTHER ASSESSMENTS
-            // --------------------------------------------
-
-            const otherColumns =
-                semester1Assessments.filter(
-                    function(column) {
-
-                        return (
-                            column !==
-                            CLOSED_BOOK_COLUMN &&
-                            column !==
-                            OPEN_BOOK_COLUMN
-                        );
-
-                    }
-                );
-
-
-            let otherAverage = 0;
-
-
-            if (
-                otherColumns.length > 0
-            ) {
-
-                let total = 0;
-
-
-                otherColumns.forEach(
-                    function(column) {
-
-                        total +=
-                            converted[column] || 0;
-
-                    }
-                );
-
-
-                otherAverage =
-                    total /
-                    otherColumns.length;
-            }
-
-
-            // --------------------------------------------
-            // WEIGHTED SCORE
-            // --------------------------------------------
-
-            const weighted =
-                (
-                    closed *
-                    CLOSED_BOOK_WEIGHT
-                )
-                +
-                (
-                    openBook *
-                    OPEN_BOOK_WEIGHT
-                )
-                +
-                (
-                    otherAverage *
-                    OTHER_WEIGHT
-                );
-
-
-            converted[
-                "Weighted Percentage"
-            ] =
-                Math.round(
-                    weighted * 100
-                ) / 100;
-
-
-            converted[
-                "Grade"
-            ] =
-                calculateGrade(
-                    converted[
-                        "Weighted Percentage"
-                    ]
-                );
-
-
-            students.push(
-                converted
-            );
-
-        }
-    );
-
-
-    // ========================================================
-    // RANK
-    // ========================================================
-
-    const sorted =
-        [...students].sort(
-            function(a, b) {
-
-                return (
-                    b[
-                        "Weighted Percentage"
-                    ]
-                    -
-                    a[
-                        "Weighted Percentage"
-                    ]
-                );
-
-            }
-        );
-
-
-    sorted.forEach(
-        function(student, index) {
-
-            if (
-                index === 0
-            ) {
-
-                student[
-                    "Rank"
-                ] = 1;
-
-                return;
-            }
-
-
-            const previous =
-                sorted[
-                    index - 1
-                ];
-
-
-            if (
-                student[
-                    "Weighted Percentage"
-                ]
-                ===
-                previous[
-                    "Weighted Percentage"
-                ]
-            ) {
-
-                student[
-                    "Rank"
-                ] =
-                    previous[
-                        "Rank"
-                    ];
-
-            }
-
-            else {
-
-                student[
-                    "Rank"
-                ] =
-                    index + 1;
-
-            }
-
-        }
-    );
-
-
-    // ========================================================
-    // PERCENTILE
-    // ========================================================
-
-    const totalStudents =
-        students.length;
-
-
-    students.forEach(
-        function(student) {
-
-            if (
-                totalStudents <= 1
-            ) {
-
-                student[
-                    "Percentile"
-                ] = 100;
-
-                return;
-            }
-
-
-            let below =
-                0;
-
-
-            students.forEach(
-                function(other) {
-
-                    if (
-                        other[
-                            "Weighted Percentage"
-                        ]
-                        <=
-                        student[
-                            "Weighted Percentage"
-                        ]
-                    ) {
-
-                        below++;
-                    }
-
-                }
-            );
-
-
-            student[
-                "Percentile"
-            ] =
-                Math.round(
-                    (
-                        below /
-                        totalStudents
-                    )
-                    *
-                    1000
-                )
-                / 10;
-
-        }
-    );
-
-
-    return {
-
-        columns:
-            columns,
-
-        semester1:
-            semester1Assessments,
-
-        semester2:
-            semester2Columns,
-
-        students:
-            students,
-
-        total:
-            totalStudents
-
-    };
-}
-
-
-// ============================================================
-// FIND STUDENT BY PASSCODE
-// ============================================================
-//
-// IMPORTANT:
-//
-// The browser cannot safely know SECRET_KEY.
-// Therefore the passcode lookup is performed using a
-// deterministic SHA-256 calculation in the browser.
-//
-// The same algorithm is used in Python.
-//
-// ============================================================
-
-async function sha256Hex(
-    text
-) {
-
-    const encoder =
-        new TextEncoder();
-
-
-    const data =
-        encoder.encode(
-            text
-        );
-
-
-    const hash =
-        await crypto.subtle.digest(
-            "SHA-256",
-            data
-        );
-
-
-    const bytes =
-        new Uint8Array(
-            hash
-        );
-
-
-    return Array.from(
-        bytes
-    )
-    .map(
-        function(byte) {
-
-            return byte
-                .toString(16)
-                .padStart(
-                    2,
-                    "0"
-                );
-
-        }
-    )
-    .join("");
-}
-
-
-// ============================================================
-// FIND STUDENT
-// ============================================================
-//
-// IMPORTANT SECURITY NOTE:
-//
-// Because this is a static GitHub Pages site, the secret
-// key must exist in the browser if the browser itself is
-// calculating passcodes.
-//
-// This is NOT suitable for high-security/private data.
-//
-// It is appropriate as an access-code convenience layer,
-// but anyone technically inspecting the page could obtain
-// the data source.
-//
-// ============================================================
-
-const SECRET_KEY =
-    "FZIS_Student_Report_2026";
-
-
-async function findStudentByCode(
-    code,
-    data
-) {
-
-    const cleanCode =
-        String(
-            code || ""
-        )
-        .trim()
-        .toUpperCase();
-
-
-    if (
-        cleanCode.length !== 6
-    ) {
-
-        return null;
-    }
-
-
-    for (
-        const student of
-        data.students
-    ) {
-
-        const name =
-            String(
-                student[
-                    STUDENT_COLUMN
-                ]
-            )
-            .trim()
-            .toLowerCase();
-
-
-        const text =
-            SECRET_KEY +
-            name;
-
-
-        const hash =
-            await sha256Hex(
-                text
-            );
-
-
-        const generated =
-            hash
-                .substring(
-                    0,
-                    6
-                )
-                .toUpperCase();
-
-
-        if (
-            generated ===
-            cleanCode
-        ) {
-
-            return student;
-        }
+        return "0.00%";
 
     }
 
+    return (
+        number.toFixed(2)
+        +
+        "%"
+    );
 
-    return null;
 }
 
 
-// ============================================================
-// OPEN REPORT
-// ============================================================
+/* =========================================================
+   OPEN REPORT
+   ========================================================= */
 
 async function openReport() {
 
-    const codeInput =
-        document.getElementById(
-            "code"
-        );
-
-
-    const error =
-        document.getElementById(
-            "error"
-        );
-
-
-    const loading =
-        document.getElementById(
-            "loading"
-        );
-
-
-    const button =
-        document.getElementById(
-            "openButton"
-        );
-
-
-    error.style.display =
+    errorBox.style.display =
         "none";
 
 
-    const code =
+    const enteredCode =
         codeInput.value
-        .trim()
-        .toUpperCase();
+            .trim()
+            .toUpperCase();
 
 
     if (
-        code.length !== 6
+        enteredCode.length !== 6
     ) {
 
-        error.innerText =
-            "Please enter your six-character access code.";
-
-        error.style.display =
-            "block";
+        showError(
+            "Please enter your complete six-character access code."
+        );
 
         return;
+
     }
 
 
-    button.disabled =
+    if (
+        !APPS_SCRIPT_URL ||
+        APPS_SCRIPT_URL.indexOf(
+            "/exec"
+        ) === -1
+    ) {
+
+        showError(
+            "Google Apps Script URL has not been configured."
+        );
+
+        return;
+
+    }
+
+
+    openButton.disabled =
         true;
 
-
-    loading.innerText =
-        "Reading the latest results from the online spreadsheet...";
+    loadingBox.style.display =
+        "block";
 
 
     try {
 
-        // --------------------------------------------
-        // Load live spreadsheet
-        // --------------------------------------------
+        /*
+         * The Apps Script returns:
+         *
+         * {
+         *     success: true,
+         *     className: "...",
+         *     generatedAt: "...",
+         *     students: [...]
+         * }
+         *
+         * Therefore we download the current data
+         * and then find the matching passcode.
+         */
 
-        const rawData =
-            await loadGoogleSheet();
+        const requestURL =
+            APPS_SCRIPT_URL
+            +
+            "?code="
+            +
+            encodeURIComponent(
+                enteredCode
+            )
+            +
+            "&t="
+            +
+            Date.now();
 
 
-        // --------------------------------------------
-        // Prepare calculations
-        // --------------------------------------------
+        const response =
+            await fetch(
+                requestURL,
+                {
+                    method: "GET",
 
-        const data =
-            prepareData(
-                rawData
-            );
+                    cache: "no-store",
 
-
-        // --------------------------------------------
-        // Find student
-        // --------------------------------------------
-
-        const student =
-            await findStudentByCode(
-                code,
-                data
+                    redirect: "follow"
+                }
             );
 
 
         if (
-            !student
+            !response.ok
         ) {
 
             throw new Error(
-                "INVALID_CODE"
+                "HTTP " +
+                response.status
             );
+
         }
 
 
-        // --------------------------------------------
-        // Display report
-        // --------------------------------------------
+        const data =
+            await response.json();
 
-        displayReport(
-            student,
+
+        console.log(
+            "Apps Script data:",
             data
         );
 
 
-    }
+        if (
+            !data ||
+            data.success !== true
+        ) {
 
-    catch(errorObject) {
+            throw new Error(
+                "Invalid Apps Script response."
+            );
 
-        console.error(
-            errorObject
-        );
+        }
 
 
         if (
-            errorObject.message ===
-            "INVALID_CODE"
+            !Array.isArray(
+                data.students
+            )
         ) {
 
-            error.innerText =
-                "Invalid access code. Please check your code and try again.";
-
-        }
-
-        else {
-
-            error.innerText =
-                "Unable to access assessment data. "
-                +
-                "Please check that the online spreadsheet is publicly readable.";
+            throw new Error(
+                "Students data was not returned."
+            );
 
         }
 
 
-        error.style.display =
-            "block";
+        /*
+         * Find student by permanent passcode.
+         */
+
+        const student =
+            data.students.find(
+                function(item) {
+
+                    return (
+                        String(
+                            item.passcode || ""
+                        )
+                        .trim()
+                        .toUpperCase()
+                        ===
+                        enteredCode
+                    );
+
+                }
+            );
 
 
-        loading.innerText =
-            "Results are read directly from the online assessment spreadsheet.";
+        if (!student) {
+
+            showError(
+                "Invalid access code. Please check your code and try again."
+            );
+
+            return;
+
+        }
+
+
+        displayReport(
+            data,
+            student
+        );
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Error:",
+            error
+        );
+
+
+        showError(
+            "Unable to access assessment data. " +
+            "Please check that the Google Apps Script is deployed correctly."
+        );
 
     }
 
 
     finally {
 
-        button.disabled =
+        openButton.disabled =
             false;
+
+        loadingBox.style.display =
+            "none";
 
     }
 
 }
 
 
-// ============================================================
-// DISPLAY REPORT
-// ============================================================
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+}
+
+
+/* =========================================================
+   DISPLAY REPORT
+   ========================================================= */
 
 function displayReport(
-    student,
-    data
+    data,
+    student
 ) {
 
-    // --------------------------------------------------------
-    // Hide login
-    // --------------------------------------------------------
 
     document.getElementById(
         "loginPage"
@@ -2577,31 +1752,66 @@ function displayReport(
         "block";
 
 
-    // --------------------------------------------------------
-    // Student
-    // --------------------------------------------------------
+    /* -----------------------------------------------------
+       Class
+       ----------------------------------------------------- */
+
+    const className =
+        data.className ||
+        "FZIS Intermediate Class 2026";
+
 
     document.getElementById(
-        "studentName"
-    ).innerText =
-        student[
-            STUDENT_COLUMN
-        ];
+        "reportClassName"
+    ).textContent =
+        className;
 
 
-    // --------------------------------------------------------
-    // Date
-    // --------------------------------------------------------
+    /* -----------------------------------------------------
+       Student
+       ----------------------------------------------------- */
 
-    const today =
+    document.getElementById(
+        "reportStudentName"
+    ).textContent =
+        student.student || "";
+
+
+    /* -----------------------------------------------------
+       Date
+       ----------------------------------------------------- */
+
+    let date =
         new Date();
+
+
+    if (
+        data.generatedAt
+    ) {
+
+        const parsed =
+            new Date(
+                data.generatedAt
+            );
+
+        if (
+            !Number.isNaN(
+                parsed.getTime()
+            )
+        ) {
+
+            date =
+                parsed;
+
+        }
+
+    }
 
 
     document.getElementById(
         "reportDate"
-    ).innerText =
-        "Progress Report • " +
-        today.toLocaleDateString(
+    ).textContent =
+        date.toLocaleDateString(
             "en-AU",
             {
                 day: "2-digit",
@@ -2611,37 +1821,31 @@ function displayReport(
         );
 
 
-    // --------------------------------------------------------
-    // Weighted
-    // --------------------------------------------------------
-
-    const weighted =
-        student[
-            "Weighted Percentage"
-        ];
-
+    /* -----------------------------------------------------
+       Weighted percentage
+       ----------------------------------------------------- */
 
     document.getElementById(
-        "weightedScore"
-    ).innerText =
-        weighted.toFixed(2)
-        +
-        "%";
+        "weightedPercentage"
+    ).textContent =
+        formatWeighted(
+            student.weightedPercentage
+        );
 
 
-    // --------------------------------------------------------
-    // Grade
-    // --------------------------------------------------------
+    /* -----------------------------------------------------
+       Grade
+       ----------------------------------------------------- */
 
     const grade =
-        student[
-            "Grade"
-        ];
+        String(
+            student.grade || ""
+        ).trim();
 
 
     document.getElementById(
-        "gradeValue"
-    ).innerText =
+        "grade"
+    ).textContent =
         grade;
 
 
@@ -2651,8 +1855,11 @@ function displayReport(
         );
 
 
-    gradeCard.className =
-        "result-card";
+    gradeCard.classList.remove(
+        "grade-a",
+        "grade-b",
+        "grade-c"
+    );
 
 
     if (
@@ -2684,81 +1891,143 @@ function displayReport(
     }
 
 
-    // --------------------------------------------------------
-    // Rank
-    // --------------------------------------------------------
+    /* -----------------------------------------------------
+       Rank
+       ----------------------------------------------------- */
 
-    document.getElementById(
-        "rankValue"
-    ).innerText =
-        student[
-            "Rank"
-        ]
-        +
-        "/"
-        +
-        data.total;
-
-
-    // --------------------------------------------------------
-    // Percentile
-    // --------------------------------------------------------
-
-    document.getElementById(
-        "percentileValue"
-    ).innerText =
+    const rank =
         Number(
-            student[
-                "Percentile"
-            ]
-        ).toFixed(1)
-        +
-        "%";
-
-
-    // --------------------------------------------------------
-    // Comment
-    // --------------------------------------------------------
-
-    let comment =
-        student[
-            COMMENT_COLUMN
-        ];
-
-
-    if (
-        comment === null ||
-        comment === undefined ||
-        String(comment).trim() === ""
-    ) {
-
-        comment =
-            "No comments provided.";
-    }
-
-
-    document.getElementById(
-        "comment"
-    ).innerText =
-        comment;
-
-
-    // --------------------------------------------------------
-    // Semester 1
-    // --------------------------------------------------------
-
-    const semester1Body =
-        document.getElementById(
-            "semester1Body"
+            student.rank
         );
 
 
-    semester1Body.innerHTML =
+    const totalStudents =
+        data.students.length;
+
+
+    document.getElementById(
+        "rank"
+    ).textContent =
+        (
+            Number.isNaN(rank)
+            ? ""
+            : rank +
+              "/" +
+              totalStudents
+        );
+
+
+    /* -----------------------------------------------------
+       Percentile
+       ----------------------------------------------------- */
+
+    const percentile =
+        Number(
+            student.percentile
+        );
+
+
+    document.getElementById(
+        "percentile"
+    ).textContent =
+        (
+            Number.isNaN(percentile)
+            ? ""
+            : percentile.toFixed(1)
+              +
+              "%"
+        );
+
+
+    /* -----------------------------------------------------
+       Comment
+       ----------------------------------------------------- */
+
+    document.getElementById(
+        "comment"
+    ).textContent =
+        (
+            student.comment &&
+            String(
+                student.comment
+            ).trim()
+        )
+        ?
+        String(
+            student.comment
+        )
+        :
+        "No comments provided.";
+
+
+    /* -----------------------------------------------------
+       Semester 1
+       ----------------------------------------------------- */
+
+    displaySemester1(
+        student.semester1 || {},
+        student.weightedPercentage
+    );
+
+
+    /* -----------------------------------------------------
+       Semester 2
+       ----------------------------------------------------- */
+
+    displaySemester2(
+        student.semester2 || {}
+    );
+
+}
+
+
+/* =========================================================
+   SEMESTER 1
+   ========================================================= */
+
+function displaySemester1(
+    semester1,
+    weightedPercentage
+) {
+
+    const table =
+        document.getElementById(
+            "semester1Table"
+        );
+
+
+    table.innerHTML =
         "";
 
 
-    data.semester1.forEach(
-        function(column) {
+    const assessments =
+        Object.entries(
+            semester1
+        );
+
+
+    if (
+        assessments.length === 0
+    ) {
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="2">
+                    No Semester 1 results available.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    assessments.forEach(
+        function([
+            name,
+            score
+        ]) {
 
             const row =
                 document.createElement(
@@ -2766,45 +2035,18 @@ function displayReport(
                 );
 
 
-            const nameCell =
-                document.createElement(
-                    "td"
-                );
+            row.innerHTML = `
+                <td>
+                    ${escapeHtml(name)}
+                </td>
+
+                <td class="score-cell">
+                    ${formatScore(score)}
+                </td>
+            `;
 
 
-            const scoreCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            nameCell.innerText =
-                column;
-
-
-            scoreCell.className =
-                "score-cell";
-
-
-            scoreCell.innerText =
-                Number(
-                    student[column] || 0
-                ).toFixed(1)
-                +
-                "%";
-
-
-            row.appendChild(
-                nameCell
-            );
-
-
-            row.appendChild(
-                scoreCell
-            );
-
-
-            semester1Body.appendChild(
+            table.appendChild(
                 row
             );
 
@@ -2812,9 +2054,9 @@ function displayReport(
     );
 
 
-    // --------------------------------------------------------
-    // Weighted row
-    // --------------------------------------------------------
+    /* -----------------------------------------------------
+       Weighted percentage
+       ----------------------------------------------------- */
 
     const weightedRow =
         document.createElement(
@@ -2826,165 +2068,105 @@ function displayReport(
         "weighted-row";
 
 
-    const weightedLabel =
-        document.createElement(
-            "td"
-        );
+    weightedRow.innerHTML = `
+        <td>
+            Final Weighted Percentage
+        </td>
+
+        <td class="score-cell">
+            ${formatWeighted(
+                weightedPercentage
+            )}
+        </td>
+    `;
 
 
-    weightedLabel.innerText =
-        "Final Weighted Percentage";
-
-
-    const weightedCell =
-        document.createElement(
-            "td"
-        );
-
-
-    weightedCell.className =
-        "score-cell";
-
-
-    weightedCell.innerText =
-        weighted.toFixed(2)
-        +
-        "%";
-
-
-    weightedRow.appendChild(
-        weightedLabel
-    );
-
-
-    weightedRow.appendChild(
-        weightedCell
-    );
-
-
-    semester1Body.appendChild(
+    table.appendChild(
         weightedRow
     );
 
+}
 
-    // --------------------------------------------------------
-    // Semester 2
-    // --------------------------------------------------------
 
-    const semester2Section =
+/* =========================================================
+   SEMESTER 2
+   ========================================================= */
+
+function displaySemester2(
+    semester2
+) {
+
+    const section =
         document.getElementById(
             "semester2Section"
         );
 
 
-    const semester2Body =
+    const table =
         document.getElementById(
-            "semester2Body"
+            "semester2Table"
         );
 
 
-    semester2Body.innerHTML =
+    table.innerHTML =
         "";
 
 
-    if (
-        data.semester2.length > 0
-    ) {
-
-        semester2Section.style.display =
-            "block";
-
-
-        data.semester2.forEach(
-            function(column) {
-
-                const row =
-                    document.createElement(
-                        "tr"
-                    );
-
-
-                const nameCell =
-                    document.createElement(
-                        "td"
-                    );
-
-
-                const scoreCell =
-                    document.createElement(
-                        "td"
-                    );
-
-
-                nameCell.innerText =
-                    column;
-
-
-                scoreCell.className =
-                    "score-cell";
-
-
-                scoreCell.innerText =
-                    Number(
-                        student[column] || 0
-                    ).toFixed(1)
-                    +
-                    "%";
-
-
-                row.appendChild(
-                    nameCell
-                );
-
-
-                row.appendChild(
-                    scoreCell
-                );
-
-
-                semester2Body.appendChild(
-                    row
-                );
-
-            }
+    const assessments =
+        Object.entries(
+            semester2
         );
 
-    }
 
-    else {
+    if (
+        assessments.length === 0
+    ) {
 
-        semester2Section.style.display =
+        section.style.display =
             "none";
 
+        return;
+
     }
+
+
+    section.style.display =
+        "block";
+
+
+    assessments.forEach(
+        function([
+            name,
+            score
+        ]) {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+                <td>
+                    ${escapeHtml(name)}
+                </td>
+
+                <td class="score-cell">
+                    ${formatScore(score)}
+                </td>
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
 
 }
 
-
-// ============================================================
-// ENTER KEY
-// ============================================================
-
-document.getElementById(
-    "code"
-).addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Enter"
-        ) {
-
-            openReport();
-
-        }
-
-    }
-);
-
-
 </script>
-
 
 </body>
 
