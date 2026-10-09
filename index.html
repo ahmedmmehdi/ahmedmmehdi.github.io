@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -15,41 +14,33 @@
   --text:#e5e7eb;
   --muted:#94a3b8;
 }
-
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:linear-gradient(180deg,#020617,var(--bg));
   color:var(--text);
 }
-
 header{
   padding:3rem 1.5rem 2rem;
   text-align:center;
 }
-
 header h1{
   font-size:clamp(2rem,5vw,2.6rem);
   margin:.4rem 0;
 }
-
 header h2{
   color:var(--muted);
   margin:.4rem 0 1.5rem;
   font-size:1.1rem;
   font-weight:400;
 }
-
 main{
   max-width:1050px;
   margin:0 auto;
   padding:1rem 1.5rem 4rem;
 }
-
 .card{
   background:linear-gradient(180deg,var(--card),#020617);
   border:1px solid rgba(148,163,184,.15);
@@ -57,7 +48,6 @@ main{
   padding:1.6rem;
   box-shadow:0 10px 25px rgba(0,0,0,.28);
 }
-
 .card-header{
   font-weight:700;
   color:var(--accent);
@@ -65,7 +55,6 @@ main{
   line-height:1.45;
   font-size:1.05rem;
 }
-
 .card-top{
   display:flex;
   gap:1.2rem;
@@ -73,14 +62,12 @@ main{
   align-items:flex-start;
   flex-wrap:wrap;
 }
-
 .card-logo{
   width:130px;
   max-width:32%;
   border-radius:10px;
   height:auto;
 }
-
 .card-text{
   font-size:.96rem;
   line-height:1.65;
@@ -88,13 +75,11 @@ main{
   min-width:180px;
   margin:0;
 }
-
 .card-links{
   display:flex;
   flex-wrap:wrap;
   gap:.55rem;
 }
-
 .card-links a{
   padding:.5rem .85rem;
   border-radius:999px;
@@ -104,9 +89,7 @@ main{
   background:var(--accent);
   color:#020617;
 }
-
 .card-links a[href=""]{display:none}
-
 .card-parents{
   margin-top:.9rem;
   padding-top:.7rem;
@@ -118,12 +101,10 @@ main{
   gap:.55rem;
   align-items:center;
 }
-
 .card-parents span{
   font-weight:700;
   color:var(--accent);
 }
-
 .card-parents a{
   border:1px solid rgba(56,189,248,.4);
   color:var(--accent);
@@ -133,7 +114,6 @@ main{
   font-weight:600;
   font-size:.76rem;
 }
-
 /* Top information boxes */
 .calendar-box{
   background:linear-gradient(180deg,var(--card),#020617);
@@ -144,28 +124,23 @@ main{
   border:1px solid rgba(148,163,184,.14);
   box-shadow:0 8px 22px rgba(0,0,0,.22);
 }
-
 .calendar-box h3{
   margin:0 0 .55rem;
   color:var(--accent);
   font-size:1rem;
 }
-
 .calendar-box a{
   color:var(--accent);
   font-weight:600;
   text-decoration:none;
   font-size:.88rem;
 }
-
 .calendar-box a:hover{text-decoration:underline}
-
 /* Current lesson */
 .current-section{
   max-width:950px;
   margin:0 auto 3rem;
 }
-
 .current-label{
   display:inline-block;
   margin-bottom:.8rem;
@@ -177,31 +152,26 @@ main{
   font-weight:800;
   letter-spacing:.08em;
 }
-
 .current-section .card{
   border:2px solid var(--accent);
   box-shadow:0 12px 35px rgba(56,189,248,.12);
 }
-
 /* Lesson archive */
 .lesson-archive{
   max-width:950px;
   margin:0 auto;
 }
-
 .lesson-archive > h2{
   text-align:center;
   margin:0;
   color:var(--accent);
   font-size:1.6rem;
 }
-
 .archive-intro{
   text-align:center;
   color:var(--muted);
   margin:.5rem 0 1.5rem;
 }
-
 .term-dropdown{
   margin-bottom:1rem;
   background:rgba(15,23,42,.75);
@@ -209,7 +179,6 @@ main{
   border-radius:16px;
   overflow:hidden;
 }
-
 .term-dropdown > summary{
   list-style:none;
   cursor:pointer;
@@ -221,25 +190,20 @@ main{
   align-items:center;
   justify-content:space-between;
 }
-
 .term-dropdown > summary::-webkit-details-marker,
 .week-dropdown > summary::-webkit-details-marker{
   display:none;
 }
-
 .term-dropdown > summary::after{
   content:"⌄";
   font-size:1.2rem;
   transition:transform .2s ease;
 }
-
 .term-dropdown[open] > summary::after{transform:rotate(180deg)}
-
 .week-list{
   padding:0 .8rem .8rem;
   border-top:1px solid rgba(148,163,184,.12);
 }
-
 .week-dropdown{
   margin:.7rem 0;
   background:rgba(2,6,23,.55);
@@ -247,7 +211,6 @@ main{
   border-radius:12px;
   overflow:hidden;
 }
-
 .week-dropdown > summary{
   list-style:none;
   cursor:pointer;
@@ -259,7 +222,6 @@ main{
   align-items:center;
   justify-content:space-between;
 }
-
 .week-dropdown > summary::after{
   content:"+";
   color:var(--accent);
@@ -267,21 +229,16 @@ main{
   margin-left:1rem;
   flex:0 0 auto;
 }
-
 .week-dropdown[open] > summary{
   color:var(--accent);
   border-bottom:1px solid rgba(148,163,184,.12);
 }
-
 .week-dropdown[open] > summary::after{content:"−"}
-
 .week-dropdown .card{
   margin:1rem;
   box-shadow:none;
 }
-
 .week-dropdown .card:hover{transform:none}
-
 footer{
   text-align:center;
   padding:1.5rem;
@@ -289,9 +246,7 @@ footer{
   border-top:1px solid rgba(148,163,184,.12);
   font-size:.85rem;
 }
-
 footer span{color:var(--accent)}
-
 @media(max-width:600px){
   header{padding:2rem 1rem 1.5rem}
   main{padding:1rem 1rem 3rem}
@@ -322,15 +277,16 @@ footer span{color:var(--accent)}
 </div>
 </header>
 <main>
-<section class="current-section"><div class="current-label">CURRENT LESSON</div><div class="card">
+<section class="current-section">
+<div class="current-label">CURRENT LESSON</div>
+<div class="card">
 <div class="card-header">
-    Term 3 - Week 9 · 19th September [7th Rabiʿ At-Thani 1448] · 
-    Towards a meaningful life
+    Term 3 - Week 9 · 19th September [7th Rabiʿ At-Thani 1448] · Towards a Meaningful Life
   </div>
 <div class="card-top">
 <img alt="Imam Sajjad (a.s.)" class="card-logo" src="logo_T9T3.jpeg"/>
 <p class="card-text">
-In last two weeks, we talked about Ibrahim and his journey of discovering the truth, including 
+In the last two weeks, we talked about Ibrahim and his journey of discovering the truth, including 
   his dream and the importance of looking beyond what we see on the surface and reflecting within ourselves. We asked, 
   “What is the purpose of my life?” and discussed how distractions, desires and attachments can become barriers that prevent us 
   from recognising and following our purpose. This week, we move from understanding our purpose to living according to it. 
@@ -341,35 +297,212 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
     </p>
 </div>
 <div class="card-links">
-<a href="The_Alchemist_s_Ledger.pdf">Slides </a>
-<a href="Protecting_Your_Melting_Capital_Guide.png">Lesson Infographic (current) </a>
-<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic (related to week 8) </a>
+<a href="The_Alchemist_s_Ledger.pdf">Slides</a>
+<a href="Protecting_Your_Melting_Capital_Guide.png">Lesson Infographic (current)</a>
+<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic (related to week 8)</a>
 <a href="The_Soul_s_Garden_Journey_Map.png">Lesson Infographic (related to Week 7)</a>
-  
-<a href="Towards_a_Meaninful_Life.pdf">Towards a meaninful life </a>
+<a href="Towards_a_Meaningful_Life.pdf">Towards a Meaningful Life</a>
 <a href="Term3Week9_Inter.pdf">Class Lecture Resource 2</a>
 </div>
 <div class="card-parents">
 <span>Parents Resources:</span>
 <a href="https://al-islam.org/media/10-great-ways-stay-positive-life">
-      Ten great ways to  stay positive in life (by Sheikh Mohammed Al-Hilli)
+      Ten great ways to stay positive in life (by Sheikh Mohammed Al-Hilli)
     </a>
 </div>
 <div class="card-parents">
 <span>HOME WORK - Interview an Adult:</span>
 <a href="https://forms.gle/PYhBS2R5KVemb7C59">
-      HomeWork/Interivew: Towards a Meaningful Life
+      Homework / Interview: Towards a Meaningful Life
     </a>
 </div>
-</div></section><section class="lesson-archive"><h2>Browse All Lessons</h2><p class="archive-intro">Select a term, then choose a week to view its lesson resources.</p><details class="term-dropdown" open=""><summary>Term 3 – 2026</summary><div class="week-list"><details class="week-dropdown"><summary>
-  Term 3 - Week 1 · 25th July [10th Safar  1448] · The Tragedy of Ashura and Its Aftermath: From Sacrifice to Captivity</summary><div class="card">
+</div>
+</section>
 
-<div class="card-header">Term 3 - Week 1 · 25th July [10th Safar  1448] · The Tragedy of Ashura and Its Aftermath: From Sacrifice to Captivity</div>
+<section class="lesson-archive">
+<h2>Browse All Lessons</h2>
+<p class="archive-intro">Select a term, then choose a week to view its lesson resources.</p>
+
+<!-- TERM 4 -->
+<details class="term-dropdown" open="">
+<summary>Term 4 – 2026</summary>
+<div class="week-list">
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 1 · 10th October [25th Rabiʿ ath-Thani 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 1 · 10th October [25th Rabiʿ ath-Thani 1448] · Coming Soon</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="AhlulBayt.png"/>
-<p class="card-text">In this lesson will be discuss and pass condolences to Ahlul Bayt following the tragedy of Karbala. The family of the Prophet was forced into captivity on camels without saddles, enduring extreme hunger, thirst, and freezing desert nights while being held outside the city of Kufa
-. On the 13th of Muharram, the tribe of Bani Asad buried the martyrs after Imam Sajjad miraculously appeared to help them identify and gather the remains of the fallen
-</p>
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 2 · 17th October [2nd Jumada al-Awwal 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 2 · 17th October [2nd Jumada al-Awwal 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 3 · 24th October [9th Jumada al-Awwal 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 3 · 24th October [9th Jumada al-Awwal 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 4 · 31st October [16th Jumada al-Awwal 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 4 · 31st October [16th Jumada al-Awwal 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 5 · 7th November [23rd Jumada al-Awwal 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 5 · 7th November [23rd Jumada al-Awwal 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 6 · 14th November [1st Jumada al-Thani 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 6 · 14th November [1st Jumada al-Thani 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 7 · 21st November [8th Jumada al-Thani 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 7 · 21st November [8th Jumada al-Thani 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 8 · 28th November [15th Jumada al-Thani 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 8 · 28th November [15th Jumada al-Thani 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 9 · 5th December [22nd Jumada al-Thani 1448] · Coming Soon</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 9 · 5th December [22nd Jumada al-Thani 1448] · Coming Soon</div>
+<div class="card-top">
+<img alt="Coming Soon" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">Lesson content and resources will be added here closer to the date. Stay tuned.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 4 - Week 10 · 12th December [29th Jumada al-Thani 1448] · End of Year / School Holidays</summary>
+<div class="card">
+<div class="card-header">Term 4 - Week 10 · 12th December [29th Jumada al-Thani 1448] · End of Year / School Holidays</div>
+<div class="card-top">
+<img alt="School Holidays" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">End of Term 4 and school year. Enjoy the holidays and may Allah accept your efforts throughout the year.</p>
+</div>
+<div class="card-links">
+<a href="">Slides</a>
+<a href="">Lesson Infographic</a>
+<a href="">Class Resources</a>
+</div>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- TERM 3 -->
+<details class="term-dropdown">
+<summary>Term 3 – 2026</summary>
+<div class="week-list">
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 1 · 25th July [10th Safar 1448] · The Tragedy of Ashura and Its Aftermath: From Sacrifice to Captivity</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 1 · 25th July [10th Safar 1448] · The Tragedy of Ashura and Its Aftermath: From Sacrifice to Captivity</div>
+<div class="card-top">
+<img alt="Ahlul Bayt" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">In this lesson we will discuss and pass condolences to Ahlul Bayt following the tragedy of Karbala. The family of the Prophet was forced into captivity on camels without saddles, enduring extreme hunger, thirst, and freezing desert nights while being held outside the city of Kufa. On the 13th of Muharram, the tribe of Bani Asad buried the martyrs after Imam Sajjad miraculously appeared to help them identify and gather the remains of the fallen.</p>
 </div>
 <div class="card-links">
 <a href="Shadows_and_Light_in_the_Desert.pdf">Slides</a>
@@ -377,16 +510,21 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 <a href="The Aftermath of Karbala_Part1.pdf">Class resource: Lesson 1 (Basic)</a>
 <a href="The Aftermath of Karbala_Part2.pdf">Class resource/Lesson 2 (Advanced)</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
-<a href="https://al-islam.org/karbala-and-ashura-ali-husayn-jalali/after-karb%C4%81la"> AhulBayt (AS) in the Palace of Ibn-e-Ziyad (LA)</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
+<a href="https://al-islam.org/karbala-and-ashura-ali-husayn-jalali/after-karb%C4%81la">AhlulBayt (AS) in the Palace of Ibn-e-Ziyad (LA)</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 2 · 1st August [17th Safar  1448] · Jaber Visits on the 40th</summary><div class="card">
-<div class="card-header">Term 3 - Week 2 · 1st August [17th Safar  1448] · Jaber Visits on the 40th</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 2 · 1st August [17th Safar 1448] · Jaber Visits on the 40th</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 2 · 1st August [17th Safar 1448] · Jaber Visits on the 40th</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Arbaeen__Jabir_and_Million_Pilgrims.png"/>
-<p class="card-text">The lesson chronicles the Ahlulbayt's arduous journey as captives from Karbala to Damascus, highlighting how their defiant sermons and the resistance they faced in various towns turned an intended Umayyad victory parade into a permanent moral defeat for the regime
-. It also examines the significance of Jabir ibn Abdullah al-Ansari, the first pilgrim to initiate the Ziyarat of Arba'een, and his historic meeting with the returning survivors at the grave of Imam Husayn
-</p>
+<img alt="Arbaeen" class="card-logo" src="Arbaeen__Jabir_and_Million_Pilgrims.png"/>
+<p class="card-text">The lesson chronicles the Ahlulbayt's arduous journey as captives from Karbala to Damascus, highlighting how their defiant sermons and the resistance they faced in various towns turned an intended Umayyad victory parade into a permanent moral defeat for the regime. It also examines the significance of Jabir ibn Abdullah al-Ansari, the first pilgrim to initiate the Ziyarat of Arba'een, and his historic meeting with the returning survivors at the grave of Imam Husayn.</p>
 </div>
 <div class="card-links">
 <a href="">Slides</a>
@@ -395,51 +533,66 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 <a href="Class Discussion_travel.pdf">Class Discussion Part1</a>
 <a href="Jaber_visits_Imam_Hussain.pdf">Class Discussion Part2</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/karbala-and-ashura-ali-husayn-jalali/map-imam-husayns-journey-karb%C4%81la%E2%80%B2">Map of Imam Husayn’s Journey to Karbāla</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/karbala-and-ashura-ali-husayn-jalali/map-imam-husayns-journey-karb%C4%81la%E2%80%B2">Map of Imam Husayn’s Journey to Karbāla</a>
 <a href="https://al-islam.org/karbala-and-ashura-ali-husayn-jalali/after-karb%C4%81la#journey-damascus">When Ahlul Bayt reach Shaam</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 3 · 8th August [24th Safar  1448] · Lecture1: The Miracles of Prophet (S). Lecture 2: Imam Sajjad Sermon in the Palace of Yazid</summary><div class="card">
-<div class="card-header">Term 3 - Week 3 · 8th August [24th Safar  1448] · Lecture1: The Miracles of Prophet (S). Lecture 2: Imam Sajjad Sermon in the Palace of Yazid</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 3 · 8th August [24th Safar 1448] · Lecture 1: The Miracles of Prophet (S). Lecture 2: Imam Sajjad Sermon in the Palace of Yazid</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 3 · 8th August [24th Safar 1448] · Lecture 1: The Miracles of Prophet (S). Lecture 2: Imam Sajjad Sermon in the Palace of Yazid</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Martyrdom_Propeht(AS)_Imam_Hassan.png"/>
-<p class="card-text">In this lesson on the occassion of Shahadat of Prophet Muhmmad (S) and Imam Hassan(AS), we will discuss the numerous miracles of Prophet Muhammad beyond the Holy Quran, addressing the misconception that he was not granted any other divine signs. The second half of the lesson will be related
-  to the serom of Imam Sajjad in yazid Palace".
-</p>
+<img alt="Martyrdom" class="card-logo" src="Martyrdom_Propeht(AS)_Imam_Hassan.png"/>
+<p class="card-text">In this lesson, on the occasion of Shahadat of Prophet Muhammad (S) and Imam Hassan (AS), we will discuss the numerous miracles of Prophet Muhammad beyond the Holy Quran, addressing the misconception that he was not granted any other divine signs. The second half of the lesson will be related to the sermon of Imam Sajjad in Yazid’s Palace.</p>
 </div>
 <div class="card-links">
 <a href="The_Framework_of_Divine_Signs.pdf">Slides</a>
 <a href="Framework_of_Divine_Signs_Infographic.png">Lesson Infographic</a>
 <a href="Miracles_of_Prophet_Muhammad(SAW).pdf">Class Resource</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span>
+<div class="card-parents">
+<span>Parents Resources:</span>
 <a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
 </div>
-<div class="card-parents"><span>HOME WORK:</span>
-<a href="HOME_WORK_Imam_Sajjad_EarlyYears.pdf"> Page 350-351 [Do it on the book provided]</a>
+<div class="card-parents">
+<span>HOME WORK:</span>
+<a href="HOME_WORK_Imam_Sajjad_EarlyYears.pdf">Page 350-351 [Do it on the book provided]</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 4 · 15th August [1st Rabi'Awal  1448] · Imam Sajjad (AS) in Shaam</summary><div class="card">
-<div class="card-header">Term 3 - Week 4 · 15th August [1st Rabi'Awal  1448] · Imam Sajjad (AS) in Shaam</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 4 · 15th August [1st Rabiʿ al-Awwal 1448] · Imam Sajjad (AS) in Shaam</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 4 · 15th August [1st Rabiʿ al-Awwal 1448] · Imam Sajjad (AS) in Shaam</div>
 <div class="card-top">
 <img alt="Imam Sajjad" class="card-logo" src="ImamSajjad_lessonLogo.jpg"/>
-<p class="card-text">In this lesson, we will discuss how Imam Sajjad used couregeous strategies to spread the true relegion of Islam in Shaam.
-</p>
+<p class="card-text">In this lesson, we will discuss how Imam Sajjad used courageous strategies to spread the true religion of Islam in Shaam.</p>
 </div>
 <div class="card-links">
 <a href="">Slides</a>
 <a href="">Lesson Infographic</a>
 <a href="Imam_Sajjad_in_Sham.pdf">Class Resources</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
 </div>
-<div class="card-parents"><span>HOME WORK:</span>
-<a href="Imam_Sajjad_in_Sham_HomeWork.pdf"> Page 356-359</a>
+<div class="card-parents">
+<span>HOME WORK:</span>
+<a href="Imam_Sajjad_in_Sham_HomeWork.pdf">Page 356-359</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 5 · 22nd August [8th Rabiʿ al-Awwal 1448] ·Imām ʿAlī as-Sajjād (a.s.): Reforming Hearts </summary><div class="card">
+</div>
+</details>
 
-<div class="card-header">
-    Term 3 - Week 5 · 22nd August [8th Rabiʿ al-Awwal 1448] · 
-    Imām ʿAlī as-Sajjād (a.s.): Reforming Hearts
-  </div>
+<details class="week-dropdown">
+<summary>Term 3 - Week 5 · 22nd August [8th Rabiʿ al-Awwal 1448] · Imām ʿAlī as-Sajjād (a.s.): Reforming Hearts</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 5 · 22nd August [8th Rabiʿ al-Awwal 1448] · Imām ʿAlī as-Sajjād (a.s.): Reforming Hearts</div>
 <div class="card-top">
 <img alt="Imam Sajjad (a.s.)" class="card-logo" src="LOGO_W5T3.jpeg"/>
 <p class="card-text">
@@ -460,42 +613,45 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 </div>
 <div class="card-parents">
 <span>Parents Resources:</span>
-<a href="https://al-islam.org/history-caliphs-rasul-jafariyan/iman-sajjad">
-      Imām as-Sajjād (a.s.)
-    </a>
+<a href="https://al-islam.org/history-caliphs-rasul-jafariyan/iman-sajjad">Imām as-Sajjād (a.s.)</a>
 </div>
 <div class="card-parents">
 <span>HOME WORK:</span>
-<a href="HomeWork_22August2026.pdf">
-      Pages 363 and 365
-    </a>
+<a href="HomeWork_22August2026.pdf">Pages 363 and 365</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 6 · 29th August [15th Rabi-Awal  1448] · Mawlid Nabi Program at ISCQ</summary><div class="card">
-<div class="card-header">Term 3 - Week 6 · 29th August [15th Rabi-Awal  1448] · Mawlid Nabi Program at ISCQ </div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 6 · 29th August [15th Rabiʿ al-Awwal 1448] · Mawlid Nabi Program at ISCQ</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 6 · 29th August [15th Rabiʿ al-Awwal 1448] · Mawlid Nabi Program at ISCQ</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="AhlulBayt.png"/>
-<p class="card-text">....
-</p>
+<img alt="Ahlul Bayt" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">This week students participated in the Mawlid Nabi program at ISCQ. No formal Diniyat class was held; the focus was on celebrating the birth of the Prophet (S).</p>
 </div>
 <div class="card-links">
 <a href="">Slides</a>
 <a href="">Lesson Infographic</a>
 <a href="">Class Resources</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
 </div>
-  
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 7 · 5th September [22nd Rabi-Awal  1448] · Beyond the Glass Walls: Ibrahim’s Dream and the Search for True Purpose</summary><div class="card">
-<div class="card-header">
-    Term 3 - Week 7 · 5th September [22nd Rabiʿ al-Awwal 1448] · 
-    Beyond the Glass Walls: Ibrahim’s Dream and the Search for True Purpose
-  </div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 7 · 5th September [22nd Rabiʿ al-Awwal 1448] · Beyond the Glass Walls: Ibrahim’s Dream and the Search for True Purpose</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 7 · 5th September [22nd Rabiʿ al-Awwal 1448] · Beyond the Glass Walls: Ibrahim’s Dream and the Search for True Purpose</div>
 <div class="card-top">
 <img alt="Imam Sajjad (a.s.)" class="card-logo" src="LOGO_W5T3.jpeg"/>
 <p class="card-text">
 Exhausted from soccer practice, Ibrahim falls asleep and wakes up trapped in a vibrant, strange garden surrounded by invisible glass walls. He soon discovers a message written on a tulip's petals: “Who created you? What purpose were you made for?”
-  When a deep thirst drives him toward a nearby stream, he hits another invisible barrier, realizing he must answer these questions to escape and survive
-This dream is a powerful spiritual analogy: the glass walls represent our hidden negative traits that block our progress, and escaping represents overcoming these obstacles to fulfill our true purpose of reaching qurb-ilāhi (closeness to Allah)
+  When a deep thirst drives him toward a nearby stream, he hits another invisible barrier, realizing he must answer these questions to escape and survive.
+This dream is a powerful spiritual analogy: the glass walls represent our hidden negative traits that block our progress, and escaping represents overcoming these obstacles to fulfill our true purpose of reaching qurb-ilāhi (closeness to Allah).
     </p>
 </div>
 <div class="card-links">
@@ -505,67 +661,54 @@ This dream is a powerful spiritual analogy: the glass walls represent our hidden
 </div>
 <div class="card-parents">
 <span>Parents Resources:</span>
-<a href="https://https://al-islam.org/god-and-god-science-syed-hasan-raza-jafri/chapter-7-goal-and-purpose-life">
-      The purpose of life
-    </a>
+<a href="https://al-islam.org/god-and-god-science-syed-hasan-raza-jafri/chapter-7-goal-and-purpose-life">The purpose of life</a>
 </div>
 <div class="card-parents">
 <span>HOME WORK:</span>
-<a href="Term3Week7_Inter.pdf">
-      Activity 1.1c, 1.1d and 1.1e
-    </a>
+<a href="Term3Week7_Inter.pdf">Activity 1.1c, 1.1d and 1.1e</a>
 </div>
+</div>
+</details>
 
-  
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 8 · 12th September [29th Rabiʿ al-Awwal 1448] ·  Salat: The Spiritual Journey of the Believer</summary><div class="card">
-
-<div class="card-header">
-    Term 3 - Week 8 · 12th September [29th Rabiʿ al-Awwal 1448] · 
-    Salat: The Spiritual Journey of the Believer
-  </div>
+<details class="week-dropdown">
+<summary>Term 3 - Week 8 · 12th September [29th Rabiʿ al-Awwal 1448] · Salat: The Spiritual Journey of the Believer</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 8 · 12th September [29th Rabiʿ al-Awwal 1448] · Salat: The Spiritual Journey of the Believer</div>
 <div class="card-top">
-<img alt="Imam Sajjad (a.s.)" class="card-logo" src="logo_Salah.jpeg"/>
+<img alt="Salat" class="card-logo" src="logo_Salah.jpeg"/>
 <p class="card-text">
-Just as Ibrahim realized (last week's lesson) that breaking through internal barriers is required to unreveal his purpose of life, now will discuss daily prayer (Salat) acts as the primary vehicle to attain that ultimate closeness
-. While the previous lesson focused on recognizing our purpose, this lesson moves us into action—exploring how taking a pause for Salat serves as a personal appointment with God
-, stepping away from daily distractions to cleanse the soul, relieve stress, and elevate the believer into the Divine presence
+Just as Ibrahim realized (last week's lesson) that breaking through internal barriers is required to unveil his purpose of life, now we discuss how daily prayer (Salat) acts as the primary vehicle to attain that ultimate closeness.
+  While the previous lesson focused on recognizing our purpose, this lesson moves us into action—exploring how taking a pause for Salat serves as a personal appointment with God,
+  stepping away from daily distractions to cleanse the soul, relieve stress, and elevate the believer into the Divine presence.
     </p>
 </div>
 <div class="card-links">
 <a href="The_Geometry_of_Ascent.pdf">Slides</a>
 <a href="The_Architecture_of_Resilience.pdf">Slides (last week's)</a>
-<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic </a>
+<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic</a>
 <a href="Salat_The_Spiritual_Journey_of_the_Believer.pdf">Class Lecture Resource 1</a>
-  
-  
 <a href="The_Soul_s_Garden_Journey_Map.png">Lesson Infographic (last week's)</a>
 <a href="Term3Week7_Inter.pdf">Class Lecture Resource 2</a>
 </div>
 <div class="card-parents">
 <span>Parents Resources:</span>
-<a href="https://al-islam.org/radiance-secrets-prayer-muhsin-qaraati/prayer-salah">
-      The Radiance of the Secrets of Prayer by Mohsin Qaraa'ti
-    </a>
+<a href="https://al-islam.org/radiance-secrets-prayer-muhsin-qaraati/prayer-salah">The Radiance of the Secrets of Prayer by Mohsin Qaraa'ti</a>
 </div>
 <div class="card-parents">
 <span>HOME WORK:</span>
-<a href="https://forms.gle/3FZEy6in6EQ51ZUL7">
-      QUIZ: The Pillar of Faith: A Spiritual Journey Through Prayer
-    </a>
+<a href="https://forms.gle/3FZEy6in6EQ51ZUL7">QUIZ: The Pillar of Faith: A Spiritual Journey Through Prayer</a>
 </div>
+</div>
+</details>
 
-
-
-
-
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 9 · 19th September [7th Rabi-Thani  1448] · Coming soon</summary><div class="card">
-    <div class="card-header">Term 3 - Week 9 · 19th September [7th Rabiʿ At-Thani 1448] ·     Towards a meaningful life</div>
-    
-  </div>
+<details class="week-dropdown">
+<summary>Term 3 - Week 9 · 19th September [7th Rabiʿ At-Thani 1448] · Towards a Meaningful Life</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 9 · 19th September [7th Rabiʿ At-Thani 1448] · Towards a Meaningful Life</div>
 <div class="card-top">
 <img alt="Imam Sajjad (a.s.)" class="card-logo" src="logo_T9T3.jpeg"/>
 <p class="card-text">
-In last two weeks, we talked about Ibrahim and his journey of discovering the truth, including 
+In the last two weeks, we talked about Ibrahim and his journey of discovering the truth, including 
   his dream and the importance of looking beyond what we see on the surface and reflecting within ourselves. We asked, 
   “What is the purpose of my life?” and discussed how distractions, desires and attachments can become barriers that prevent us 
   from recognising and following our purpose. This week, we move from understanding our purpose to living according to it. 
@@ -576,45 +719,58 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
     </p>
 </div>
 <div class="card-links">
-<a href="The_Alchemist_s_Ledger.pdf">Slides </a>
-<a href="Protecting_Your_Melting_Capital_Guide.png">Lesson Infographic (current) </a>
-<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic (related to week 8) </a>
+<a href="The_Alchemist_s_Ledger.pdf">Slides</a>
+<a href="Protecting_Your_Melting_Capital_Guide.png">Lesson Infographic (current)</a>
+<a href="Salaat_Spiritual_Prayer_Journey.png">Lesson Infographic (related to week 8)</a>
 <a href="The_Soul_s_Garden_Journey_Map.png">Lesson Infographic (related to Week 7)</a>
-  
-<a href="Towards_a_Meaninful_Life.pdf">Towards a meaninful life </a>
+<a href="Towards_a_Meaningful_Life.pdf">Towards a Meaningful Life</a>
 <a href="Term3Week9_Inter.pdf">Class Lecture Resource 2</a>
 </div>
 <div class="card-parents">
 <span>Parents Resources:</span>
 <a href="https://al-islam.org/media/10-great-ways-stay-positive-life">
-      Ten great ways to  stay positive in life (by Sheikh Mohammed Al-Hilli)
+      Ten great ways to stay positive in life (by Sheikh Mohammed Al-Hilli)
     </a>
 </div>
 <div class="card-parents">
-<span>HOME WORK:</span>
+<span>HOME WORK - Interview an Adult:</span>
 <a href="https://forms.gle/PYhBS2R5KVemb7C59">
-      QUIZ: Towards a Meaningful Life
+      Homework / Interview: Towards a Meaningful Life
     </a>
 </div>
-  
-</div></details><details class="week-dropdown"><summary>Term 3 - Week 10-11 · 26th September [14th Rabi-Thani  1448] · School Holidays</summary><div class="card">
-<div class="card-header">Term 3 - Week 10-11 · 26th September [14th Rabi-Thani  1448] · School Holidays</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 3 - Week 10–11 · 26th September [14th Rabiʿ At-Thani 1448] · School Holidays</summary>
+<div class="card">
+<div class="card-header">Term 3 - Week 10–11 · 26th September [14th Rabiʿ At-Thani 1448] · School Holidays</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="AhlulBayt.png"/>
-<p class="card-text">....
-</p>
+<img alt="School Holidays" class="card-logo" src="AhlulBayt.png"/>
+<p class="card-text">School holidays. No formal classes. Enjoy the break and prepare for Term 4.</p>
 </div>
 <div class="card-links">
 <a href="">Slides</a>
 <a href="">Lesson Infographic</a>
 <a href="">Class Resources</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/media/understanding-sacrifice-imam-husayn-lady-zainab">Understanding The Sacrifice Of Imam Husayn (A) &amp; Lady Zainab (A)</a>
 </div>
-</div></details></div></details><details class="term-dropdown"><summary>Term 2 – 2026</summary><div class="week-list"><details class="week-dropdown"><summary>Term 2 - Week 1 · 2nd May [14 Dhu al-Qi'dah  1447] · Understanding Taharah and Najasah (Part II)</summary><div class="card">
-<div class="card-header">Term 2 - Week 1 · 2nd May [14 Dhu al-Qi'dah  1447] · Understanding Taharah and Najasah (Part II) </div>
+</details>
+
+</div>
+</details>
+
+<!-- TERM 2 -->
+<details class="term-dropdown">
+<summary>Term 2 – 2026</summary>
+<div class="week-list">
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 1 · 2nd May [14 Dhu al-Qi'dah 1447] · Understanding Taharah and Najasah (Part II)</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 1 · 2nd May [14 Dhu al-Qi'dah 1447] · Understanding Taharah and Najasah (Part II)</div>
 <div class="card-top">
-<img alt="Coming Soon" class="card-logo" src="Tahara_logo.png"/>
+<img alt="Taharah" class="card-logo" src="Tahara_logo.png"/>
 <p class="card-text">We will continue to explore the essential principles of ritual purity (ṭahārah) and ritual impurity (najāsah) in Islam.</p>
 </div>
 <div class="card-links">
@@ -624,14 +780,22 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 <a href="T1W4_Taharah_and_Najasah.pdf">Class Resources</a>
 <a href="https://forms.gle/x4SCEhLgjWQJ1Xzo8">Quiz Week1 - Term2</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
-<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a></div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 2 · 9th May [21st Dhu al-Qi'dah  1447] · Rules of Wudu</summary><div class="card">
-<div class="card-header">Term 2 - Week 2 · 9th May [21st Dhu al-Qi'dah  1447] · Rules of Wudu</div>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
+<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 2 · 9th May [21st Dhu al-Qi'dah 1447] · Rules of Wudu</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 2 · 9th May [21st Dhu al-Qi'dah 1447] · Rules of Wudu</div>
 <div class="card-top">
 <img alt="Rules of Wudu" class="card-logo" src="Wudu_logo.jpg"/>
 <p class="card-text">In this lesson, we learn wuḍūʾ means cleanliness and brings spiritual purity. 
-  We identify when it is wājib (e.g., ṣalāh) or mustaḥab (e.g., before sleep). We also cover the ten conditions for valid wuḍūʾ and actions that invalidate it, such as passing gas or sleeping</p>
+  We identify when it is wājib (e.g., ṣalāh) or mustaḥab (e.g., before sleep). We also cover the ten conditions for valid wuḍūʾ and actions that invalidate it, such as passing gas or sleeping.</p>
 </div>
 <div class="card-links">
 <a href="The_Architecture_of_Purity.pdf">Slides</a>
@@ -642,33 +806,46 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 <a href="https://al-islam.org/media/wudhu-al-jabirah">🎥 Wudu Al Jabirah</a>
 <a href="https://al-islam.org/ritual-and-spiritual-purity-sayyid-muhammad-rizvi/iii-ghusl">Rules of Ghusl</a>
 </div>
-<div class="card-parents"><span> </span><a href="https://forms.gle/G7nk13cn5BvtELqWA">Wudu Practical Assessment (Parent Assessed)</a></div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 3 · 16th May [28th Dhu al-Qi'dah  1447] · Rules of Ghusl</summary><div class="card">
-<div class="card-header">Term 2 - Week 3 · 16th May [28th Dhu al-Qi'dah  1447] · Rules of Ghusl</div>
+<div class="card-parents">
+<span> </span>
+<a href="https://forms.gle/G7nk13cn5BvtELqWA">Wudu Practical Assessment (Parent Assessed)</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 3 · 16th May [28th Dhu al-Qi'dah 1447] · Rules of Ghusl</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 3 · 16th May [28th Dhu al-Qi'dah 1447] · Rules of Ghusl</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="GHUSL_Tayammum_logo.png"/>
+<img alt="Ghusl and Tayammum" class="card-logo" src="GHUSL_Tayammum_logo.png"/>
 <p class="card-text">In this lesson, we study Ghusl (ritual full-body wash) and Tayammum (earth-based purification). 
   Ghusl involves washing the head and neck first, then the body. Tayammum replaces it when water is unavailable or harmful, using soil or dry earth. 
-  Both rituals require a sincere intention and the removal of all barriers
-</p>
+  Both rituals require a sincere intention and the removal of all barriers.</p>
 </div>
 <div class="card-links">
 <a href="Ghusl_and_Tayammum_Essentials.pdf">Slides</a>
 <a href="Tayammum_Ghusl_infographics.png">Lesson Infographic</a>
 <a href="T1W7_Ghusl.pdf">Class Resources</a>
-<a href="Tayammum_Ghusl_infographics.png">Lesson Infographic</a>
 <a href="https://youtu.be/yiZXBsGZuX4">🎥 Revision of Class lesson</a>
 <a href="https://forms.gle/uwCc84jQQwBAdHNBA">Open Book Assessment</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/ritual-and-spiritual-purity-sayyid-muhammad-rizvi/iii-ghusl">Rules of Ghusl</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/ritual-and-spiritual-purity-sayyid-muhammad-rizvi/iii-ghusl">Rules of Ghusl</a>
 <a href="https://al-islam.org/media/wudhu-al-jabirah">🎥 Wudu/Ghusl Al Jabirah</a>
 <a href="The Life of Imam Muhammad At Taqi.pdf">Imam al-Jawad: The Phenomenon of the Eight-Year-Old Leader and the Miracle of Divine Knowledge</a>
 <a href="https://www.youtube.com/live/g678Cu5oUoo?si=9IiMze7S04xSICF6">🎥 The Miracle of Imam Al-Jawad: Sayed Muhammad Baqer Qazwini</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 4 · 23rd May [7th Dhual Hajj  1447] · Revision and Assessment</summary><div class="card">
-<div class="card-header">Term 2 - Week 4 · 23rd May [7th Dhual Hajj  1447] · Revision and Assessment</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 4 · 23rd May [7th Dhual Hajj 1447] · Revision and Assessment</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 4 · 23rd May [7th Dhual Hajj 1447] · Revision and Assessment</div>
 <div class="card-top">
-<img alt="Coming Soon" class="card-logo" src="revsion_logo.png"/>
+<img alt="Revision" class="card-logo" src="revsion_logo.png"/>
 <p class="card-text">This week, we will conduct assessments on all lessons covered so far.</p>
 </div>
 <div class="card-links">
@@ -677,81 +854,114 @@ In last two weeks, we talked about Ibrahim and his journey of discovering the tr
 <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Imam Al-Mahdi(AS)</a>
 <a href="Ijtihad_Taklif_Lesson2_14Feb26.pdf">Imam Al-Mahdi(AS)</a>
 <a href="T1W3_Ramadan.pdf">Spiritual Benefits of month of Ramadan</a>
-<a href="ImamAli_Strength_Submission.pdf">Lesson on Imam Ali's life </a>
+<a href="ImamAli_Strength_Submission.pdf">Lesson on Imam Ali's life</a>
 <a href="T1W5_ImamHasan.pdf">Lesson on Imam Hasan's life</a>
 <a href="T1W4_Taharah_and_Najasah.pdf">Taharah and Najasah</a>
 <a href="T1W6_Rules_of_Wudu.pdf">Wudu</a>
 <a href="T1W7_Ghusl.pdf">Ghusl and Tayammum</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 5 · 30th May [12th Dhual Hajj  1447] · Eid Al-Ghadeer</summary><div class="card">
-<div class="card-header">Term 2 - Week 5 · 30th May [12th Dhual Hajj  1447] · Eid Al-Ghadeer</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 5 · 30th May [12th Dhual Hajj 1447] · Eid Al-Ghadeer</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 5 · 30th May [12th Dhual Hajj 1447] · Eid Al-Ghadeer</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Eid_Ghadeer_Logo.jpeg"/>
+<img alt="Eid Al-Ghadeer" class="card-logo" src="Eid_Ghadeer_Logo.jpeg"/>
 <p class="card-text">In this lesson, we will explore the theological and historical significance of Hadith al-Ghadir. 
   We will examine how the appointment of Imam Ali follows the precedent of earlier prophets, study the events at Ghadir Khumm and the 
-  revelation of Ayah 67, and analyze how the term “Mawla” indicates leadership. Finally, we will review key evidences of succession, including symbolic actions and historical accounts.
-</p>
+  revelation of Ayah 67, and analyze how the term “Mawla” indicates leadership. Finally, we will review key evidences of succession, including symbolic actions and historical accounts.</p>
 </div>
 <div class="card-links">
 <a href="Ghadir_Infographics.png">Lesson Infographic</a>
 <a href="The_Ghadir_Brief.pdf">Slides</a>
 <a href="Lecure_GhadeerKhum.pdf">Class resources</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/media/did-prophet-muhammad-appoint-anyone-after-him-event-ghadir-18">The Event Of Ghadir</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/media/did-prophet-muhammad-appoint-anyone-after-him-event-ghadir-18">The Event Of Ghadir</a>
 <a href="Practically_Achieving_Akhlaq.pdf">Practically Achieving Our Purpose through Akhlāq</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 6 · 6th June [19th Dhual Hajj  1447] · Celebration of Eid-e-Ghadeer</summary><div class="card">
-<div class="card-header">Term 2 - Week 6 · 6th June [19th Dhual Hajj  1447] · Celebration of Eid-e-Ghadeer</div>
-<div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Eid_Ghadeer_Logo.jpeg"/>
-<p class="card-text">This week, we will be celebrating Eid-e-Ghadeer at school. As part of the celebrations, no formal Diniyat class will be held.
-Students will instead participate in activities and programs related to this blessed occasion.
-</p>
 </div>
-<div class="card-links">
-</div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/articles/laws-and-practices-how-perform-daily-prayers">Laws and Practice: How to Perform the Daily Prayers</a>
-</div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 7 · 13th June [26th Dhual Hajj  1447] · Preliminaries to Prayer</summary><div class="card">
-<div class="card-header">Term 2 - Week 7 · 13th June [26th Dhual Hajj  1447] · Preliminaries to Prayer</div>
-<div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Shia_Salah_logo.jpg"/>
-<p class="card-text">In this lesson we will learn the five preliminary conditions for ṣalāh: purity (ṭahārah), direction (qiblah), timing, place, and clothing. 
-  We will also cover how to find the qiblah, use prayer calendars, and identify permissible surfaces for prostration and clothing requirements
+</details>
 
-</p>
+<details class="week-dropdown">
+<summary>Term 2 - Week 6 · 6th June [19th Dhual Hajj 1447] · Celebration of Eid-e-Ghadeer</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 6 · 6th June [19th Dhual Hajj 1447] · Celebration of Eid-e-Ghadeer</div>
+<div class="card-top">
+<img alt="Eid Al-Ghadeer" class="card-logo" src="Eid_Ghadeer_Logo.jpeg"/>
+<p class="card-text">This week, we will be celebrating Eid-e-Ghadeer at school. As part of the celebrations, no formal Diniyat class will be held.
+Students will instead participate in activities and programs related to this blessed occasion.</p>
+</div>
+<div class="card-links"></div>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/articles/laws-and-practices-how-perform-daily-prayers">Laws and Practice: How to Perform the Daily Prayers</a>
+</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 7 · 13th June [26th Dhual Hajj 1447] · Preliminaries to Prayer</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 7 · 13th June [26th Dhual Hajj 1447] · Preliminaries to Prayer</div>
+<div class="card-top">
+<img alt="Shia Salah" class="card-logo" src="Shia_Salah_logo.jpg"/>
+<p class="card-text">In this lesson we will learn the five preliminary conditions for ṣalāh: purity (ṭahārah), direction (qiblah), timing, place, and clothing. 
+  We will also cover how to find the qiblah, use prayer calendars, and identify permissible surfaces for prostration and clothing requirements.</p>
 </div>
 <div class="card-links">
 <a href="The_5_Conditions_of_Salah.pdf">Slides</a>
 <a href="Prayers_Infographics.png">Lesson Infographic</a>
 <a href="Preliminaries to Prayer.pdf">Class Resources</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/articles/laws-and-practices-how-perform-daily-prayers">Laws and Practice: How to Perform the Daily Prayers</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/articles/laws-and-practices-how-perform-daily-prayers">Laws and Practice: How to Perform the Daily Prayers</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 2 - Week 8 · 20th June [4th Muharram  1448] · Imām Ḥusayn’s Resistance against Oppression</summary><div class="card">
-<div class="card-header">Term 2 - Week 8 · 20th June [4th Muharram  1448] · Imām Ḥusayn’s Resistance against Oppression</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 2 - Week 8 · 20th June [4th Muharram 1448] · Imām Ḥusayn’s Resistance against Oppression</summary>
+<div class="card">
+<div class="card-header">Term 2 - Week 8 · 20th June [4th Muharram 1448] · Imām Ḥusayn’s Resistance against Oppression</div>
 <div class="card-top">
-<img alt="Rules of Wudu" class="card-logo" src="Imam_Hussain_logo.jpeg"/>
+<img alt="Imam Hussain" class="card-logo" src="Imam_Hussain_logo.jpeg"/>
 <p class="card-text">In this lesson, we will learn about Imām Ḥusayn’s life, starting with his birth and the Prophet’s immense love for him. 
   We will explore his support for Imām Ḥasan’s leadership and his lifelong resistance to oppression. 
-  Finally, we will analyze his stance against Yazīd for the sake of reformation and the spiritual importance of his visitation (ziyārah).
-</p>
+  Finally, we will analyze his stance against Yazīd for the sake of reformation and the spiritual importance of his visitation (ziyārah).</p>
 </div>
 <div class="card-links">
 <a href="Husayn_and_the_Arc_of_Reform.pdf">Slides</a>
 <a href="ImamHussainResistance_infographics.png">[Infographics] Imam Hussain Resistance</a>
-<a href="The_Encounter_at_Dhu_Husam.png ">[Infographics] Beyond the Numbers: Nafeh’s Speech and the Power of Conviction</a>
-<a href="Nafeh_bin_Hilal_Speech_Infographic.png ">[Infographics]Importance of Nafeh's Speech</a>
+<a href="The_Encounter_at_Dhu_Husam.png">[Infographics] Beyond the Numbers: Nafeh’s Speech and the Power of Conviction</a>
+<a href="Nafeh_bin_Hilal_Speech_Infographic.png">[Infographics] Importance of Nafeh's Speech</a>
 <a href="The Lifelong Resistance of Imām Ḥusayn.pdf">Class lecture on The Lifelong Resistance of Imām Ḥusayn (AS)</a>
 <a href="Imām Ḥusayn’s Resistance against Oppression.pdf">Class Slides</a>
 <a href="Class LectureHurr_vsNafeh.pdf">Class lecture on Quenching Thirst, Testing Hearts: The Crossroads of Dhu Husam</a>
 </div>
-<div class="card-parents"><span>Parents Resources:</span><a href="https://al-islam.org/truth-about-al-husayns-revolt-murtadha-mutahhari/imam-husayns-revolt-causes">Imam Husayn’s revolt, the causes</a>
+<div class="card-parents">
+<span>Parents Resources:</span>
+<a href="https://al-islam.org/truth-about-al-husayns-revolt-murtadha-mutahhari/imam-husayns-revolt-causes">Imam Husayn’s revolt, the causes</a>
 </div>
-</div></details></div></details><details class="term-dropdown"><summary>Term 1 – 2026</summary><div class="week-list"><details class="week-dropdown"><summary>Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</summary><div class="card">
-<div class="card-header">
-    Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)
-  </div>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- TERM 1 -->
+<details class="term-dropdown">
+<summary>Term 1 – 2026</summary>
+<div class="week-list">
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</summary>
+<div class="card">
+<div class="card-header">Term 1 - Week 1 · 7 Feb 2026 [18th Sha'ban 1447] · Imam al-Mahdi (AS)</div>
 <div class="card-top">
 <img alt="Al-Intidhar" class="card-logo" src="Intidhar.jpg"/>
 <p class="card-text">
@@ -767,21 +977,20 @@ Students will instead participate in activities and programs related to this ble
 <a href="https://youtu.be/erjdUmeGgUA">🎥 Quick Revision</a>
 <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Class Resources</a>
 <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz Week1</a>
-<a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">
-      Additional Resources
-    </a>
+<a href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age">Additional Resources</a>
 <a href="https://youtube.com/watch?v=FZWwLWRZS3Y&amp;t=7s">🎥 Who is Imam Mahdi</a>
 </div>
 <div class="card-parents">
 <span>Parents Resources (Share stories with your children):</span>
-<a href="https://youtu.be/a-ZVMdG8H5E?si=_VNCBVXznm4aXrQD">
-      Imam Al-Mahdi (AS): Miraculous Birth of Imam Al-Mahdi (ajtf) Explained — Shaikh Azhar Nasser
-    </a>
-<a href="https://youtu.be/InA6t_MdX94">
-      Imam Al-Mahdi (AS): The Awaited Reality [Sumamarized lectures of Syed Abid Hussain Zaidi]
-    </a>
+<a href="https://youtu.be/a-ZVMdG8H5E?si=_VNCBVXznm4aXrQD">Imam Al-Mahdi (AS): Miraculous Birth of Imam Al-Mahdi (ajtf) Explained — Shaikh Azhar Nasser</a>
+<a href="https://youtu.be/InA6t_MdX94">Imam Al-Mahdi (AS): The Awaited Reality [Summarized lectures of Syed Abid Hussain Zaidi]</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd &amp; Taklīf</summary><div class="card">
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd &amp; Taklīf</summary>
+<div class="card">
 <div class="card-header">Term 1 - Week 2 · 14 Feb 2026 [25th Sha'ban 1447] · Taqlīd &amp; Taklīf</div>
 <div class="card-top">
 <img alt="Taqlīd &amp; Taklīf" class="card-logo" src="Tohzeeh.jpg"/>
@@ -801,17 +1010,24 @@ Students will instead participate in activities and programs related to this ble
 <a href="https://al-islam.org/simplified-islamic-laws-youth-and-young-adults-sayyid-ali-hussaini-sistani/ijtihad-and-taqlid">Additional Resources</a>
 <a href="https://youtube.com/watch?v=gtOVyqpe0xM">🎥 Ijtihad and Taqleed</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/EgKsqhD155Y">  The Spun Wheel Story </a><a href="https://youtu.be/MkSIl_Ro27A">  The Shattered Idol Story</a>
-<a href="https://youtu.be/tCpzDBnTvtw">  🎥[Video] The Prophet’s (SAW) Sermon Welcoming the Month of Ramadhan </a>
-<a href="https://www.youtube.com/watch?v=x_YIZfym6w8"> Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English </a>
-<a href="https://al-islam.org/fasting-and-holy-month-ramadhan-mansour-leghaei/ramadhan-awareness"> Ramadhan Awareness</a>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://youtu.be/EgKsqhD155Y">The Spun Wheel Story</a>
+<a href="https://youtu.be/MkSIl_Ro27A">The Shattered Idol Story</a>
+<a href="https://youtu.be/tCpzDBnTvtw">🎥 [Video] The Prophet’s (SAW) Sermon Welcoming the Month of Ramadhan</a>
+<a href="https://www.youtube.com/watch?v=x_YIZfym6w8">Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English</a>
+<a href="https://al-islam.org/fasting-and-holy-month-ramadhan-mansour-leghaei/ramadhan-awareness">Ramadhan Awareness</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 3 · 21 Feb [2nd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul + Discussion on Last week's related questions</summary><div class="card">
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 3 · 21 Feb [2nd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul + Discussion on Last week's related questions</summary>
+<div class="card">
 <div class="card-header">Term 1 - Week 3 · 21 Feb [2nd Ramadan 1447] · Ramadan: A Spiritual Training for the Soul + Discussion on Last week's related questions</div>
 <div class="card-top">
-<img alt="Ramadan: A Spiritual Training for the Soul" class="card-logo" src="Ramadan_logo.jpg"/>
-<p class="card-text">Explore how <strong>Ramadan</strong> serves as a <strong>spiritual training for the soul</strong>, nurturing patience, reflection, and closeness to Allah. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong> 286 </strong>from <strong>Book 7.</strong></p>
+<img alt="Ramadan" class="card-logo" src="Ramadan_logo.jpg"/>
+<p class="card-text">Explore how <strong>Ramadan</strong> serves as a <strong>spiritual training for the soul</strong>, nurturing patience, reflection, and closeness to Allah. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong>286</strong> from <strong>Book 7.</strong></p>
 </div>
 <div class="card-links">
 <a href="T1W3_Ramadan_Guide_and_Framework.pdf">Slides</a>
@@ -819,22 +1035,30 @@ Students will instead participate in activities and programs related to this ble
 <a href="https://youtu.be/1d8oAd2jLAI">🎥 Quick Revision</a>
 <a href="T1W3_Ramadan.pdf">Class Resources</a>
 <a href="https://forms.gle/QDyMczVtWJYXn7966">Quiz Week3</a>
-<a href="Ramadan_Book9.pdf"> Additional Resource on Ramadhan Awareness (taken from Book9)</a>
-<a href="Taqlid_Book8.pdf"> Additional Resource on Taqlid (taken from Book8)</a>
+<a href="Ramadan_Book9.pdf">Additional Resource on Ramadhan Awareness (taken from Book9)</a>
+<a href="Taqlid_Book8.pdf">Additional Resource on Taqlid (taken from Book8)</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi"> Ijtihad and Taqlid [https://al-islam.org/]</a><a href="https://www.sistani.org/english/qa/"> Q &amp; A [Grand Ayatollah Sayyid Ali al-Husayni al-Sistani (born 1930)]</a>
-<a href="https://youtu.be/EgKsqhD155Y">  [Story] The Spun Wheel  </a>
-<a href="https://youtu.be/MkSIl_Ro27A">  [Story] The Shattered Idol </a>
-<a href="https://youtu.be/j3k5HHXybsU"> [Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS) </a>
-<a href="https://www.youtube.com/watch?v=x_YIZfym6w8"> Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English </a>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://al-islam.org/articles/taqlid-meaning-and-reality-sayyid-muhammad-rizvi">Ijtihad and Taqlid [https://al-islam.org/]</a>
+<a href="https://www.sistani.org/english/qa/">Q &amp; A [Grand Ayatollah Sayyid Ali al-Husayni al-Sistani (born 1930)]</a>
+<a href="https://youtu.be/EgKsqhD155Y">[Story] The Spun Wheel</a>
+<a href="https://youtu.be/MkSIl_Ro27A">[Story] The Shattered Idol</a>
+<a href="https://youtu.be/j3k5HHXybsU">[Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS)</a>
+<a href="https://www.youtube.com/watch?v=x_YIZfym6w8">Dua al-Iftitah - Abathar Al-Halawaji - Arabic sub English</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 4· 28 Feb [9th Ramadan 1447] · Imam Hasan Al-Mujtaba (AS): The Wisdom of Courage</summary><div class="card">
-<div class="card-header">Term 1 - Week 4· 28 Feb [9th Ramadan 1447] · Imam Hasan Al-Mujtaba (AS): The Wisdom of Courage</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 4 · 28 Feb [9th Ramadan 1447] · Imam Hasan Al-Mujtaba (AS): The Wisdom of Courage</summary>
+<div class="card">
+<div class="card-header">Term 1 - Week 4 · 28 Feb [9th Ramadan 1447] · Imam Hasan Al-Mujtaba (AS): The Wisdom of Courage</div>
 <div class="card-top">
 <img alt="Imam Hasan Al-Mujtaba" class="card-logo" src="Imam_hasan_logo.jpg"/>
 <p class="card-text">This lesson will discuss Imam Hasan (a.s.) as the "Manifestation of Divine Beauty" and the "speaking Quran". 
 Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty of character" by repelling evil with good, transforming enemies into friends, and exercising the supreme courage of 
-  wisdom to sign a peace treaty that preserved the Muslim nation. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong>333, 334, 335 </strong>from <strong>Book 7.</strong></p>
+  wisdom to sign a peace treaty that preserved the Muslim nation. <u><strong>Homework:</strong></u> Do not forget to complete pages <strong>333, 334, 335</strong> from <strong>Book 7.</strong></p>
 </div>
 <div class="card-links">
 <a href="The_Courage_of_Wisdom.pdf">Slides</a>
@@ -843,14 +1067,20 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 <a href="https://youtu.be/xgC760gzPUYI">🎥 Quick Revision</a>
 <a href="https://forms.gle/HvnyyoquKG8dmHr97">Quiz Week4</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/8Vly2hsJP70?start=1601&amp;end=4735"> The Hassani Persona - Part 1: Dr Aws Hmud  </a>
-<a href="https://youtu.be/EqqopJvg40w?start=1819&amp;end=5346"> The Hassani Persona - Part 2: Dr Aws Hmud </a>
-<a href="https://youtu.be/68ewiOugX24?start=1383&amp;end=4743"> The Hassani Persona - Part 3: Dr Aws Hmud </a>
-<a href="https://youtu.be/8o6XvcnbH5s?start=3066&amp;end=5754"> The Hassani Persona - Part 4: Dr Aws Hmud </a>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://youtu.be/8Vly2hsJP70?start=1601&amp;end=4735">The Hassani Persona - Part 1: Dr Aws Hmud</a>
+<a href="https://youtu.be/EqqopJvg40w?start=1819&amp;end=5346">The Hassani Persona - Part 2: Dr Aws Hmud</a>
+<a href="https://youtu.be/68ewiOugX24?start=1383&amp;end=4743">The Hassani Persona - Part 3: Dr Aws Hmud</a>
+<a href="https://youtu.be/8o6XvcnbH5s?start=3066&amp;end=5754">The Hassani Persona - Part 4: Dr Aws Hmud</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 5 · 7th March [16th Ramadan 1447]· The Martyrdom of Imam Ali (AS)</summary><div class="card">
-<div class="card-header">Term 1 - Week 5 · 7th March [16th Ramadan 1447]· The Martyrdom of Imam Ali (AS)</div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 5 · 7th March [16th Ramadan 1447] · The Martyrdom of Imam Ali (AS)</summary>
+<div class="card">
+<div class="card-header">Term 1 - Week 5 · 7th March [16th Ramadan 1447] · The Martyrdom of Imam Ali (AS)</div>
 <div class="card-top">
 <img alt="Imam Ali (AS)" class="card-logo" src="Imam_Ali_logo_image.jpg"/>
 <p class="card-text">This lesson explores the life, spiritual importance, and ultimate sacrifice of Imām ʿAlī ibn Abī Ṭālib, emphasizing his distinctive role as the first Imām and the successor to Prophet Muḥammad.</p>
@@ -862,12 +1092,18 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 <a href="https://forms.gle/powNNCmC6ECQPWUKA">Quiz Week5</a>
 <a href="https://youtu.be/g2Y14dIU4zY">🎥 Quick Revision</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span>
-<a href="https://youtu.be/j3k5HHXybsU"> [Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS)</a>
-<a href="https://youtu.be/552L-4eAQ_I"> [Story] The importance of Time</a>
-<a href="https://youtu.be/Gwjz3MbYCOE"> [Story] The Melting Capital </a>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://youtu.be/j3k5HHXybsU">[Story] The encounter in Samarra between the Bohlul and the young Imam Hasan al-Askari (AS)</a>
+<a href="https://youtu.be/552L-4eAQ_I">[Story] The importance of Time</a>
+<a href="https://youtu.be/Gwjz3MbYCOE">[Story] The Melting Capital</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 6 · 14th March [23rd Ramadan 1447] · No Class (Laylatul Qadr)</summary><div class="card">
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 6 · 14th March [23rd Ramadan 1447] · No Class (Laylatul Qadr)</summary>
+<div class="card">
 <div class="card-header">Term 1 - Week 6 · 14th March [23rd Ramadan 1447] · No Class (Laylatul Qadr)</div>
 <div class="card-top">
 <img alt="No Class" class="card-logo" src="LylatulQadar_logo.png"/>
@@ -881,7 +1117,12 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 <a href="https://www.duas.org/ramadan-laylat-ul-qadr-amaal-dua-common.html">Laylat ul Qadr - Amaal and Dua for 19-21-23</a>
 <a href="https://al-islam.org/supplications-month-ramadhan/laylatul-qadr-night-power">Laylatul Qadr, the Night of Power</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 7 · 21st March [1st Shawwal 1447] · No Class (Eid-ul-Fitr holiday)</summary><div class="card">
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 7 · 21st March [1st Shawwal 1447] · No Class (Eid-ul-Fitr holiday)</summary>
+<div class="card">
 <div class="card-header">Term 1 - Week 7 · 21st March [1st Shawwal 1447] · No Class (Eid-ul-Fitr holiday)</div>
 <div class="card-top">
 <img alt="No Class" class="card-logo" src="Eid_fitr_logo.png"/>
@@ -892,15 +1133,20 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 </div>
 <div class="card-parents">
 <span>Parent Resources for Home Support:</span>
-<a href="https://www.duas.org/1nightshawall.htm">Night preceeding Eid (1st Shawwal)</a>
+<a href="https://www.duas.org/1nightshawall.htm">Night preceding Eid (1st Shawwal)</a>
 <a href="https://www.duas.org/dua-nudbah.html">Dua Nudba</a>
-<a href="https://www.duas.org/ziyarat-imam-hussain-laylat-ul-qadr-eid.html">Ziyarat Imam Hussain on Day of Eid </a>
-<a href="https://www.duas.org/ziyarat-imam-hussain-ashura.html">Ziyarat-e-Ashura </a>
+<a href="https://www.duas.org/ziyarat-imam-hussain-laylat-ul-qadr-eid.html">Ziyarat Imam Hussain on Day of Eid</a>
+<a href="https://www.duas.org/ziyarat-imam-hussain-ashura.html">Ziyarat-e-Ashura</a>
 </div>
-</div></details><details class="week-dropdown"><summary>Term 1 - Week 8 · 28th March [8th Shawwal 1447] · Understanding Taharah and Najasah (Part I)</summary><div class="card">
-<div class="card-header">Term 1 - Week 8 · 28th March [8th Shawwal 1447] · Understanding Taharah and Najasah (Part I) </div>
+</div>
+</details>
+
+<details class="week-dropdown">
+<summary>Term 1 - Week 8 · 28th March [8th Shawwal 1447] · Understanding Taharah and Najasah (Part I)</summary>
+<div class="card">
+<div class="card-header">Term 1 - Week 8 · 28th March [8th Shawwal 1447] · Understanding Taharah and Najasah (Part I)</div>
 <div class="card-top">
-<img alt="Coming Soon" class="card-logo" src="Tahara_logo.png"/>
+<img alt="Taharah" class="card-logo" src="Tahara_logo.png"/>
 <p class="card-text">In this lesson, we will explore the essential principles of ritual purity (ṭahārah) and ritual impurity (najāsah) in Islam.</p>
 </div>
 <div class="card-links">
@@ -908,9 +1154,18 @@ Beyond his physical resemblance to the Prophet (SAW), he manifested the "beauty 
 <a href="6. Taharah_and_Najasah_infographics.png">Lesson Infographic</a>
 <a href="T1W4_Taharah_and_Najasah.pdf">Class Resources</a>
 </div>
-<div class="card-parents"><span>Parent Resources for Home Support:</span><a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
-<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a></div>
-</div></details></div></details></section>
+<div class="card-parents">
+<span>Parent Resources for Home Support:</span>
+<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/taharah-purification">A Course In Islamic Jurisprudence - Manhajul Fiqhil Islami</a>
+<a href="https://al-islam.org/course-islamic-jurisprudence-manhajul-fiqhil-islami-sayyid-hashim-al-musawi/al-mutahhirat-purifiers">Al-Mutahhirat [The Purifiers]</a>
+</div>
+</div>
+</details>
+
+</div>
+</details>
+
+</section>
 </main>
 <footer>
   © <span>Ahmed Mehdi</span> · GitHub Pages
