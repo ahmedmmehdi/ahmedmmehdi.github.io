@@ -1175,7 +1175,35 @@ body {
 
             <br><br>
 
-            Missing Semester 1 assessment
+            <strong>
+                Semester 2 weighting:
+            </strong>
+
+            <br><br>
+
+            Closed Book Assessment-2:
+            <strong>70%</strong>
+
+            <br>
+
+            Open Book Assessment-2:
+            <strong>10%</strong>
+
+            <br>
+
+            Interview an Adult regarding Purpose of Life:
+            <strong>10%</strong>
+
+            <br>
+
+            Other Semester 2 work:
+            <strong>10%</strong>
+
+            <br><br>
+
+            The overall weighted percentage is the
+            average of the Semester 1 and Semester 2
+            weighted percentages. Missing assessment
             values are treated as zero.
 
             <br><br>
@@ -1233,7 +1261,7 @@ body {
                 class="semester-badge
                        badge-sem2"
             >
-                Results Only
+                Included in Grade
             </div>
 
         </div>
@@ -1284,12 +1312,10 @@ body {
             "
         >
 
-            Semester 2 results are shown for
-            progress monitoring only.
-
-            They are not included in the
-            current weighted percentage,
-            grade, rank or percentile.
+            The Semester 2 weighted percentage is
+            calculated using the assessment weightings
+            shown above and contributes equally with
+            Semester 1 to the overall result.
 
         </div>
 
@@ -1503,6 +1529,120 @@ function formatWeighted(value) {
 }
 
 
+
+/* =========================================================
+   SEMESTER 2 AND OVERALL CALCULATIONS
+   ========================================================= */
+
+function numericScore(value) {
+    if (value === null || value === undefined || value === "") {
+        return null;
+    }
+
+    const cleaned = String(value).replace("%", "").trim();
+    const number = Number(cleaned);
+
+    return Number.isFinite(number) ? number : null;
+}
+
+function normalizedAssessmentName(value) {
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+}
+
+function findSemester2Assessment(semester2, matcher) {
+    return Object.entries(semester2 || {}).find(
+        ([name]) => matcher(normalizedAssessmentName(name))
+    ) || null;
+}
+
+function calculateSemester2(semester2) {
+    const entries = Object.entries(semester2 || {});
+
+    const closed = findSemester2Assessment(
+        semester2,
+        name => name.includes("closedbook") &&
+                name.includes("assessment") &&
+                name.includes("2")
+    );
+
+    const open = findSemester2Assessment(
+        semester2,
+        name => name.includes("openbook") &&
+                name.includes("assessment") &&
+                name.includes("2")
+    );
+
+    const interview = findSemester2Assessment(
+        semester2,
+        name => name.includes("interview") &&
+                name.includes("adult")
+    );
+
+    const excludedNames = new Set(
+        [closed, open, interview]
+            .filter(Boolean)
+            .map(([name]) => name)
+    );
+
+    const otherScores = entries
+        .filter(([name]) => !excludedNames.has(name))
+        .map(([, value]) => numericScore(value))
+        .filter(value => value !== null);
+
+    const otherWorkAverage = otherScores.length
+        ? otherScores.reduce((sum, value) => sum + value, 0) / otherScores.length
+        : 0;
+
+    const closedScore = closed ? (numericScore(closed[1]) ?? 0) : 0;
+    const openScore = open ? (numericScore(open[1]) ?? 0) : 0;
+    const interviewScore = interview ? (numericScore(interview[1]) ?? 0) : 0;
+
+    return (
+        closedScore * 0.70 +
+        openScore * 0.10 +
+        interviewScore * 0.10 +
+        otherWorkAverage * 0.10
+    );
+}
+
+function gradeFromPercentage(value) {
+    const percentage = numericScore(value) ?? 0;
+
+    if (percentage >= 80) return "A";
+    if (percentage >= 65) return "B";
+    if (percentage >= 50) return "C";
+    return "D";
+}
+
+function calculateOverallResults(students) {
+    const results = (students || []).map(student => {
+        const semester1 = numericScore(student.weightedPercentage) ?? 0;
+        const semester2 = calculateSemester2(student.semester2 || {});
+        const overall = (semester1 + semester2) / 2;
+
+        student.semester1WeightedPercentage = semester1;
+        student.semester2WeightedPercentage = semester2;
+        student.overallWeightedPercentage = overall;
+
+        return { student, overall };
+    });
+
+    results.forEach(result => {
+        const higherScores = results.filter(
+            other => other.overall > result.overall
+        ).length;
+
+        result.student.rank = higherScores + 1;
+
+        result.student.percentile = results.length <= 1
+            ? 100
+            : ((results.length - result.student.rank) /
+               (results.length - 1)) * 100;
+    });
+}
+
 /* =========================================================
    OPEN REPORT
    ========================================================= */
@@ -1644,6 +1784,8 @@ async function openReport() {
 
         }
 
+
+        calculateOverallResults(data.students);
 
         /*
          * Find student by permanent passcode.
@@ -1829,7 +1971,7 @@ function displayReport(
         "weightedPercentage"
     ).textContent =
         formatWeighted(
-            student.weightedPercentage
+            student.overallWeightedPercentage
         );
 
 
@@ -1838,9 +1980,9 @@ function displayReport(
        ----------------------------------------------------- */
 
     const grade =
-        String(
-            student.grade || ""
-        ).trim();
+        gradeFromPercentage(
+            student.overallWeightedPercentage
+        );
 
 
     document.getElementById(
@@ -1966,7 +2108,7 @@ function displayReport(
 
     displaySemester1(
         student.semester1 || {},
-        student.weightedPercentage
+        student.semester1WeightedPercentage
     );
 
 
@@ -1975,7 +2117,8 @@ function displayReport(
        ----------------------------------------------------- */
 
     displaySemester2(
-        student.semester2 || {}
+        student.semester2 || {},
+        student.semester2WeightedPercentage
     );
 
 }
@@ -2017,8 +2160,6 @@ function displaySemester1(
                 </td>
             </tr>
         `;
-
-        return;
 
     }
 
@@ -2070,7 +2211,7 @@ function displaySemester1(
 
     weightedRow.innerHTML = `
         <td>
-            Final Weighted Percentage
+            Semester 1 Weighted Percentage
         </td>
 
         <td class="score-cell">
@@ -2093,7 +2234,8 @@ function displaySemester1(
    ========================================================= */
 
 function displaySemester2(
-    semester2
+    semester2,
+    weightedPercentage
 ) {
 
     const section =
@@ -2118,21 +2260,18 @@ function displaySemester2(
         );
 
 
-    if (
-        assessments.length === 0
-    ) {
-
-        section.style.display =
-            "none";
-
-        return;
-
-    }
-
-
     section.style.display =
         "block";
 
+    if (assessments.length === 0) {
+        table.innerHTML = `
+            <tr>
+                <td colspan="2">
+                    No Semester 2 assessment results available.
+                </td>
+            </tr>
+        `;
+    }
 
     assessments.forEach(
         function([
@@ -2163,6 +2302,24 @@ function displaySemester2(
 
         }
     );
+
+    const weightedRow =
+        document.createElement("tr");
+
+    weightedRow.className =
+        "weighted-row";
+
+    weightedRow.innerHTML = `
+        <td>
+            Semester 2 Weighted Percentage
+        </td>
+
+        <td class="score-cell">
+            ${formatWeighted(weightedPercentage)}
+        </td>
+    `;
+
+    table.appendChild(weightedRow);
 
 }
 
